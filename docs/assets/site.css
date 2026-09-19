@@ -852,6 +852,62 @@ a {
   font-weight: 600;
 }
 
+/* GitHub star */
+.star {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+}
+.star-icon {
+  width: 1em;
+  height: 1em;
+  flex: none;
+  color: var(--purple);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.star:hover .star-icon,
+.star-button:hover .star-icon {
+  transform: rotate(-14deg) scale(1.15);
+}
+.star-count {
+  margin-left: 0.15em;
+  padding: 0.05em 0.45em;
+  border-radius: 999px;
+  background: var(--lavender);
+  color: var(--lavender-ink);
+  font-size: 0.8em;
+  font-variant-numeric: tabular-nums;
+}
+.admin .star-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  border: 1.5px solid var(--sticker-mint);
+  border-radius: 8px;
+  color: var(--cream);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.admin .star-button .star-icon {
+  color: var(--sticker-yellow);
+}
+.admin .star-button:hover {
+  background: var(--sticker-mint);
+  color: var(--ink);
+}
+.admin .star-button .star-count {
+  background: rgba(240, 240, 230, 0.14);
+  color: var(--cream);
+}
+.admin .star-button:hover .star-count {
+  background: rgba(56, 53, 65, 0.12);
+  color: var(--ink);
+}
+.links {
+  align-items: center;
+}
+
 /* Footer */
 .foot {
   padding-block: 2.5rem;
