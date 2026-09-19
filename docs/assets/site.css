@@ -19,12 +19,10 @@
 
 :root {
   --purple: #5926eb;
-  --purple-deep: #4a1fc4;
   --ink: #383541;
   --ink-soft: #5d5a66;
   --ink-mute: #6c6976;
   --cream: #f0f0e6;
-  --study: #fafaf5;
   --white: #ffffff;
   --yellow: #ebd926;
   --sticker-yellow: #f8d93c;
@@ -274,7 +272,7 @@ a {
   border-radius: 6px;
   background: #726f7b;
   color: var(--white);
-  font-size: calc(13 * var(--k));
+  font-size: max(11.5px, calc(13 * var(--k)));
   font-weight: 700;
   line-height: 1.45;
 }
@@ -317,7 +315,7 @@ a {
   margin-top: calc(12 * var(--k));
 }
 .who {
-  font-size: calc(13 * var(--k));
+  font-size: max(11.5px, calc(13 * var(--k)));
   font-weight: 700;
   color: #55525e;
   line-height: 1.3;
@@ -429,7 +427,7 @@ a {
 }
 .skip-note {
   color: var(--ink-soft);
-  font-size: calc(13.5 * var(--k));
+  font-size: max(11.5px, calc(13.5 * var(--k)));
 }
 .groups .go {
   flex: none;
@@ -475,6 +473,11 @@ a {
 @media (min-width: 48rem) {
   .wrap {
     width: min(100% - 6rem, 75rem);
+  }
+}
+@media (min-width: 75.0625rem) {
+  .wrap {
+    width: calc(min(100vw, 1536px) - 200 * var(--k));
   }
 }
 
@@ -629,10 +632,10 @@ a {
   display: inline-block;
   margin-left: 0.35rem;
   padding: 0.3rem 0.6rem 0.35rem;
-  font-size: 0.42em;
+  font-size: 1rem;
   letter-spacing: 0;
   background: var(--sticker-yellow);
-  transform: rotate(-6deg) translateY(-0.45em);
+  transform: rotate(-6deg) translateY(-0.3em);
   vertical-align: middle;
 }
 .trust .section-head {
@@ -834,26 +837,6 @@ a {
   border-radius: 4px;
   background: rgba(240, 240, 230, 0.1);
 }
-.milestones {
-  width: 100%;
-  border-collapse: collapse;
-  font-variant-numeric: tabular-nums;
-}
-.milestones th,
-.milestones td {
-  text-align: left;
-  vertical-align: top;
-  padding: 0.7rem 1rem 0.7rem 0;
-  border-bottom: 1px solid rgba(240, 240, 230, 0.16);
-}
-.milestones th {
-  font-weight: 600;
-  white-space: nowrap;
-  color: var(--sticker-mint);
-}
-.milestones td {
-  color: #d9d7df;
-}
 .status {
   margin: 0;
   padding-top: 1.25rem;
@@ -933,9 +916,11 @@ a {
 
 @media (max-width: 75rem) {
   .hero {
+    --gut: 1.5rem;
+    --date: clamp(5.5rem, 27vw, 11rem);
     width: auto;
     height: auto;
-    padding: 1.25rem 1.5rem 3.5rem;
+    padding: 1.25rem var(--gut) 3.5rem;
     display: flex;
     flex-direction: column;
   }
@@ -991,14 +976,14 @@ a {
     position: relative;
     left: auto;
     top: auto;
-    font-size: clamp(5.5rem, 27vw, 11rem);
+    font-size: var(--date);
     margin-top: 1.5rem;
   }
   .sticker--date {
     position: absolute;
     left: auto;
-    right: 1.5rem;
-    top: 7.5rem;
+    right: max(var(--gut), calc(100vw - var(--gut) - 2.75 * var(--date)));
+    top: calc(3.5rem + 0.55 * var(--date));
     font-size: clamp(0.95rem, 4vw, 1.4rem);
     padding: 0.4rem 0.7rem 0.45rem;
   }
@@ -1022,6 +1007,7 @@ a {
     left: auto;
     top: auto;
     width: 100%;
+    max-width: 46rem;
     height: auto;
     margin-top: 3rem;
     padding-bottom: 1.25rem;
@@ -1066,5 +1052,11 @@ a {
   }
   body {
     overflow-x: clip;
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 75rem) {
+  .hero {
+    --gut: 3rem;
   }
 }
