@@ -353,7 +353,7 @@ a {
 .preview {
   display: flex;
   align-items: center;
-  gap: calc(20 * var(--k));
+  gap: calc(14 * var(--k));
   width: calc(460 * var(--k));
   padding: calc(12 * var(--k)) calc(14 * var(--k)) calc(12 * var(--k)) calc(18 * var(--k));
   border: 1px solid var(--lavender-line);
@@ -395,14 +395,13 @@ a {
   line-height: 1.2;
 }
 
-/* Message groups: two different messages, one approval */
+/* Message groups: a different message per group, each with its own approval */
 .groups {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: calc(8 * var(--k)) calc(14 * var(--k));
+  gap: calc(8 * var(--k));
   width: calc(460 * var(--k));
   margin-top: calc(8 * var(--k));
-  padding: calc(12 * var(--k)) calc(14 * var(--k)) calc(12 * var(--k)) calc(14 * var(--k));
+  padding: calc(10 * var(--k)) calc(12 * var(--k)) calc(12 * var(--k)) calc(14 * var(--k));
   border: 1px solid var(--lavender-line);
   border-radius: calc(10 * var(--k));
   background: #f4f0fe;
@@ -411,10 +410,13 @@ a {
   line-height: 1.35;
 }
 .group {
-  grid-column: 1;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: calc(10 * var(--k));
+}
+.group > span:not(.go) {
+  flex: 1;
+  min-width: 0;
 }
 .group b {
   flex: none;
@@ -426,24 +428,38 @@ a {
   background: var(--purple);
   color: var(--white);
   font-size: calc(13 * var(--k));
-  transform: translateY(calc(-1 * var(--k)));
 }
 .skip-note {
-  grid-column: 1;
   color: var(--ink-soft);
   font-size: calc(13.5 * var(--k));
 }
 .groups .go {
-  grid-column: 2;
-  grid-row: 1 / span 3;
-  align-self: end;
-  padding: calc(13 * var(--k)) calc(18 * var(--k));
-  border-radius: calc(8 * var(--k));
+  flex: none;
+  padding: calc(8 * var(--k)) calc(14 * var(--k));
+  border-radius: calc(7 * var(--k));
   background: var(--purple);
   color: var(--white);
   font-weight: 700;
-  font-size: calc(16 * var(--k));
+  font-size: calc(14.5 * var(--k));
   line-height: 1.2;
+}
+.approved {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(8 * var(--k));
+  padding: calc(6 * var(--k)) calc(12 * var(--k)) calc(7 * var(--k)) calc(9 * var(--k));
+  border-radius: calc(7 * var(--k));
+  background: #ebebee;
+  color: var(--ink);
+  font-weight: 600;
+}
+.approved svg {
+  width: calc(18 * var(--k));
+  height: calc(18 * var(--k));
+  padding: calc(2 * var(--k));
+  border-radius: 50%;
+  background: var(--purple);
+  color: var(--white);
 }
 .turn .reply + .preview {
   margin-top: calc(8 * var(--k));
@@ -1041,14 +1057,7 @@ a {
   .preview .label {
     white-space: normal;
   }
-  .groups {
-    grid-template-columns: 1fr;
-  }
-  .groups .go {
-    grid-column: 1;
-    grid-row: auto;
-    justify-self: start;
-  }
+
   .preview .count {
     white-space: nowrap;
   }
