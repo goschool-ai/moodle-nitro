@@ -110,8 +110,8 @@ a {
 
 .brand {
   position: absolute;
-  left: calc(89 * var(--k));
-  top: calc(94 * var(--k));
+  left: calc(100 * var(--k));
+  top: calc(101 * var(--k));
   display: flex;
   align-items: center;
   gap: calc(21 * var(--k));
@@ -120,10 +120,8 @@ a {
 }
 .brand img {
   display: block;
-  width: calc(166 * var(--k));
-  height: calc(53 * var(--k));
-  object-fit: contain;
-  margin-right: calc(-10 * var(--k));
+  width: calc(144 * var(--k));
+  height: auto;
 }
 .brand .divider {
   width: 1.5px;
@@ -673,9 +671,9 @@ a {
 }
 .client-logo {
   display: inline-block;
-  width: 6rem;
+  width: 5.6rem;
   height: auto;
-  vertical-align: -0.2em;
+  vertical-align: -0.12em;
 }
 .admin h3.spaced {
   margin-top: 2.5rem;
@@ -957,9 +955,8 @@ a {
     gap: 0.7rem;
   }
   .brand img {
-    width: 7.2rem;
+    width: 6.4rem;
     height: auto;
-    margin-right: -0.4rem;
   }
   .brand .divider {
     height: 1.2rem;
