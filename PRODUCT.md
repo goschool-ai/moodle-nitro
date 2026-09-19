@@ -12,14 +12,14 @@ Moodle local plugin (`local_nitro`, PHP), Moodle 5.x. Every nitro page is Moodle
 
 ## Users
 
-- **Teachers** at Hungarian universities, first at BME (each faculty has its own Moodle) and then at ELTE (currently moving from Canvas to Moodle). They are a mixed group, and many are cautious: for plenty of them this is their first AI connector. They meet nitro in three places:
+- **Teachers** at Hungarian universities, where a faculty or an institution often runs its own Moodle, and some institutions are moving to Moodle from other systems. They are a mixed group, and many are cautious: for plenty of them this is their first AI connector. They meet nitro in three places:
   - the consent screen, when they connect Claude or Copilot to Moodle;
   - the "My connections" page, where they see and revoke connections;
   - the sandbox signup, after the demo.
 
   The real work happens in the AI client's chat. On Moodle, the job is to understand what they are allowing and to feel in control.
 - **Faculty Moodle administrators** install the plugin, grant `local/nitro:use`, set the allowlists and the kill switch, and check discovery. They are not always the same people as the web server operators.
-- **Attendees of the BME Oktatói Klub** (2026-10-06): from the next day they sign up on the sandbox and try nitro on their own personal demo course, with no help.
+- **Attendees of the live demo** (2026-10-06): from the next day they sign up on the sandbox and try nitro on their own personal demo course, with no help.
 - **Students** never see a nitro interface. Messages, announcements and grades reach them through Moodle's own channels.
 
 ## Product Purpose
@@ -32,13 +32,13 @@ Moodle itself becomes the MCP server, with no intermediary service. Core Moodle 
 
 ## Operating Context
 
-- The model workflow is the Advanced programming course on canvas.elte.hu, run from Claude Code through the Canvas API. Its weekly loop:
+- The model workflow is a programming course on Canvas, run from Claude Code through the Canvas API. Its weekly loop:
   - who is behind;
   - individual reminders;
   - accepting submissions;
   - announcements;
   - pages and assignments republished from markdown.
-- Demo: 2026-10-06 14:30, BME Oktatói Klub, on the sandbox moodle.tilosazai.org (Moodle 5.2.2). After that, a faculty pilot in November.
+- Live demo: 2026-10-06, on the sandbox moodle.tilosazai.org (Moodle 5.2.2). After that, a pilot in November.
 - OAuth sign-in goes through the normal Moodle login and faculty SSO. Claude identifies itself with CIMD, and Copilot uses DCR or a manually registered client.
 - Requirements and plans live in `openspec/changes/nitro-demo` and `openspec/changes/nitro-pilot`.
 
@@ -64,7 +64,7 @@ Moodle itself becomes the MCP server, with no intermediary service. Core Moodle 
 - Brand by surface:
   - **Moodle pages** (consent screen, My connections, admin settings): Moodle-native. The faculty theme leads, and the official GoSchool logo appears as a small, quiet mark with no brand fields or motifs.
   - **The sandbox's public landing and signup page:** the goschool-web brand (logo, purple field, Sora, one leading motif).
-  - **Marketing** (Klub slides, a possible nitro page on goschool-web): the goschool-web brand.
+  - **Marketing** (demo slides, a possible nitro page on goschool-web): the goschool-web brand.
 - Only the official logo files may be used. There must be no improvised substitute (such as a "G" letter).
 - The voice, as with GoSchool, is direct, concrete and aware of evidence. The AI does not replace the teacher's judgement. Grades and messages are always decided by the teacher.
 

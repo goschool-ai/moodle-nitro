@@ -7,7 +7,7 @@ Constraints that shape the approach:
 - Moodle core web services read well but have no functions that create modules, questions or quizzes. Writing content needs Moodle's internal PHP APIs, so the plugin must run inside Moodle.
 - Copilot Cowork connectors accept only OAuth (dynamic or static client registration), not API keys. Claude custom connectors accept OAuth as well. Moodle has no OAuth authorization server (its `oauth2` subsystem is a client only).
 - The demo sandbox (moodle.tilosazai.org) runs Moodle 5.2.2 with the `public/` web root, on a machine we control with a fixed IP, currently behind Cloudflare for convenience. Faculty Moodles may run 4.5; that is handled in `nitro-pilot`.
-- The tool set is driven by the teacher's real Canvas workflow on Advanced programming (ELTE): daily status checks, individual reminders, accepting submissions, announcements, and pages and assignments republished from markdown in a repository. Teacher- and course-specific rules (course constants, "never grade in sync", feedback style) live in the teacher's own client skills, not in nitro.
+- The tool set is driven by the teacher's real Canvas workflow on a programming course: daily status checks, individual reminders, accepting submissions, announcements, and pages and assignments republished from markdown in a repository. Teacher- and course-specific rules (course constants, "never grade in sync", feedback style) live in the teacher's own client skills, not in nitro.
 - Timeline: skeleton by 2026-09-25, demo-ready by 2026-10-02, demo on 2026-10-06, attendees self-serve on the sandbox from 2026-10-07.
 - Faculty Moodle admins can install plugins but often cannot change the web server configuration; some Moodles run under a subpath or on hosted platforms.
 
@@ -144,7 +144,7 @@ Alternatives: Moodle's built-in course request (fallback B if this is not ready 
 - [The sandbox's Cloudflare in front of Moodle blocks Anthropic or Microsoft requests] → Either a Cloudflare skip rule for `160.79.104.0/21` and the Microsoft ranges on `/local/nitro/*` and `/.well-known/*`, or serve the sandbox directly on its fixed IP with its own certificate; decided on day 1.
 - [Copilot DCR connectors are reported to fail silently after sideloading (Microsoft Q&A, 2026)] → Copilot support is presented as standards-based and verified in the pilot; a hand-registered client is the fallback.
 - [Upsert overwrites a teacher's manual edits in Moodle] → The result says `updated` and lists the changed fields; `dry_run` shows them first. The repository stays the source of truth, as in the teacher's Canvas workflow.
-- [Sandbox signup depends on outbound email] → Configure and test SMTP on the sandbox on day 1; fallback: admin-created accounts from the Klub signup list.
+- [Sandbox signup depends on outbound email] → Configure and test SMTP on the sandbox on day 1; fallback: admin-created accounts from the demo signup list.
 - [Many attendees sign up at once after the demo] → Course creation runs as an ad hoc task, so signup stays fast; check the time for 30 signups in a row on the sandbox.
 - [Attendees put real student data on the sandbox] → Consent screen and login page notice; fictitious students only; sandbox data can be wiped at any time.
 - [Without skills, the AI may chain quiz tools wrongly] → Rich `instructions` and tool descriptions; coarse, forgiving tools (category created on import, clear errors that say what to do next); run the demo script at least five times before 2026-10-02.

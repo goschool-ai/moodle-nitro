@@ -23,7 +23,7 @@ Every tool MUST validate the target context (course or module) and check the Moo
 - **THEN** the call fails with a permission error and no submission data is returned
 
 ### Requirement: Data minimisation
-Read tools SHALL return only the fields needed for course work by default. Email addresses and identity fields (such as the Neptun code in `idnumber`) SHALL be returned only when the call explicitly asks for them and the user is allowed to see them in the web UI.
+Read tools SHALL return only the fields needed for course work by default. Email addresses and identity fields (such as a student ID in `idnumber`) SHALL be returned only when the call explicitly asks for them and the user is allowed to see them in the web UI.
 
 #### Scenario: Default participant list
 - **WHEN** a teacher calls `list_participants` without asking for identity fields

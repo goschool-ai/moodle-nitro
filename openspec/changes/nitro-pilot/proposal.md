@@ -1,10 +1,10 @@
 ## Why
 
-`nitro-demo` delivers the 2026-10-06 BME Oktatói Klub demo and the self-service sandbox. A faculty pilot (target: November 2026, one faculty Moodle, 3–5 teachers, after code review) needs the rest of a teacher's week, a production-grade OAuth setup, Microsoft 365 Copilot verified end to end, and support for the Moodle versions faculties actually run.
+`nitro-demo` delivers the 2026-10-06 live demo and the self-service sandbox. A pilot (target: November 2026, one institution's Moodle, 3–5 teachers, after code review) needs the rest of a teacher's week, a production-grade OAuth setup, Microsoft 365 Copilot verified end to end, and support for the Moodle versions faculties actually run.
 
 Audiences:
-- **BME:** first audience. Every faculty runs its own Moodle, and teachers have Microsoft Copilot. The pilot runs on one faculty's Moodle.
-- **ELTE:** second audience. ELTE is moving to Moodle right now. The model workflow (Advanced programming on canvas.elte.hu, run through the Canvas API) is lost in the move, and `local_nitro` gives it back on Moodle. A new installation is also more open to new plugins than an established one, and Canvas-to-Moodle content migration is a natural use case for the content tools. Whether ELTE joins the November pilot or comes after it is still open.
+- **Universities where a faculty or institution runs its own Moodle** and teachers have Microsoft Copilot or Claude. The pilot runs on one such Moodle.
+- **Institutions moving from Canvas to Moodle.** The model workflow (a course run through the Canvas API) is lost in the move, and `local_nitro` gives it back on Moodle. A new installation is also more open to new plugins than an established one, and Canvas-to-Moodle content migration is a natural use case for the content tools.
 
 ## What Changes
 
@@ -17,7 +17,7 @@ Audiences:
 - **Microsoft 365 Copilot verified:** a Cowork connector package built with Agents Toolkit against a faculty Moodle, with DCR or a hand-registered client, tested in a tenant with Copilot licences.
 - **OAuth for production:** an admin view of all issued tokens with revocation, and tuning of lifetimes and the never-used client cap from the sandbox experience. (CIMD, DCR and the user's own connections page ship in `nitro-demo`.)
 - **Client packages (optional):** generic `SKILL.md` skills as a Claude plugin, only if the demo and sandbox show that tool descriptions alone are not enough. Teacher-specific rules stay in each teacher's own client.
-- **Pilot readiness:** installation guide for faculty admins (including the root well-known rewrite for Copilot), open-source release, code review package, needs list per faculty collected at the Klub.
+- **Pilot readiness:** installation guide for faculty admins (including the root well-known rewrite for Copilot), open-source release, code review package, needs list collected at the demo.
 
 ## Capabilities
 
@@ -35,16 +35,16 @@ These capabilities are introduced by `nitro-demo`; this change extends them afte
 
 ## Non-goals
 
-Course creation and enrolment (handled by the Neptun sync), admin operations, an AI running inside Moodle, automatic grading without human approval, profiling tools. When the AI groups students by behaviour, the grouping happens in the conversation from that course's data only, and is never stored as a label.
+Course creation and enrolment (handled by the student information system), admin operations, an AI running inside Moodle, automatic grading without human approval, profiling tools. When the AI groups students by behaviour, the grouping happens in the conversation from that course's data only, and is never stored as a label.
 
 ## Open Questions
 
-- Which faculties run Moodle, and on which versions? (asked from the BME contact)
-- Do teachers have Microsoft 365 Copilot licences and Cowork? (asked from the BME contact)
-- What does BME policy allow to be sent to an AI tool? (asked from the BME contact)
-- Which AI tool do teachers actually have: M365 Copilot, only Copilot Chat (not enough for Cowork), Claude, or none? Measured on the Klub needs list. If most have only Copilot Chat or nothing, a GoSchool-hosted client (GoSchool is already a data processor for universities) becomes a separate product decision; nitro itself does not change, GoSchool would be one more OAuth client.
+- Which faculties run Moodle, and on which versions? (asked from the pilot contact)
+- Do teachers have Microsoft 365 Copilot licences and Cowork? (asked from the pilot contact)
+- What does the institution's policy allow to be sent to an AI tool? (asked from the pilot contact)
+- Which AI tool do teachers actually have: M365 Copilot, only Copilot Chat (not enough for Cowork), Claude, or none? Measured on the demo needs list. If most have only Copilot Chat or nothing, a GoSchool-hosted client (GoSchool is already a data processor for universities) becomes a separate product decision; nitro itself does not change, GoSchool would be one more OAuth client.
 - Is a detailed access log (who opened what) needed for grouping students by behaviour, or are submissions and completion enough?
-- ELTE: November pilot or later? Who runs the ELTE Moodle, centrally or per faculty, and when does Canvas shut down?
+- For institutions moving from Canvas: November pilot or later? Who runs their Moodle, centrally or per faculty, and when does Canvas shut down?
 
 ## Impact
 

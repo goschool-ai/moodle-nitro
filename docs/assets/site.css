@@ -111,7 +111,7 @@ a {
   left: calc(100 * var(--k));
   top: calc(101 * var(--k));
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: calc(21 * var(--k));
   text-decoration: none;
   color: var(--ink);
@@ -122,6 +122,7 @@ a {
   height: auto;
 }
 .brand .divider {
+  align-self: center;
   width: 1.5px;
   height: calc(26 * var(--k));
   background: #b9b7b1;
@@ -131,7 +132,6 @@ a {
   font-size: calc(36 * var(--k));
   letter-spacing: -0.02em;
   line-height: 1;
-  transform: translateY(calc(-2 * var(--k)));
 }
 
 .nav ul {

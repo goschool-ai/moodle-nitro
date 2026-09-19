@@ -86,5 +86,5 @@
 - [ ] 11.4 Prepare the stage demo course on the sandbox through the onboarding flow itself; verify it is created by a real signup
 - [ ] 11.5 Run the full demo script five times on the sandbox; verify three consecutive clean runs, and record one run as a fallback video
 - [ ] 11.6 Walk through the attendee path as a new user (signup, connect Claude by URL, first prompt) on a clean browser; verify it works without admin help
-- [ ] 11.7 Needs-list form for the Klub, including "Which AI tool do you have now: M365 Copilot, only Copilot Chat, Claude, none?"; verify it is ready and linked from the last slide
+- [ ] 11.7 Needs-list form for the demo, including "Which AI tool do you have now: M365 Copilot, only Copilot Chat, Claude, none?"; verify it is ready and linked from the last slide
 - [ ] 11.8 Run the full PHPUnit and Behat suites and Moodle code checker; verify they pass with no errors

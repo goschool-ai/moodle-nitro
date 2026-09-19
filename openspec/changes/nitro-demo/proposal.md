@@ -1,10 +1,10 @@
 ## Why
 
-Moodle's core web services read well but cannot create content: there is no core function that creates a page, an assignment, a question or a quiz. University tokens are also issued with a narrow function list and have to be copied by hand. Teachers who want to run their course from an AI assistant (Claude or Microsoft Copilot Cowork) therefore cannot do it on Moodle today, while the same workflow already works on Canvas through the Canvas API: the Advanced programming course on canvas.elte.hu is run this way, and ELTE is now moving to Moodle.
+Moodle's core web services read well but cannot create content: there is no core function that creates a page, an assignment, a question or a quiz. Web service tokens are also usually issued with a narrow function list and have to be copied by hand. Teachers who want to run their course from an AI assistant (Claude or Microsoft Copilot Cowork) therefore cannot do it on Moodle today, while the same workflow already works on Canvas through the Canvas API: a programming course on Canvas is run this way, and institutions moving from Canvas to Moodle lose it.
 
 The tool set follows what that course actually needed in its first weeks (from the teacher's own Claude Code sessions): a daily "who is behind?" check, reminders to individual students, accepting submissions, announcements, and pages and assignments kept in sync with markdown in a repository. Quizzes were not used there, but they are the biggest gain over core web services and the strongest demo moment, so they stay.
 
-The first deadline is a live demo at the BME Oktatói Klub on 2026-10-06 14:30, on the sandbox Moodle (moodle.tilosazai.org, Moodle 5.2). Attendees must be able to use nitro themselves from the next day (2026-10-07), on the sandbox, without anyone's help. Everything else is deferred to `nitro-pilot`.
+The first deadline is a live demo on 2026-10-06, on the sandbox Moodle (moodle.tilosazai.org, Moodle 5.2). Attendees must be able to use nitro themselves from the next day (2026-10-07), on the sandbox, without anyone's help. Everything else is deferred to `nitro-pilot`.
 
 ## What Changes
 
@@ -43,7 +43,7 @@ The first deadline is a live demo at the BME Oktatói Klub on 2026-10-06 14:30, 
 
 ## Non-goals
 
-- Course creation and enrolment (handled by the Neptun sync), admin operations, an AI running inside Moodle, automatic grading without human approval.
+- Course creation and enrolment (handled by the student information system), admin operations, an AI running inside Moodle, automatic grading without human approval.
 - In `nitro-pilot`: file and PDF upload, labels, URLs, sections, visibility, forums, course front page, inbox reading, calendar, extensions, question editing, quiz results, completion, Moodle 4.5 support, client-side skill packages, admin view of all issued tokens.
 - Real student data on the sandbox: the sandbox has no data protection agreement with any university and holds fictitious students only.
 
