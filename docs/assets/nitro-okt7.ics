@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//GoSchool//nitro//HU
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:nitro-trial-2026-10-07@goschool-ai.github.io
+DTSTAMP:20260919T120000Z
+DTSTART;VALUE=DATE:20261007
+DTEND;VALUE=DATE:20261008
+SUMMARY:nitro: nyílik a próbakurzus / trial course opens
+DESCRIPTION:Kérj próbakurzust, és add hozzá a Claude-hoz: https://goschool-ai.github.io/moodle-nitro/
+URL:https://goschool-ai.github.io/moodle-nitro/
+END:VEVENT
+END:VCALENDAR

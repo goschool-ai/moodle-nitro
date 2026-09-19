@@ -1,0 +1,9 @@
+{
+  "prompt": "Desktop documentation-style landing page, first viewport only, 1536x1024, for \"nitro\", an open-source Moodle plugin from the GoSchool product family. Regions in order: (1) a full-width purple #5926eb band across the top third, containing at left the GoSchool logo in white and small links \"GitHub\" and \"EN\", then the title \"nitro\" in huge cream Sora bold, the line \"A Moodle mint MCP-szerver – nyílt forrás, GPL v3\", and one cream paragraph \"Tanárok a saját AI-asszisztensükből vezetik a Moodle-kurzusukat, a saját Moodle-jogaikkal.\". (2) Below, on a soft #fafaf5 reading surface, a two-column document layout: a narrow left table of contents with a hairline divider listing \"Oktatóknak\", \"Adminoknak\", \"Hogyan működik\", \"Biztonság\", \"Specek\", \"Ütemterv\", the first item highlighted with a mint underline; the wide right column starts with heading \"Ütemterv\" and a clean hairline table of milestones: \"09-25  Csontváz\", \"10-02  Demókész\", \"10-06  Élő demó\", \"10-07  Homokozó nyílik\", \"11  Pilot\", then the heading \"Oktatóknak\" and two lines of body text. Calm, readable, typographic. Match the reference screenshot's visual system exactly: warm cream ground #f0f0e6, anthracite text #383541, electric purple #5926eb primary buttons with 8px radius, geometric Sora typeface with tight bold headlines and light body, tilted sticker labels in yellow/mint/purple with a small lift shadow, flat surfaces, generous whitespace, GoSchool logo top-left. Do NOT copy the reference's photo, hexagon image, headline or copy; no photos of people. All UI text in Hungarian, spelled exactly as given. It must read as a real website first viewport, not a poster.\n",
+  "createdAt": "2026-09-19T15:53:52.113Z",
+  "tool": "impeccable generate-image",
+  "model": "gpt-image-2.5-flare",
+  "refs": [
+    "/private/tmp/claude-501/-Users-rp-Dev-goschool-moodle-nitro/6925ad8c-c6c4-47e7-a5df-d32de600c519/scratchpad/goschool-ref.png"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "prompt": "Desktop landing page first viewport, 1536x1024, for \"nitro\", a Moodle plugin from GoSchool. Regions in order: (1) top navigation exactly like the reference: GoSchool logo, a thin divider, the word \"nitro\"; links \"Hogyan működik\", \"Biztonság\", \"Adminoknak\", \"GitHub\"; outlined language button \"EN\". (2) Left column, kept from the reference: the enormous date \"okt. 7.\" in heavy tight anthracite Sora with a tilted yellow sticker label reading \"nyílik a próbakurzus\", below it the headline \"Személyesen. Mégis egy perc alatt.\" and a purple button \"Próbáld ki október 7-től\". (3) Right column, the focal object: one large white message draft card, like a personal letter, with a small grey tag \"illusztráció\". Above it a tiny line \"kérted 14:02 · kész 14:02\". Card header \"Címzett: Kovács Anna · Haladó programozás\". Body in warm teacher voice: \"Szia Anna! A 2. házid repója megvan, de a README még hiányzik. Péntek 23:59-ig pótold, és vasárnap estig még elfogadom késve is. Ha elakadtál, írj nyugodtan!\" Footer of the card: purple button \"Mehet\" and outlined button \"Módosítom\", and a small note \"Anna a Moodle-ben, tőled kapja\". Keep the reference visual system exactly: warm cream ground #f0f0e6, anthracite #383541 text, purple #5926eb primary button 8px radius, Sora geometric type with tight bold headlines and light body, tilted sticker labels, flat surfaces, generous whitespace. Do not show the purple ticket from the reference. No photos of people, no avatars with faces. Every UI text in Hungarian exactly as given. A small grey tag \"illusztráció\" marks the illustrated chat content. It must read as a real website first viewport.\n",
+  "createdAt": "2026-09-19T16:02:26.013Z",
+  "tool": "impeccable generate-image",
+  "model": "gpt-image-2.5-flare",
+  "refs": [
+    ".impeccable/mocks/decision/ticket.png"
+  ]
+}

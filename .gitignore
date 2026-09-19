@@ -3,3 +3,8 @@
 .impeccable/live/
 .impeccable/*.cache.json
 node_modules/
+.impeccable/review/
+.impeccable/build/
+.impeccable/questions/
+.impeccable/mocks/**/*.png
+!.impeccable/mocks/decision/week.png

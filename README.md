@@ -2,16 +2,11 @@
 
 A Moodle plugin (`local_nitro`), part of the GoSchool product family, that lets teachers run their course from an AI assistant such as Claude or Microsoft Copilot Cowork. The assistant can read the course, send messages to students, and write content and quizzes. It does this with the teacher's own Moodle permissions, and the data goes to no third party.
 
-> **Status:** in planning. No code yet. The first milestone is a live demo at the BME Oktatói Klub on 2026-10-06.
+> **Status:** in planning. No code yet. The first milestone is a live demo on 2026-10-06.
 
 ## Why
 
-Moodle's core web services are good at reading but cannot create content: no page, assignment, question or quiz. University web service tokens also come with a narrow function list and have to be copied by hand. On Canvas this workflow already works through the Canvas API; nitro brings it to Moodle.
-
-First audiences:
-
-- **BME:** each faculty runs its own Moodle, and teachers have Microsoft Copilot.
-- **ELTE:** moving from Canvas to Moodle now, which ends the Canvas API workflow that nitro reproduces.
+Moodle's core web services are good at reading but cannot create content: no page, assignment, question or quiz. Web service tokens are also usually issued with a narrow function list and have to be copied by hand. On Canvas this workflow already works through the Canvas API; nitro brings it to Moodle.
 
 ## How it works
 
@@ -32,7 +27,7 @@ Moodle itself is the MCP server. There is no intermediary service.
  Moodle APIs and database
 ```
 
-- **OAuth 2.1 inside Moodle:** authorization code + PKCE. Claude identifies itself with a Client ID Metadata Document, so it needs no registration. Microsoft 365 Copilot uses dynamic client registration with a client secret, or a client registered by the admin. The teacher pastes one URL and logs in once through the normal Moodle login (including faculty SSO). Nobody copies a long-lived token.
+- **OAuth 2.1 inside Moodle:** authorization code + PKCE. Claude identifies itself with a Client ID Metadata Document, so it needs no registration. Microsoft 365 Copilot uses dynamic client registration with a client secret, or a client registered by the admin. The teacher pastes one URL and logs in once through the normal Moodle login (including single sign-on). Nobody copies a long-lived token.
 - **Same permissions as the web UI:** every tool checks the Moodle capabilities the equivalent UI action requires. The only new capability is `local/nitro:use`, an entry gate that admins grant per site, category or course.
 - **Human approval enforced on the server:** messages, announcements and grades first return a preview. They run only when repeated with a confirmation token. Every write tool also supports `dry_run`.
 - **Audit:** every tool call is recorded in the Moodle event log, without message or content bodies.
@@ -72,19 +67,19 @@ From 2026-10-07, teachers can try nitro themselves on the sandbox, moodle.tilosa
 The project is planned with [OpenSpec](https://github.com/Fission-AI/OpenSpec). Requirements, design and tasks are in `openspec/changes/`:
 
 - [`nitro-demo`](openspec/changes/nitro-demo/): what the demo needs, with the full proposal, specs, design and tasks.
-- [`nitro-pilot`](openspec/changes/nitro-pilot/): the rest of the scope for the faculty pilot. For now this is a proposal only.
+- [`nitro-pilot`](openspec/changes/nitro-pilot/): the rest of the scope for the pilot. For now this is a proposal only.
 
 | Date | Milestone | Done when |
 | --- | --- | --- |
 | 2026-09-25 | Skeleton | MCP endpoint with OAuth runs on the sandbox, Claude connects, read tools work |
 | 2026-10-02 | Demo-ready | content, quiz, messaging, announcement and grading tools work; the demo script runs cleanly three times |
-| 2026-10-06 | BME Oktatói Klub | live demo on moodle.tilosazai.org, needs list per faculty |
+| 2026-10-06 | Live demo | live demo on moodle.tilosazai.org, needs list from teachers |
 | 2026-10-07 | Sandbox open | attendees sign up and connect on their own, without admin help |
-| 2026-11 | Faculty pilot | installed on one faculty Moodle, 3–5 teachers, after code review |
+| 2026-11 | Pilot | installed on one institution's Moodle, 3–5 teachers, after code review |
 
 ## Not in scope
 
-Course creation and enrolment (handled by the Neptun sync), admin operations, an AI running inside Moodle, grading without human approval, profiling students.
+Course creation and enrolment (handled by the student information system), admin operations, an AI running inside Moodle, grading without human approval, profiling students.
 
 ## Author
 

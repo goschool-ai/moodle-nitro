@@ -1,0 +1,9 @@
+{
+  "prompt": "Desktop landing page, first viewport only, 1536x1024, for \"nitro\", a Moodle plugin from the GoSchool product family. Regions in order: (1) top navigation bar: GoSchool logo and the word \"nitro\" at left; links \"Hogyan működik\", \"Biztonság\", \"Adminoknak\", \"GitHub\"; small outlined language button \"EN\" at right. (2) Left 55 percent: an enormous date \"okt. 7.\" set in heavy tight Sora bold anthracite, a yellow tilted sticker label on it reading \"homokozó nyílik\"; below it the headline \"Vezesd a Moodle-kurzusodat az AI-asszisztensedből.\" in bold, then one light line \"Claude vagy Copilot olvas, ír, kvízt készít – a te jogaiddal.\" (3) Right 45 percent, the focal object: a large purple #5926eb admission ticket with perforated tear lines, divided into three stubs numbered 1, 2, 3 in cream text: \"1  Regisztrálj a homokozóban\", \"2  Másold be a connector-URL-t a Claude-ba\", \"3  Kérdezd meg: Ki van lemaradva?\". Nothing else competes with the ticket. Match the reference screenshot's visual system exactly: warm cream ground #f0f0e6, anthracite text #383541, electric purple #5926eb primary buttons with 8px radius, geometric Sora typeface with tight bold headlines and light body, tilted sticker labels in yellow/mint/purple with a small lift shadow, flat surfaces, generous whitespace, GoSchool logo top-left. Do NOT copy the reference's photo, hexagon image, headline or copy; no photos of people. All UI text in Hungarian, spelled exactly as given. It must read as a real website first viewport, not a poster.\n",
+  "createdAt": "2026-09-19T15:53:51.149Z",
+  "tool": "impeccable generate-image",
+  "model": "gpt-image-2.5-flare",
+  "refs": [
+    "/private/tmp/claude-501/-Users-rp-Dev-goschool-moodle-nitro/6925ad8c-c6c4-47e7-a5df-d32de600c519/scratchpad/goschool-ref.png"
+  ]
+}

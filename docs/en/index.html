@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>nitro – run your Moodle course from your AI assistant</title>
+  <meta name="description" content="nitro is a Moodle plugin: run your course from Claude or Copilot with your own Moodle permissions, and nothing reaches a student without your approval.">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="en" href="./">
+  <link rel="alternate" hreflang="hu" href="../">
+  <link rel="preload" href="../assets/fonts/Sora-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../assets/site.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="hero">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="./" aria-label="GoSchool nitro – home">
+        <img src="../assets/plates/logo.png" alt="GoSchool" width="166" height="53">
+        <span class="divider" aria-hidden="true"></span>
+        <span class="word">nitro</span>
+      </a>
+      <ul>
+        <li><a href="#hogyan">How it works</a></li>
+        <li><a href="#biztonsag">Safety</a></li>
+        <li><a href="#adminoknak">For admins</a></li>
+        <li><a href="https://github.com/goschool-ai/moodle-nitro">GitHub</a></li>
+      </ul>
+      <a class="lang" href="../?lang=hu" hreflang="hu" lang="hu" data-lang="hu" aria-label="Magyar változat">HU</a>
+    </nav>
+
+    <p class="date" data-state="date">Oct&nbsp;7</p>
+    <span class="sticker sticker--date" data-state="sticker">trial course opens</span>
+    <h1 class="headline">A teaching week, in one&nbsp;conversation.</h1>
+    <a class="cta" href="#hogyan" data-state="cta">Try it from 7 October</a>
+
+    <figure class="chat" aria-label="Illustration: a teaching week in one conversation">
+      <span class="tag">illustration</span>
+      <span class="sticker sticker--timer">4 min</span>
+      <ol>
+        <li class="exchange">
+          <time datetime="14:00">14:00</time>
+          <div>
+            <div class="turn"><span class="who">Teacher</span><span class="bubble">Who is behind on assignment 2?</span></div>
+            <div class="turn"><span class="who">Nitro</span><span class="reply"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.6 5.3 3.2 8 9 9v1c-5.8 1-8.4 3.7-9 9h-1c-.6-5.3-3.2-8-9-9v-1c5.8-1 8.4-3.7 9-9z"/></svg>5 students: Anna, Ben, Dora, Matt, Esther</span></div>
+          </div>
+        </li>
+        <li class="exchange">
+          <time datetime="14:01">14:01</time>
+          <div>
+            <div class="turn"><span class="who">Teacher</span><span class="bubble">Write to each of them personally.</span></div>
+            <div class="turn"><span class="who">Nitro</span>
+              <span class="preview">
+                <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v10H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span>
+                <span class="label"><strong>Preview</strong> <span class="count">· 5 messages</span></span>
+                <span class="go">Send</span>
+              </span>
+            </div>
+          </div>
+        </li>
+        <li class="exchange">
+          <time datetime="14:02">14:02</time>
+          <div>
+            <div class="turn"><span class="who">Teacher</span><span class="bubble">Accept the READMEs that are fine.</span></div>
+            <div class="turn"><span class="who">Nitro</span><span class="reply"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.6 5.3 3.2 8 9 9v1c-5.8 1-8.4 3.7-9 9h-1c-.6-5.3-3.2-8-9-9v-1c5.8-1 8.4-3.7 9-9z"/></svg>14 submissions accepted</span></div>
+          </div>
+        </li>
+        <li class="exchange">
+          <time datetime="14:03">14:03</time>
+          <div>
+            <div class="turn"><span class="who">Teacher</span><span class="bubble">Post an announcement: laptops on Monday.</span></div>
+            <div class="turn"><span class="who">Nitro</span><span class="reply"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.6 5.3 3.2 8 9 9v1c-5.8 1-8.4 3.7-9 9h-1c-.6-5.3-3.2-8-9-9v-1c5.8-1 8.4-3.7 9-9z"/></svg>Announcement posted, 38 students notified</span></div>
+          </div>
+        </li>
+      </ol>
+    </figure>
+  </header>
+
+  <main id="main">
+    <section class="section" id="hogyan" aria-labelledby="hogyan-cim">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="hogyan-cim">Try it in a few minutes. <span class="sticker sticker--inline">from 7 Oct</span></h2>
+          <p class="lead">From 7 October you get your own trial course with fictitious students, submissions and late work. There is no real student data in it, so experiment freely.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>Get a trial course</h3>
+            <p>Sign up on the trial Moodle. Your course is created for you, with you as its teacher.</p>
+            <p class="cal"><a href="../assets/nitro-okt7.ics" download>Add 7 October to your calendar</a></p>
+          </li>
+          <li>
+            <h3>Add it to Claude</h3>
+            <p>Paste this address as a custom connector and sign in with your trial Moodle account.</p>
+            <div class="copy">
+              <code id="mcp-url">https://<wbr>moodle.tilosazai.org/<wbr>local/<wbr>nitro/<wbr>mcp.php</code>
+              <button type="button" data-copy="mcp-url" data-done="Copied">Copy</button>
+            </div>
+          </li>
+          <li>
+            <h3>Ask it like a colleague</h3>
+            <p>“Who is behind on the assignment? Write to them personally.” It shows you the messages first and sends them only after your “Send”.</p>
+          </li>
+        </ol>
+        <div class="clients" aria-labelledby="honnan-cim">
+          <h3 id="honnan-cim">Where can you use it?</h3>
+          <ul>
+            <li><strong>Claude</strong> <span class="pill pill--now">from 7 Oct</span><span>As a custom connector, on a plan that includes them.</span></li>
+            <li><strong>Microsoft 365 Copilot</strong> <span class="pill pill--pilot">pilot</span><span>Uses the same standard; we test it end to end in the pilot and do not promise it before then.</span></li>
+            <li><strong><img class="client-logo" src="../assets/img/goschool-logo.svg" alt="GoSchool" width="112" height="28"></strong> <span class="pill pill--plan">planned</span><span>From GoSchool too, with the same Moodle permissions.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section trust" id="biztonsag" aria-labelledby="biztonsag-cim">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="biztonsag-cim">Fast, and <span class="ul">yours</span> the whole way.</h2>
+          <p class="lead">nitro is not a new actor in your course. You work faster, in your own name, by your own rules.</p>
+        </div>
+        <dl class="rules">
+          <div>
+            <dt>With your permissions</dt>
+            <dd>It can do exactly what you can do in Moodle: no more, no less. Where you cannot edit, neither can it.</dd>
+          </div>
+          <div>
+            <dt>Nothing without your approval</dt>
+            <dd>Messages, announcements, grades: it shows each one first. Moodle sends it only when you say so.</dd>
+          </div>
+          <div class="outcome">
+            <dt>Revoke it any time</dt>
+            <dd>Your profile shows which AI tools have access, and one click disconnects them. No copyable key that lasts forever.</dd>
+          </div>
+          <div class="limit">
+            <dt>No third party</dt>
+            <dd>Data travels between Moodle and your AI tool only. Every step is recorded in Moodle’s own log.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="mit-tud" aria-labelledby="mit-tud-cim">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="mit-tud-cim">What it does in a teaching week.</h2>
+          <p class="lead">It works through Moodle’s own APIs, so it can do what Moodle’s web services cannot: write pages, assignments and quizzes.</p>
+        </div>
+        <div class="verbs">
+          <div>
+            <h3>Checks</h3>
+            <ul>
+              <li>Who is behind<span>submissions, late work, extensions</span></li>
+              <li>Who has shown up at all<span>last access per student</span></li>
+              <li>Where the course stands<span>sections, deadlines, hidden items</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Writes</h3>
+            <ul>
+              <li>Pages and assignments<span>from your own markdown, updatable</span></li>
+              <li>Questions into the bank<span>in GIFT or Moodle XML</span></li>
+              <li>Practice quizzes<span>with random questions and a deadline</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Sends <span class="sticker">with approval</span></h3>
+            <ul>
+              <li>Personal messages<span>one per student, in your voice</span></li>
+              <li>Announcements<span>to the course news forum</span></li>
+              <li>Grades and feedback<span>that you decided on</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section admin" id="adminoknak" aria-labelledby="admin-cim">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="admin-cim">For admins</h2>
+          <p class="lead">One Moodle plugin, no intermediary service. Moodle itself becomes the MCP server, with its own sign-in.</p>
+        </div>
+        <div class="admin-grid">
+          <div>
+            <h3>Installation (planned)</h3>
+            <ol>
+              <li>Copy the plugin to <code>local/nitro</code> and run the Moodle upgrade.</li>
+              <li>Grant <code>local/nitro:use</code> to the teachers or courses that should have access.</li>
+              <li>Optionally narrow the allowed AI tools in the settings. Claude and Microsoft 365 by default.</li>
+              <li>The teacher pastes <code>…/local/nitro/mcp.php</code> and signs in with their Moodle account.</li>
+            </ol>
+            <h3 class="spaced">Requirements</h3>
+            <ul>
+              <li>Moodle 5.0 or later (4.5 comes with the pilot).</li>
+              <li>HTTPS. Copilot most likely also needs a one-line web server rule; the settings page checks and prints it.</li>
+              <li>Hungarian and English on every screen.</li>
+            </ul>
+          </div>
+          <div>
+            <p class="status">Status: planning. Requirements and decisions are public; the code is being built for the demo.</p>
+            <p class="links">
+              <a href="https://github.com/goschool-ai/moodle-nitro">Source on GitHub</a>
+              <a href="https://github.com/goschool-ai/moodle-nitro/tree/main/openspec/changes/nitro-demo">Specifications</a>
+              <a href="https://github.com/goschool-ai/moodle-nitro/blob/main/LICENSE">GPL v3</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <img src="../assets/img/goschool-logo.svg" alt="GoSchool" width="112" height="28">
+      <p>nitro · part of the GoSchool product family · Árpád Tamási · <a href="../?lang=hu" hreflang="hu" data-lang="hu">Magyar</a></p>
+    </div>
+  </footer>
+
+  <script src="../assets/site.js" defer></script>
+</body>
+</html>

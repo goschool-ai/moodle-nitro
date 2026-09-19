@@ -1,0 +1,595 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-19T16:24:26.519494+00:00",
+  "title": "Design System: nitro",
+  "extensions": {
+    "parent": "/Users/rp/Dev/goschool/goschool-web/DESIGN.md",
+    "scope": "docs/ GitHub Pages site only; nitro Moodle pages (consent, settings, profile) are Moodle-native and not governed.",
+    "scaleUnit": {
+      "name": "--k",
+      "value": "calc(min(100vw, 1536px) / 1536)",
+      "purpose": "One reference pixel of the 1536x1024 hero frame; hero only, above 60rem. The chat re-pins it to 0.92px at 60rem and below."
+    },
+    "colorMeta": {
+      "scholar-purple": {
+        "role": "primary",
+        "displayName": "Scholar Purple",
+        "canonical": "#5926eb",
+        "tonalRamp": [
+          "#170646",
+          "#260b75",
+          "#350fa3",
+          "#4915e0",
+          "#7044ee",
+          "#9b7cf3",
+          "#c6b4f8",
+          "#ede8fd"
+        ]
+      },
+      "scholar-purple-deep": {
+        "role": "primary",
+        "displayName": "Scholar Purple Deep",
+        "canonical": "#4a1fc4",
+        "tonalRamp": [
+          "#190a42",
+          "#2a116e",
+          "#3a189a",
+          "#5021d3",
+          "#764fe3",
+          "#9f84eb",
+          "#c8b9f4",
+          "#eee9fc"
+        ]
+      },
+      "ink-anthracite": {
+        "role": "neutral",
+        "displayName": "Ink Anthracite",
+        "canonical": "#383541",
+        "tonalRamp": [
+          "#24222a",
+          "#3d3946",
+          "#555062",
+          "#746e87",
+          "#948fa3",
+          "#b4b0bf",
+          "#d4d2da",
+          "#f2f1f4"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "#5d5a66",
+        "tonalRamp": [
+          "#252429",
+          "#3e3c44",
+          "#56545f",
+          "#777382",
+          "#96939f",
+          "#b5b3bc",
+          "#d5d4d9",
+          "#f2f1f3"
+        ]
+      },
+      "ink-mute": {
+        "role": "neutral",
+        "displayName": "Ink Mute",
+        "canonical": "#6c6976",
+        "tonalRamp": [
+          "#252428",
+          "#3e3c43",
+          "#56545e",
+          "#777382",
+          "#96939f",
+          "#b5b3bc",
+          "#d5d4d9",
+          "#f2f2f3"
+        ]
+      },
+      "warm-paper-cream": {
+        "role": "neutral",
+        "displayName": "Warm Paper Cream",
+        "canonical": "#f0f0e6",
+        "tonalRamp": [
+          "#30301d",
+          "#505030",
+          "#707043",
+          "#99995c",
+          "#b2b280",
+          "#c9c9a6",
+          "#e0e0cc",
+          "#f5f5ef"
+        ]
+      },
+      "soft-study-surface": {
+        "role": "neutral",
+        "displayName": "Soft Study Surface",
+        "canonical": "#fafaf5",
+        "tonalRamp": [
+          "#33331a",
+          "#55552b",
+          "#77773c",
+          "#a3a352",
+          "#bbbb77",
+          "#cfcfa0",
+          "#e4e4c9",
+          "#f7f7ee"
+        ]
+      },
+      "studio-white": {
+        "role": "neutral",
+        "displayName": "Studio White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#595959",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "spark-yellow": {
+        "role": "tertiary",
+        "displayName": "Spark Yellow",
+        "canonical": "#ebd926",
+        "tonalRamp": [
+          "#464006",
+          "#756b0b",
+          "#a3960f",
+          "#e0ce15",
+          "#eede44",
+          "#f3e87c",
+          "#f8f2b4",
+          "#fdfbe8"
+        ]
+      },
+      "sticker-yellow": {
+        "role": "secondary",
+        "displayName": "Sticker Yellow",
+        "canonical": "#f8d93c",
+        "tonalRamp": [
+          "#4a3e03",
+          "#7b6804",
+          "#ac9106",
+          "#ecc708",
+          "#f8d93a",
+          "#fae475",
+          "#fcf0b0",
+          "#fefae6"
+        ]
+      },
+      "signal-mint": {
+        "role": "tertiary",
+        "displayName": "Signal Mint",
+        "canonical": "#26eaa6",
+        "tonalRamp": [
+          "#074630",
+          "#0b7450",
+          "#10a370",
+          "#16df99",
+          "#45edb3",
+          "#7df2ca",
+          "#b5f8e0",
+          "#e8fdf5"
+        ]
+      },
+      "sticker-mint": {
+        "role": "secondary",
+        "displayName": "Sticker Mint",
+        "canonical": "#8af7c8",
+        "tonalRamp": [
+          "#05482b",
+          "#087747",
+          "#0ba764",
+          "#10e589",
+          "#40f2a5",
+          "#79f6c0",
+          "#b3fadb",
+          "#e7fdf4"
+        ]
+      },
+      "insight-magenta": {
+        "role": "tertiary",
+        "displayName": "Insight Magenta",
+        "canonical": "#c226eb",
+        "tonalRamp": [
+          "#390646",
+          "#5f0b75",
+          "#850fa3",
+          "#b615e0",
+          "#ca44ee",
+          "#da7cf3",
+          "#eab4f8",
+          "#f8e8fd"
+        ]
+      },
+      "assistant-lavender": {
+        "role": "secondary",
+        "displayName": "Assistant Lavender",
+        "canonical": "#ece6fb",
+        "tonalRamp": [
+          "#1a0b42",
+          "#2c126e",
+          "#3e199a",
+          "#5422d3",
+          "#794fe3",
+          "#a184eb",
+          "#cab9f4",
+          "#eee9fb"
+        ]
+      },
+      "assistant-lavender-line": {
+        "role": "secondary",
+        "displayName": "Assistant Lavender Line",
+        "canonical": "#dcd2f7",
+        "tonalRamp": [
+          "#1a0c41",
+          "#2b136c",
+          "#3d1b98",
+          "#5325d0",
+          "#7852e0",
+          "#a186e9",
+          "#c9baf3",
+          "#eee9fb"
+        ]
+      },
+      "assistant-lavender-ink": {
+        "role": "secondary",
+        "displayName": "Assistant Lavender Ink",
+        "canonical": "#3a2596",
+        "tonalRamp": [
+          "#180f3d",
+          "#281966",
+          "#37238f",
+          "#4c30c4",
+          "#725bd7",
+          "#9c8ce3",
+          "#c7beef",
+          "#edebfa"
+        ]
+      },
+      "preview-lavender": {
+        "role": "secondary",
+        "displayName": "Preview Lavender",
+        "canonical": "#f4f0fe",
+        "tonalRamp": [
+          "#180548",
+          "#280878",
+          "#380ba7",
+          "#4d0fe6",
+          "#7340f2",
+          "#9d79f6",
+          "#c7b2fa",
+          "#ede7fd"
+        ]
+      },
+      "chat-paper": {
+        "role": "neutral",
+        "displayName": "Chat Paper",
+        "canonical": "#f8f8f6",
+        "tonalRamp": [
+          "#2b2b21",
+          "#484838",
+          "#64644e",
+          "#8a8a6b",
+          "#a6a68c",
+          "#c1c1af",
+          "#dbdbd1",
+          "#f4f4f1"
+        ]
+      },
+      "chat-border": {
+        "role": "neutral",
+        "displayName": "Chat Border",
+        "canonical": "#e2e1dc",
+        "tonalRamp": [
+          "#2a2923",
+          "#46443a",
+          "#625f51",
+          "#86826f",
+          "#a39f8f",
+          "#bebcb1",
+          "#dad9d2",
+          "#f3f3f1"
+        ]
+      },
+      "teacher-bubble": {
+        "role": "neutral",
+        "displayName": "Teacher Bubble",
+        "canonical": "#ebebee",
+        "tonalRamp": [
+          "#232329",
+          "#3b3b45",
+          "#525260",
+          "#707084",
+          "#9191a1",
+          "#b2b2bd",
+          "#d3d3da",
+          "#f1f1f3"
+        ]
+      },
+      "chat-tag-grey": {
+        "role": "neutral",
+        "displayName": "Chat Tag Grey",
+        "canonical": "#726f7b",
+        "tonalRamp": [
+          "#252428",
+          "#3e3c43",
+          "#57555e",
+          "#777481",
+          "#96949e",
+          "#b6b4bb",
+          "#d5d4d8",
+          "#f2f2f3"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(56, 53, 65, 0.14)"
+      },
+      "dark-band-lead": {
+        "role": "neutral",
+        "displayName": "Dark Band Lead",
+        "canonical": "#cfcdd6",
+        "tonalRamp": [
+          "#24222a",
+          "#3c3946",
+          "#545062",
+          "#746e87",
+          "#938fa3",
+          "#b4b1bf",
+          "#d4d2da",
+          "#f2f1f4"
+        ]
+      },
+      "dark-band-body": {
+        "role": "neutral",
+        "displayName": "Dark Band Body",
+        "canonical": "#d9d7df",
+        "tonalRamp": [
+          "#24222a",
+          "#3c3947",
+          "#544f63",
+          "#746d88",
+          "#938ea4",
+          "#b4b0c0",
+          "#d4d2db",
+          "#f2f1f4"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "date-display": {
+        "displayName": "Date Display",
+        "purpose": "The opening date only, one per page."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section heads."
+      },
+      "headline-statement": {
+        "displayName": "Headline Statement",
+        "purpose": "The trust section head."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Step, clients and list heads."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Paragraph beside each section head, max 46ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text."
+      },
+      "chat": {
+        "displayName": "Chat",
+        "purpose": "Bubbles and replies in the chat illustration."
+      },
+      "sticker": {
+        "displayName": "Sticker",
+        "purpose": "Pogonia on stickers and status pills only."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Connector URL and admin code."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sticker-lift",
+        "value": "0 4px 14px rgba(56, 53, 65, 0.16)",
+        "purpose": "Every sticker and status pill (parent value)."
+      },
+      {
+        "name": "chat-float",
+        "value": "0 10px 30px rgba(56, 53, 65, 0.08)",
+        "purpose": "The chat window only."
+      },
+      {
+        "name": "go-nudge",
+        "value": "0 0 0 7px rgba(89, 38, 235, 0.18)",
+        "purpose": "One-time animated ring on Mehet; not a resting shadow."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-arrive",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All entrance motion."
+      },
+      {
+        "name": "arrive",
+        "value": "0.7s; opacity 0, translateY(10px), blur(3px) to none; exchanges 0.7s apart, reply +0.35s",
+        "purpose": "Chat exchanges arriving in order on load."
+      },
+      {
+        "name": "stamp",
+        "value": "0.5s at 3.2s; scale 1.4 to 1 at -14deg",
+        "purpose": "Timer sticker lands last."
+      },
+      {
+        "name": "nudge",
+        "value": "1.2s at 1.6s, once",
+        "purpose": "Draws the eye to Mehet."
+      },
+      {
+        "name": "state",
+        "value": "0.2s",
+        "purpose": "Hover colour, border and opacity changes."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "none",
+        "purpose": "Finished chat, no animation."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "two-column",
+        "value": "48rem"
+      },
+      {
+        "name": "three-column",
+        "value": "56rem"
+      },
+      {
+        "name": "hero-reflow",
+        "value": "60rem (max-width)"
+      },
+      {
+        "name": "hero-frame",
+        "value": "1536px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The hero call to action; one per page, label and target change on 7 October.",
+      "html": "<a class=\"ds-cta\" href=\"#\">Próbáld ki október 7-től</a>",
+      "css": ".ds-cta{--k: 0.8px;display:grid;place-items:center;width:calc(358*var(--k));height:calc(74*var(--k));background:var(--purple,#5926eb);color:#fff;border-radius:8px;font-family:Sora,system-ui,sans-serif;font-weight:700;font-size:calc(24*var(--k));letter-spacing:-0.01em;text-decoration:none;transition:opacity .2s,transform .15s}.ds-cta:hover{opacity:.88}.ds-cta:active{transform:scale(.985)}.ds-cta:focus-visible{outline:2px solid #383541;outline-offset:2px}"
+    },
+    {
+      "name": "Copy Field",
+      "kind": "input",
+      "refersTo": "copy-field",
+      "description": "The connector URL with its joined copy button.",
+      "html": "<div class=\"ds-copy\"><code>https://moodle.tilosazai.org/local/nitro/mcp.php</code><button type=\"button\">Másolás</button></div>",
+      "css": ".ds-copy{display:flex;align-items:stretch;max-width:26rem;border:1.5px solid #383541;border-radius:8px;background:#fff;overflow:hidden;font-family:Sora,system-ui,sans-serif}.ds-copy code{flex:1;min-width:0;padding:.7rem .8rem;font-family:ui-monospace,\"SF Mono\",Menlo,Consolas,monospace;font-size:.82rem;line-height:1.45;color:#383541;overflow-wrap:anywhere}.ds-copy button{flex:none;border:0;border-left:1.5px solid #383541;background:#383541;color:#f0f0e6;font:inherit;font-weight:600;font-size:.9rem;padding:0 1rem;cursor:pointer;transition:background .2s}.ds-copy button:hover{background:#5926eb}.ds-copy button:focus-visible{outline:3px solid #ebd926;outline-offset:-3px}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Brand lockup, four ink links and the language toggle.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><span class=\"ds-logo\">GoSchool</span><span class=\"ds-div\"></span><span class=\"ds-word\">nitro</span></a><a href=\"#\">Hogyan működik</a><a href=\"#\">Biztonság</a><a href=\"#\">Adminoknak</a><a class=\"ds-lang\" href=\"#\">EN</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:1.5rem;font-family:Sora,system-ui,sans-serif;color:#383541;background:#f0f0e6;padding:1rem}.ds-nav a{color:#383541;text-decoration:none;font-weight:600;font-size:.95rem}.ds-nav a:hover{color:#5926eb}.ds-brand{display:flex;align-items:center;gap:.7rem;margin-right:auto}.ds-logo{font-weight:800}.ds-div{width:1.5px;height:1.2rem;background:#b9b7b1}.ds-nav .ds-word{font-weight:800;font-size:1.5rem;letter-spacing:-0.02em}.ds-nav .ds-lang{display:grid;place-items:center;width:2.75rem;height:2.5rem;border:1.5px solid #bdbbb6;border-radius:8px;transition:border-color .2s}.ds-nav .ds-lang:hover{border-color:#383541;color:#383541}"
+    },
+    {
+      "name": "Chat Illustration",
+      "kind": "custom",
+      "refersTo": "chat-window",
+      "description": "The signature: teacher grey, assistant lavender, the preview row with Mehet, labelled as an illustration.",
+      "html": "<figure class=\"ds-chat\"><span class=\"ds-tag\">illusztráció</span><div class=\"ds-ex\"><time>14:00</time><div><div class=\"ds-turn\"><span class=\"ds-who\">Tanár</span><span class=\"ds-bubble\">Ki van lemaradva a 2. házival?</span></div><div class=\"ds-turn\"><span class=\"ds-who\">Nitro</span><span class=\"ds-reply\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path fill=\"#5926eb\" d=\"M12 1.5c.6 5.3 3.2 8 9 9v1c-5.8 1-8.4 3.7-9 9h-1c-.6-5.3-3.2-8-9-9v-1c5.8-1 8.4-3.7 9-9z\"/></svg>5 hallgató</span></div></div></div><div class=\"ds-ex\"><time>14:01</time><div><div class=\"ds-turn\"><span class=\"ds-who\">Nitro</span><span class=\"ds-preview\"><span><strong>Előnézet</strong> <span class=\"ds-count\">· 5 üzenet</span></span><span class=\"ds-go\">Mehet</span></span></div></div></div></figure>",
+      "css": ".ds-chat{position:relative;margin:0;width:26rem;padding:3rem 1rem 1rem 0;background:#f8f8f6;border:1px solid #e2e1dc;border-radius:12px;box-shadow:0 10px 30px rgba(56,53,65,.08);font-family:Sora,system-ui,sans-serif;font-size:15px;line-height:1.35;color:#383541}.ds-tag{position:absolute;left:10px;top:9px;padding:3px 10px;border-radius:6px;background:#726f7b;color:#fff;font-size:12px;font-weight:700}.ds-ex{display:grid;grid-template-columns:4rem 1fr;margin-bottom:1.2rem}.ds-ex time{padding-left:1rem;padding-top:5px;color:#6c6976;font-variant-numeric:tabular-nums;font-size:13px}.ds-turn{display:grid;justify-items:start;gap:4px;margin-bottom:10px}.ds-who{font-size:12px;font-weight:700;color:#55525e}.ds-bubble,.ds-reply{letter-spacing:-0.02em;border-radius:7px;padding:7px 13px 8px}.ds-bubble{background:#ebebee}.ds-reply{display:flex;align-items:center;gap:10px;background:#ece6fb;color:#3a2596;padding-left:11px}.ds-preview{display:flex;align-items:center;gap:1rem;width:100%;padding:10px 12px 10px 16px;border:1px solid #dcd2f7;border-radius:10px;background:#f4f0fe}.ds-count{color:#5d5a66}.ds-go{margin-left:auto;padding:11px 16px;border-radius:8px;background:#5926eb;color:#fff;font-weight:700;line-height:1.2;cursor:pointer;transition:box-shadow .3s}.ds-go:hover{box-shadow:0 0 0 7px rgba(89,38,235,.18)}"
+    },
+    {
+      "name": "Stickers and Status Pills",
+      "kind": "chip",
+      "refersTo": "sticker-yellow",
+      "description": "Pogonia on tilted, lifted paper; pill colour carries status.",
+      "html": "<div class=\"ds-stk-row\"><span class=\"ds-stk ds-y\">nyílik a próbakurzus</span><span class=\"ds-stk ds-m\">4 perc</span><span class=\"ds-pill ds-m\">okt. 7-től</span><span class=\"ds-pill ds-y\">pilot</span><span class=\"ds-pill ds-l\">tervezett</span></div>",
+      "css": ".ds-stk-row{display:flex;gap:1.5rem;align-items:center;padding:1.5rem;background:#f0f0e6}.ds-stk,.ds-pill{display:inline-block;font-family:Pogonia,Sora,system-ui,sans-serif;font-weight:700;line-height:1.1;color:#383541;border-radius:4px;box-shadow:0 4px 14px rgba(56,53,65,.16);white-space:nowrap}.ds-stk{padding:.45rem .7rem .5rem;font-size:1.2rem;transform:rotate(-11deg)}.ds-stk.ds-m{transform:rotate(-14deg)}.ds-pill{padding:.15rem .55rem .2rem;font-size:.85rem;transform:rotate(-4deg)}.ds-y{background:#f8d93c}.ds-m{background:#8af7c8}.ds-l{background:#ece6fb;color:#3a2596}"
+    },
+    {
+      "name": "Steps Sequence",
+      "kind": "custom",
+      "refersTo": "step-marker",
+      "description": "Three counted steps on purple circles joined by one dashed line.",
+      "html": "<ol class=\"ds-steps\"><li><h3>Kérj próbakurzust</h3><p>Regisztrálj a próba-Moodle-ben.</p></li><li><h3>Add hozzá a Claude-hoz</h3><p>Másold be a címet.</p></li><li><h3>Kérdezz</h3><p>Előbb megmutatja.</p></li></ol>",
+      "css": ".ds-steps{list-style:none;margin:0;padding:1.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative;counter-reset:s;background:#f0f0e6;font-family:Sora,system-ui,sans-serif;color:#383541}.ds-steps::before{content:\"\";position:absolute;left:1.5rem;right:1.5rem;top:3.6rem;height:2px;background:repeating-linear-gradient(90deg,#383541 0 6px,transparent 6px 12px);opacity:.35}.ds-steps li{position:relative;counter-increment:s}.ds-steps li::before{content:counter(s);display:grid;place-items:center;width:4.2rem;height:4.2rem;margin-bottom:1.25rem;border-radius:50%;background:#5926eb;color:#f0f0e6;font-weight:800;font-size:1.9rem;position:relative}.ds-steps h3{margin:0 0 .5rem;font-size:1.35rem;font-weight:700;letter-spacing:-0.02em;line-height:1.25}.ds-steps p{margin:0;color:#5d5a66}"
+    },
+    {
+      "name": "Trust Rules",
+      "kind": "card",
+      "refersTo": null,
+      "description": "Statements opening on a 4px leading rule coloured by meaning.",
+      "html": "<dl class=\"ds-rules\"><div><dt>A te jogaiddal</dt><dd>Pontosan azt teheti, amit te.</dd></div><div class=\"ds-out\"><dt>Bármikor visszavonhatod</dt><dd>Egy kattintással leválasztod.</dd></div><div class=\"ds-lim\"><dt>Nincs harmadik fél</dt><dd>Minden lépés a Moodle naplójába kerül.</dd></div></dl>",
+      "css": ".ds-rules{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin:0;padding:1.5rem;background:#fff;font-family:Sora,system-ui,sans-serif;color:#383541}.ds-rules>div{padding-top:1.25rem;border-top:4px solid #5926eb}.ds-rules>.ds-out{border-top-color:#26eaa6}.ds-rules>.ds-lim{border-top-color:#c226eb}.ds-rules dt{font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:.6rem}.ds-rules dd{margin:0;color:#5d5a66}"
+    },
+    {
+      "name": "Dark Admin Band",
+      "kind": "card",
+      "refersTo": "admin-band",
+      "description": "Anthracite band: mint rules, mint markers and links, tabular milestones.",
+      "html": "<section class=\"ds-admin\"><h3>Ütemterv</h3><table><tr><th>okt. 6.</th><td>Élő demó</td></tr><tr><th>okt. 7.</th><td>Nyílik a próbakurzus</td></tr></table><p><a href=\"#\">Forráskód a GitHubon</a> · <code>local/nitro</code></p></section>",
+      "css": ".ds-admin{background:#383541;color:#f0f0e6;padding:2rem;font-family:Sora,system-ui,sans-serif}.ds-admin h3{margin:0 0 1rem;padding-top:1.25rem;border-top:4px solid #26eaa6;font-size:1.3rem;font-weight:700;letter-spacing:-0.02em}.ds-admin table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}.ds-admin th,.ds-admin td{text-align:left;padding:.7rem 1rem .7rem 0;border-bottom:1px solid rgba(240,240,230,.16)}.ds-admin th{font-weight:600;color:#8af7c8;white-space:nowrap}.ds-admin td{color:#d9d7df}.ds-admin a{color:#8af7c8;font-weight:600}.ds-admin a:focus-visible{outline:2px solid #ebd926;outline-offset:2px}.ds-admin code{font-family:ui-monospace,Menlo,monospace;font-size:.88em;padding:.1em .35em;border-radius:4px;background:rgba(240,240,230,.1)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Week in One Conversation",
+    "overview": "This page is a surface inside the GoSchool brand world. The parent system lives at `/Users/rp/Dev/goschool/goschool-web/DESIGN.md` and governs everything this file does not narrow: the palette, Sora and Pogonia, the Flat-by-Default and One Clear Spark rules, the Accent Rule and the sticker lift. This file records what the nitro site built on top of it: a measured first viewport scaled by one unit, a chat illustration with its own component set, and the sections below the fold that reuse the parent's rules, pills and dark band.\n\nThe first viewport is composed, not flowed. Every element in the hero is placed at a measured coordinate on a 1536 x 1024 frame and scaled by `--k`, so the date, the headline, the purple button and the chat keep the proportions of the approved comp at every desktop width. Below 60rem the hero stops being measured and reflows into one column. Everything below the fold is ordinary document flow on cream, in a 75rem container.\n\nScope: this DESIGN.md governs the GitHub Pages site in `docs/` (Hungarian at `docs/index.html`, English at `docs/en/index.html`). The plugin's own Moodle pages (the OAuth consent screen, settings and profile pages) are Moodle-native, render through the Moodle theme and its components, and are NOT governed by this file.",
+    "keyCharacteristics": [
+      "Cream ground, anthracite ink, one electric purple for action (inherited).",
+      "A measured hero: absolute placement in `--k` units against a 1536px reference frame.",
+      "The assistant's voice is lavender; the teacher's is neutral grey.",
+      "Pogonia appears only on tilted stickers and status pills, each with the parent's sticker lift.",
+      "Accent rules open blocks by meaning: purple principle, mint outcome, magenta limit; mint only on dark.",
+      "Hungarian and English pages share one stylesheet and identical markup structure."
+    ],
+    "rules": [
+      {
+        "name": "The Two Voices Rule",
+        "body": "In the chat the teacher is grey (`teacher-bubble`) and the assistant is lavender (`assistant-lavender` with a purple spark glyph). Never swap them, and never give the teacher purple: purple is the action the teacher takes, not the teacher.",
+        "section": "colors"
+      },
+      {
+        "name": "The Rule Colour Means Something Rule",
+        "body": "Leading rules in a set take colour by meaning, as in the parent Accent Rule: purple for a principle, mint for an outcome, magenta for a limit. On the anthracite band every rule is mint.",
+        "section": "colors"
+      },
+      {
+        "name": "The Pogonia Stays on Paper Rule",
+        "body": "Pogonia is set only on a sticker or a status pill, that is, on a tilted, lifted paper chip. Headings, the button, nav and chat text are Sora.",
+        "section": "typography"
+      },
+      {
+        "name": "The Measured Frame Rule",
+        "body": "Anything added to the hero above 60rem is placed in `--k` units against the 1536 frame, never in rem or percent. Nothing below the hero uses `--k`.",
+        "section": "layout"
+      },
+      {
+        "name": "The Only the Chat Floats Rule",
+        "body": "The chat window is the page's single lifted surface. Steps, rules, verbs and clients are flat, separated by hairlines, accent rules and colour fields.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** treat goschool-web DESIGN.md as the parent; this file only narrows it for the nitro site.",
+      "**Do** write every hero measurement as `calc(n * var(--k))` against the 1536 x 1024 frame, and keep the 60rem reflow working.",
+      "**Do** keep the teacher grey and the assistant lavender in any chat illustration, and label it as an illustration.",
+      "**Do** colour leading rules by meaning (purple principle, mint outcome, magenta limit) and use mint only on the dark band.",
+      "**Do** give every sticker and pill the sticker lift and a counter-clockwise tilt.",
+      "**Do** keep the Hungarian and English pages structurally identical, sharing `site.css`."
+    ],
+    "donts": [
+      "**Don't** use `--k` outside the hero, or rem units inside it above 60rem.",
+      "**Don't** lift anything but the chat window and the stickers; sections stay flat.",
+      "**Don't** set Pogonia anywhere but a sticker or a status pill.",
+      "**Don't** add a second purple button to a viewport; \"Mehet\" inside the illustration is the only other purple button, and it is part of the drawing.",
+      "**Don't** apply this file to nitro's Moodle-native pages (consent, settings, profile); those follow the Moodle theme."
+    ]
+  }
+}
