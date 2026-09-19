@@ -259,7 +259,8 @@ a {
   left: calc(855 * var(--k));
   top: calc(205 * var(--k));
   width: calc(579 * var(--k));
-  height: calc(712 * var(--k));
+  min-height: calc(712 * var(--k));
+  padding-bottom: calc(22 * var(--k));
   background: #f8f8f6;
   border: 1px solid #e2e1dc;
   border-radius: calc(12 * var(--k));
@@ -283,7 +284,7 @@ a {
   right: calc(-2 * var(--k));
   top: calc(-7 * var(--k));
   padding: calc(9 * var(--k)) calc(13 * var(--k)) calc(10 * var(--k));
-  font-size: calc(22 * var(--k));
+  font-size: calc(19 * var(--k));
   background: var(--sticker-mint);
   transform: rotate(-14deg);
 }
@@ -295,11 +296,12 @@ a {
 }
 .exchange {
   display: grid;
-  grid-template-columns: calc(95 * var(--k)) 1fr;
-  margin-bottom: calc(31 * var(--k));
+  grid-template-columns: calc(95 * var(--k)) minmax(0, 1fr);
+  padding-right: calc(22 * var(--k));
+  margin-bottom: calc(24 * var(--k));
 }
-.exchange:first-child {
-  margin-bottom: calc(20 * var(--k));
+.exchange:last-child {
+  margin-bottom: 0;
 }
 .exchange time {
   padding-left: calc(22 * var(--k));
@@ -391,6 +393,63 @@ a {
   font-weight: 700;
   font-size: calc(16 * var(--k));
   line-height: 1.2;
+}
+
+/* Message groups: two different messages, one approval */
+.groups {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: calc(8 * var(--k)) calc(14 * var(--k));
+  width: calc(460 * var(--k));
+  margin-top: calc(8 * var(--k));
+  padding: calc(12 * var(--k)) calc(14 * var(--k)) calc(12 * var(--k)) calc(14 * var(--k));
+  border: 1px solid var(--lavender-line);
+  border-radius: calc(10 * var(--k));
+  background: #f4f0fe;
+  color: var(--ink);
+  font-size: calc(14.5 * var(--k));
+  line-height: 1.35;
+}
+.group {
+  grid-column: 1;
+  display: flex;
+  align-items: baseline;
+  gap: calc(10 * var(--k));
+}
+.group b {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: calc(24 * var(--k));
+  height: calc(24 * var(--k));
+  border-radius: calc(6 * var(--k));
+  background: var(--purple);
+  color: var(--white);
+  font-size: calc(13 * var(--k));
+  transform: translateY(calc(-1 * var(--k)));
+}
+.skip-note {
+  grid-column: 1;
+  color: var(--ink-soft);
+  font-size: calc(13.5 * var(--k));
+}
+.groups .go {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  align-self: end;
+  padding: calc(13 * var(--k)) calc(18 * var(--k));
+  border-radius: calc(8 * var(--k));
+  background: var(--purple);
+  color: var(--white);
+  font-weight: 700;
+  font-size: calc(16 * var(--k));
+  line-height: 1.2;
+}
+.turn .reply + .preview {
+  margin-top: calc(8 * var(--k));
+}
+.reply {
+  max-width: calc(460 * var(--k));
 }
 
 /* ---------- Sections below the fold ---------- */
@@ -827,7 +886,7 @@ a {
   .js .exchange:nth-child(1) { animation-delay: 0.35s; }
   .js .exchange:nth-child(2) { animation-delay: 1.05s; }
   .js .exchange:nth-child(3) { animation-delay: 1.75s; }
-  .js .exchange:nth-child(4) { animation-delay: 2.45s; }
+
   .js .exchange .turn + .turn {
     animation: arrive 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
     animation-delay: inherit;
@@ -835,12 +894,12 @@ a {
   .js .exchange:nth-child(1) .turn + .turn { animation-delay: 0.7s; }
   .js .exchange:nth-child(2) .turn + .turn { animation-delay: 1.4s; }
   .js .exchange:nth-child(3) .turn + .turn { animation-delay: 2.1s; }
-  .js .exchange:nth-child(4) .turn + .turn { animation-delay: 2.8s; }
+
   .js .sticker--timer {
-    animation: stamp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 3.2s both;
+    animation: stamp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 2.6s both;
   }
-  .js .preview .go {
-    animation: nudge 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.6s 1 both;
+  .js .groups .go {
+    animation: nudge 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.2s 1 both;
   }
 }
 @keyframes arrive {
@@ -972,6 +1031,26 @@ a {
   }
   .preview .icon {
     display: none;
+  }
+  .groups,
+  .reply,
+  .preview {
+    width: 100%;
+    max-width: 100%;
+  }
+  .preview .label {
+    white-space: normal;
+  }
+  .groups {
+    grid-template-columns: 1fr;
+  }
+  .groups .go {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+  }
+  .preview .count {
+    white-space: nowrap;
   }
   .preview .go {
     padding: 0.6rem 0.85rem;
