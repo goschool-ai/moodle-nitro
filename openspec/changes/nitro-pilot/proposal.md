@@ -23,6 +23,7 @@ Audiences:
   - A threat model for the MCP and OAuth surface: the assets, who could reach them (a malicious client, a compromised teacher account, a prompt-injected assistant acting through a teacher's grant, another tenant on the same Moodle), what stops each, and what is accepted.
   - An independent code review of the plugin, by someone outside the team that wrote it, with the findings and their fixes published. (`nitro-demo` reviews the OAuth endpoints itself before going public; this is the wider, arm's-length one.)
   - A recommended starting configuration for admins: which tools to enable for a first pilot course, and which to leave off until the institution has seen the log.
+  - A data-handling audit of the running system, walked twice: once on the pilot Moodle before a real student is in a course, and once at the end of the pilot. It checks the description against what actually happens — every field each tool returns (inventoried from the external function definitions, not from memory), what the plugin stored while it ran, what the Moodle log recorded, and what left the site and to which host, read from the server's own logs. A finding is anything that exceeds the processing description or the consent screen's promise; findings are fixed or the description is corrected, and the record is published with the pack. The walk is written so the institution's own staff can repeat it without us.
 - **Pilot readiness:** installation guide for faculty admins (including the root well-known rewrite for Copilot), open-source release, code review package, needs list collected at the demo.
 
 ## Capabilities
@@ -58,4 +59,4 @@ Course creation and enrolment (handled by the student information system), admin
 
 - Extends `local_nitro` with new external functions, an admin token page, file handling and version-dependent question bank code.
 - Needs a faculty admin willing to install and review the plugin (and a web server change for Copilot discovery), and a Microsoft 365 tenant with Copilot licences.
-- Needs a data protection officer at the pilot institution to read the pack, and a reviewer outside the team for the code review. Writing, not code: the per-tool control, data minimisation, consent statement and privacy declaration the pack documents all ship in `nitro-demo`.
+- Needs a data protection officer at the pilot institution to read the pack, a reviewer outside the team for the code review, and web server log access on the pilot Moodle for the audit walks (plus a window before real students are enrolled for the first one). Writing, not code: the per-tool control, data minimisation, consent statement and privacy declaration the pack documents all ship in `nitro-demo`.
