@@ -23,6 +23,7 @@
   --ink-soft: #5d5a66;
   --ink-mute: #6c6976;
   --cream: #f0f0e6;
+  --soft: #fafaf5;
   --white: #ffffff;
   --yellow: #ebd926;
   --sticker-yellow: #f8d93c;
@@ -797,6 +798,51 @@ a {
 .verbs li span {
   display: block;
   font-size: 0.9rem;
+  color: var(--ink-mute);
+}
+
+/* Against Moodle's own AI: paired rows */
+.compare {
+  background: var(--soft);
+}
+.compare-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--hair);
+}
+.compare-rows li {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--hair);
+}
+@media (min-width: 56rem) {
+  .compare-rows li {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: baseline;
+  }
+}
+.compare-rows b {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.compare-rows .from {
+  color: var(--ink-soft);
+}
+.compare-rows .to b {
+  color: var(--purple);
+}
+.compare-note {
+  margin: 1.75rem 0 0;
+  max-width: 62ch;
+  font-size: 0.95rem;
   color: var(--ink-mute);
 }
 

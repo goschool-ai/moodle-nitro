@@ -1,6 +1,6 @@
 # nitro
 
-A Moodle plugin (`local_nitro`), part of the GoSchool product family, that lets teachers run their course from an AI assistant such as Claude or Microsoft Copilot Cowork. The assistant can read the course, send messages to students, and write content and quizzes. It does this with the teacher's own Moodle permissions, and the data goes to no third party.
+A Moodle plugin (`local_nitro`), part of the GoSchool product family, that lets teachers run their course from an AI assistant such as Claude or Microsoft Copilot Cowork. The assistant can read the course, send messages to students, and write content and quizzes. It does this with the teacher's own Moodle permissions, and with no service in between: the data goes straight between Moodle and the AI client the teacher already uses, never through GoSchool. What the teacher sends that client is, of course, processed by whoever runs it (Anthropic for Claude, Microsoft for Copilot).
 
 > **Status:** in planning. No code yet. The first milestone is a live demo on 2026-10-06.
 
