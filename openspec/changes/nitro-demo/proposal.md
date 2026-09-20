@@ -46,7 +46,7 @@ The first deadline is a live demo on 2026-10-06, on the sandbox Moodle (moodle.t
 
 - Course creation and enrolment (handled by the student information system), admin operations, an AI running inside Moodle, automatic grading without human approval.
 - In `nitro-pilot`: file and PDF upload, labels, URLs, sections, visibility, forums, course front page, inbox reading, calendar, extensions, question editing, quiz results, completion, Moodle 4.5 support, client-side skill packages, admin view of all issued tokens.
-- In `nitro-pilot`: the institutional data-protection pack (data-flow diagram, processing description, the statement about conversation history, threat model, independent code review, recommended admin configuration). What the plugin itself must do for them — per-tool control, data minimisation, the consent statement, the privacy declaration — is in this change.
+- In `nitro-pilot`: the institutional data-protection pack (data-flow diagram, processing description, the statement about conversation history, threat model, independent code review, recommended admin configuration, the data-handling audit of the running system). What the plugin itself must do for them — per-tool control, data minimisation, the consent statement, the privacy declaration — is in this change.
 - Real student data on the sandbox: the sandbox has no data protection agreement with any university and holds fictitious students only.
 
 ## Impact
