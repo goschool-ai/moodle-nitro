@@ -211,19 +211,31 @@ a {
 .headline {
   position: absolute;
   left: calc(99 * var(--k));
-  top: calc(506 * var(--k));
-  width: calc(720 * var(--k));
+  top: calc(496 * var(--k));
+  width: calc(800 * var(--k));
   margin: 0;
   font-weight: 800;
-  font-size: calc(66 * var(--k));
+  font-size: calc(60 * var(--k));
   line-height: 1.07;
   letter-spacing: -0.035em;
+}
+
+.hero-lead {
+  position: absolute;
+  left: calc(100 * var(--k));
+  top: calc(668 * var(--k));
+  width: calc(600 * var(--k));
+  margin: 0;
+  font-size: calc(21 * var(--k));
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--ink-soft);
 }
 
 .cta {
   position: absolute;
   left: calc(100 * var(--k));
-  top: calc(690 * var(--k));
+  top: calc(776 * var(--k));
   width: calc(358 * var(--k));
   height: calc(74 * var(--k));
   display: grid;
@@ -1014,6 +1026,12 @@ a {
     margin-top: 1.25rem;
     font-size: clamp(2rem, 8.4vw, 3.8rem);
   }
+  .hero-lead {
+    position: static;
+    width: auto;
+    margin-top: 1.25rem;
+    font-size: 1.05rem;
+  }
   .cta {
     position: static;
     width: 100%;
@@ -1069,7 +1087,10 @@ a {
     padding: 0.6rem 0.85rem;
   }
   .sticker--timer {
-    right: 0.4rem;
+    right: 1.4rem;
+    top: -0.9rem;
+    font-size: 0.95rem;
+    padding: 0.35rem 0.6rem 0.4rem;
   }
   body {
     overflow-x: clip;

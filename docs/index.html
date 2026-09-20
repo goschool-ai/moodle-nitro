@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>nitro – a Moodle-kurzusod az AI-asszisztensedből</title>
+  <title>nitro – irányítsd a Moodle-t az AI-asszisztensedből</title>
   <meta name="description" content="A nitro Moodle-bővítmény: Claude-ból vagy Copilotból vezeted a kurzusodat, a saját Moodle-jogaiddal, és a hallgatóhoz semmi nem jut el a jóváhagyásod nélkül.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="alternate" hreflang="en" href="en/">
   <link rel="alternate" hreflang="hu" href="./">
   <link rel="preload" href="assets/fonts/Sora-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="assets/site.css?v=g881309">
+  <link rel="stylesheet" href="assets/site.css?v=c881560">
   <script>
     (function () {
       var d = document.documentElement;
@@ -45,22 +45,23 @@
 
     <p class="date" data-state="date">okt.&#8239;7.</p>
     <span class="sticker sticker--date" data-state="sticker">nyílik a próbakurzus</span>
-    <h1 class="headline">Egy tanítási hét, egy&nbsp;beszélgetésben.</h1>
+    <h1 class="headline">Irányítsd a Moodle-t<br>az AI-asszisztensedből.</h1>
+    <p class="hero-lead">Olvas, ír, kvízt készít és üzen a hallgatóknak – a te jogaiddal, a te jóváhagyásoddal.</p>
     <a class="cta" href="#hogyan" data-state="cta">Próbáld ki október 7-től</a>
 
-    <figure class="chat" aria-label="Illusztráció: egy tanítási hét egy beszélgetésben">
+    <figure class="chat" aria-label="Illusztráció: egy tanítási hét egyetlen beszélgetésben">
       <span class="tag">illusztráció</span>
       <span class="sticker sticker--timer">11 személyes üzenet</span>
       <ol>
         <li class="exchange">
           <time datetime="14:41">14:41</time>
           <div>
-            <div class="turn"><span class="who">Tanár</span><span class="bubble">Hol állunk a 2. házival? Aki nem adta be, annak menjen személyes.</span></div>
+            <div class="turn"><span class="who">Tanár</span><span class="bubble">Hol állunk a 2. házival? Írjunk a lemaradóknak.</span></div>
             <div class="turn"><span class="who">Nitro</span>
-              <span class="reply"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.6 5.3 3.2 8 9 9v1c-5.8 1-8.4 3.7-9 9h-1c-.6-5.3-3.2-8-9-9v-1c5.8-1 8.4-3.7 9-9z"/></svg>Mindkét rész bent: 16 · csak Snake: 5 · semmi: 7</span>
+              <span class="reply"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.6 5.3 3.2 8 9 9v1c-5.8 1-8.4 3.7-9 9h-1c-.6-5.3-3.2-8-9-9v-1c5.8-1 8.4-3.7 9-9z"/></svg>Kész van 16, az első felével 5, és 7 még semmit nem adott le.</span>
               <span class="groups">
-                <span class="group"><b>A</b><span>6 hallgató · még semmi nincs bent</span><span class="go">Mehet</span></span>
-                <span class="group"><b>B</b><span>5 hallgató · csak a 2b (Cassino) hiányzik</span><span class="go">Mehet</span></span>
+                <span class="group"><b>A</b><span>6 hallgató · még semmit nem adott le</span><span class="go">Mehet</span></span>
+                <span class="group"><b>B</b><span>5 hallgató · a második fele hiányzik</span><span class="go">Mehet</span></span>
                 <span class="skip-note">Dávid kimarad: délben már írtunk neki.</span>
               </span>
             </div>
@@ -77,7 +78,7 @@
           <time datetime="17:59">17:59</time>
           <div>
             <div class="turn"><span class="who">Tanár</span><span class="bubble">Haladnak?</span></div>
-            <div class="turn"><span class="who">Nitro</span><span class="reply"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.6 5.3 3.2 8 9 9v1c-5.8 1-8.4 3.7-9 9h-1c-.6-5.3-3.2-8-9-9v-1c5.8-1 8.4-3.7 9-9z"/></svg>22-en bent (15:30-kor még 16). Bence válaszolt: közös GitHub-fiókot használ.</span>
+            <div class="turn"><span class="who">Nitro</span><span class="reply"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.6 5.3 3.2 8 9 9v1c-5.8 1-8.4 3.7-9 9h-1c-.6-5.3-3.2-8-9-9v-1c5.8-1 8.4-3.7 9-9z"/></svg>22-en készen vannak (15:30-kor még 16). Bence válaszolt: közös GitHub-fiókot használ.</span>
               <span class="preview">
                 <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v10H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span>
                 <span class="label"><strong>Válasz Bencének</strong> <span class="count">· a saját szálában</span></span>
@@ -130,8 +131,8 @@
     <section class="section trust" id="biztonsag" aria-labelledby="biztonsag-cim">
       <div class="wrap">
         <div class="section-head">
-          <h2 id="biztonsag-cim">Gyors, és közben végig a <span class="ul">tiéd</span>.</h2>
-          <p class="lead">A nitro nem új szereplő a kurzusodban. Te dolgozol gyorsabban, a saját nevedben, a saját szabályaid szerint.</p>
+          <h2 id="biztonsag-cim">Az irányítás végig <span class="ul">nálad</span> marad.</h2>
+          <p class="lead">A nitro nem új szereplő a kurzusodban: a te kezedben lévő eszköz. Gyorsabban dolgozol, a saját nevedben, a saját szabályaid szerint.</p>
         </div>
         <dl class="rules">
           <div>
@@ -231,6 +232,6 @@
     </div>
   </footer>
 
-  <script src="assets/site.js?v=g881309" defer></script>
+  <script src="assets/site.js?v=c881560" defer></script>
 </body>
 </html>
