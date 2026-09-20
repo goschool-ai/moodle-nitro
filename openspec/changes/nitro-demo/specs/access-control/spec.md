@@ -33,12 +33,38 @@ Read tools SHALL return only the fields needed for course work by default. Email
 - **WHEN** a teacher asks for email addresses and has permission to view them in the participants page
 - **THEN** the result includes email addresses
 
+#### Scenario: Submission content only when asked
+- **WHEN** a teacher calls `list_submissions` without `include_content`
+- **THEN** the result reports submission status, timing and grading state only, and no submitted text, link or file name leaves Moodle
+
+### Requirement: Per-tool admin control
+A site setting SHALL list every tool the plugin can expose with a checkbox for each, so that an admin can allow or deny tools one by one. This setting is the allowlist that tool discovery and invocation enforce. Every tool SHALL be enabled by default, because each one is already bounded by the user's Moodle capabilities; the setting narrows that surface further and MUST take effect without reconnecting a client.
+
+#### Scenario: Grading turned off site-wide
+- **WHEN** an admin unticks `grade_submission` and a teacher's client lists tools
+- **THEN** `grade_submission` is absent from `tools/list`, calling it by name is refused, and the other tools keep working
+
+#### Scenario: Read-only site
+- **WHEN** an admin unticks every write tool
+- **THEN** only read tools are offered, and no tool can change a course or reach a student
+
 ### Requirement: Site kill switch
 A site-level setting SHALL enable or disable the plugin. While disabled, the MCP endpoint and the OAuth endpoints MUST refuse all requests and existing tokens MUST NOT work.
 
 #### Scenario: Admin disables the plugin
 - **WHEN** the admin turns the setting off
 - **THEN** every MCP request is answered with HTTP 503 and every OAuth request is refused, until the setting is turned on again
+
+### Requirement: Consent screen states what the client can reach
+Before a grant is given, the consent screen SHALL state, without any admin configuration and in the user's language: which data the client can read with the user's own permissions (course content, participant lists, submissions and grades), that whatever the AI reads goes to the provider of that client and may stay in that conversation's history outside Moodle, and that messages, announcements and grades still need a separate approval for each send. It SHALL name the client and its redirect host next to this text.
+
+#### Scenario: Teacher connects a client
+- **WHEN** a teacher opens the consent screen for a client
+- **THEN** it names the data categories the client could read, states that the data reaches the client's provider and may remain in the conversation history, and says that writes reaching students need a separate approval
+
+#### Scenario: Statement is not the admin's to remove
+- **WHEN** the admin has set no notice text
+- **THEN** the statement is still shown in full
 
 ### Requirement: Consent screen notice
 The admin SHALL be able to set a notice text shown on the OAuth consent screen, for example to state that a site is a sandbox and must not hold real student data.
@@ -71,3 +97,14 @@ The plugin MUST NOT send course or user data anywhere other than back to the req
 #### Scenario: Client metadata fetch
 - **WHEN** the authorization server fetches a client metadata document
 - **THEN** the request goes only to an allowed CIMD host and contains no user or course data
+
+### Requirement: Declared data handling
+The plugin SHALL implement Moodle's privacy API. Its metadata SHALL declare every table it stores (OAuth clients, authorization codes, tokens, pending confirmations) with the fields and the reason they are kept, and SHALL declare the external transmission of course and user data to the AI client the user has connected. Export and deletion requests SHALL cover the plugin's own tables.
+
+#### Scenario: Plugin privacy registry
+- **WHEN** an admin opens the site's plugin privacy compliance page
+- **THEN** `local_nitro` is listed with the fields it stores and with the transmission of course and user data to the connected AI client
+
+#### Scenario: User data deleted
+- **WHEN** a user's data is deleted through the privacy API
+- **THEN** that user's tokens, authorization codes and pending confirmations are deleted with it, and their grants stop working
