@@ -21,21 +21,6 @@
     });
   });
 
-  // Live GitHub star count next to the star buttons.
-  var counts = document.querySelectorAll("[data-stars]");
-  if (counts.length && window.fetch) {
-    fetch("https://api.github.com/repos/goschool-ai/moodle-nitro", { headers: { Accept: "application/vnd.github+json" } })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (repo) {
-        if (!repo || typeof repo.stargazers_count !== "number" || repo.stargazers_count < 1) return;
-        counts.forEach(function (el) {
-          el.textContent = repo.stargazers_count;
-          el.hidden = false;
-        });
-      })
-      .catch(function () {});
-  }
-
   // From 7 October 2026 (Budapest) the trial course is open: the button signs you up.
   var open = new Date("2026-10-07T00:00:00+02:00");
   if (new Date() >= open) {
