@@ -20,6 +20,7 @@ The first deadline is a live demo on 2026-10-06, on the sandbox Moodle (moodle.t
   - content: `save_page`, `save_assignment`: create or update by a stable key, markdown in, partial updates leave other settings untouched, no silent defaults, and a report of anything Moodle's HTML cleaning removed
   - quiz: `import_questions` (GIFT / Moodle XML), `create_quiz`, `add_questions_to_quiz` (fixed and random questions)
   - students: `message_students`, `post_announcement`, `grade_submission` (points or scale, with an optional feedback comment)
+  - product feedback: `send_feedback`, which mails the nitro team what a teacher found missing or broken, after the teacher approved the text
 - No client-side skill packages in this change. Teacher- and course-specific rules stay in the teacher's own client (for example, their repository's skills). Claude connects as a custom connector; Copilot Cowork connects through a connector-only app manifest.
 - Sandbox self-service for attendees, in a separate sandbox-only plugin: signing up on moodle.tilosazai.org gives each teacher a personal copy of the demo course with its own fictitious students, the teacher role and `local/nitro:use`.
 
@@ -31,12 +32,13 @@ The first deadline is a live demo on 2026-10-06, on the sandbox Moodle (moodle.t
 - `access-control`: the `local/nitro:use` gate, per-call context and capability checks, data minimisation of read results, site-level kill switch, consent-screen notice, discovery self-check.
 - `write-confirmation`: `dry_run` for all writes; preview-then-confirm for writes that reach students.
 - `audit-log`: a Moodle event for every tool call.
-- `course-read`: the teacher's courses, course overview, participants with last access, and assignment submissions with their content and grading state.
+- `course-read`: the teacher's courses, course overview, participants with last access, assignment submissions with their content and grading state, and forum discussions with their posts.
 - `content-authoring`: creating and updating pages and assignments from markdown by a stable key.
 - `quiz-authoring`: importing questions into a question bank, creating quizzes, adding fixed and random questions.
 - `messaging`: messages to individual students and course announcements.
 - `grading`: grading assignment submissions with an optional feedback comment.
 - `sandbox-onboarding`: self-service signup on the sandbox that creates a personal demo course with isolated fictitious students.
+- `feedback`: a tool that mails feedback about nitro to the address the admin configured, after the teacher approved the text.
 
 ### Modified Capabilities
 <!-- none: the project has no specs yet -->

@@ -1,0 +1,704 @@
+[
+    {
+        "name": "list_courses",
+        "description": "List the courses the teacher teaches and can work on through nitro, including courses hidden from students. Start here to find the course ID the other tools need. Changes nothing.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "List my courses",
+            "readOnlyHint": true,
+            "destructiveHint": false,
+            "idempotentHint": true,
+            "openWorldHint": false
+        }
+    },
+    {
+        "name": "course_overview",
+        "description": "Show a course as the teacher sees it: sections in order, their activities with course module ID, stable key, type, visibility and dates (due dates, close dates), and the number of students. Use it to find an assignment's cmid or a page's key before other tools. Changes nothing.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "courseid": {
+                    "type": "integer",
+                    "description": "Course ID from list_courses"
+                }
+            },
+            "required": [
+                "courseid"
+            ],
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "Show course contents",
+            "readOnlyHint": true,
+            "destructiveHint": false,
+            "idempotentHint": true,
+            "openWorldHint": false
+        }
+    },
+    {
+        "name": "list_participants",
+        "description": "List the people enrolled in a course with their roles, groups and last access to the course (null means they never opened it). Filter by role (for example student), group, or never_accessed. Email addresses and ID numbers only with include_identity. Changes nothing.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "courseid": {
+                    "type": "integer",
+                    "description": "Course ID from list_courses"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "Only users with this role, by short name (student, teacher, editingteacher); empty for everyone",
+                    "default": ""
+                },
+                "groupid": {
+                    "type": "integer",
+                    "description": "Only members of this group; 0 for everyone",
+                    "default": 0
+                },
+                "never_accessed": {
+                    "type": "boolean",
+                    "description": "Only users who never opened the course",
+                    "default": false
+                },
+                "include_identity": {
+                    "type": "boolean",
+                    "description": "Also return email address and ID number, where the teacher may see them in Moodle. Only ask for these when the task needs them.",
+                    "default": false
+                }
+            },
+            "required": [
+                "courseid"
+            ],
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "List participants",
+            "readOnlyHint": true,
+            "destructiveHint": false,
+            "idempotentHint": true,
+            "openWorldHint": false
+        }
+    },
+    {
+        "name": "list_submissions",
+        "description": "Show every student's submission for an assignment: submitted or not, when, whether late (after the due date and any extension), extension, whether graded and the grade. Graded students stay in the list. Use filter missing, late, ungraded or graded for \"who is behind?\" questions; set include_content to read the submitted text, its links and file names. Changes nothing.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "cmid": {
+                    "type": "integer",
+                    "description": "Course module ID of the assignment, from course_overview"
+                },
+                "filter": {
+                    "type": "string",
+                    "description": "all; missing (nothing submitted); late (submitted after the due date and any extension); ungraded (submitted, not graded yet); graded",
+                    "default": "all"
+                },
+                "include_content": {
+                    "type": "boolean",
+                    "description": "Also return the submitted online text, the links in it and the names and sizes of submitted files",
+                    "default": false
+                },
+                "groupid": {
+                    "type": "integer",
+                    "description": "Only members of this group; 0 for everyone",
+                    "default": 0
+                }
+            },
+            "required": [
+                "cmid"
+            ],
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "List assignment submissions",
+            "readOnlyHint": true,
+            "destructiveHint": false,
+            "idempotentHint": true,
+            "openWorldHint": false
+        }
+    },
+    {
+        "name": "list_forum_posts",
+        "description": "Read forum discussions of a course with their posts: subject, author, time and text, newest discussion first. Use it to see what was announced (the announcements forum has type news) or what students are discussing. Pass a cmid for one forum. Changes nothing.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "courseid": {
+                    "type": "integer",
+                    "description": "Course ID from list_courses"
+                },
+                "cmid": {
+                    "type": "integer",
+                    "description": "Only this forum, by course module ID (from course_overview); 0 for every forum of the course, announcements included",
+                    "default": 0
+                },
+                "discussions": {
+                    "type": "integer",
+                    "description": "How many discussions per forum, newest first",
+                    "default": 10
+                },
+                "posts_per_discussion": {
+                    "type": "integer",
+                    "description": "How many posts per discussion, oldest first; 1 returns only the opening post",
+                    "default": 20
+                }
+            },
+            "required": [
+                "courseid"
+            ],
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "Read forum discussions",
+            "readOnlyHint": true,
+            "destructiveHint": false,
+            "idempotentHint": true,
+            "openWorldHint": false
+        }
+    },
+    {
+        "name": "read_activity",
+        "description": "Read the text of one activity: a page's content, an assignment's or a quiz's description, with its dates. Use it before writing questions, a summary or an announcement from the course's own material, instead of asking the teacher to paste it. Changes nothing.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "cmid": {
+                    "type": "integer",
+                    "description": "Course module ID of the activity, from course_overview"
+                },
+                "include_html": {
+                    "type": "boolean",
+                    "description": "Also return the HTML, not only the plain text; only needed when republishing the same content",
+                    "default": false
+                }
+            },
+            "required": [
+                "cmid"
+            ],
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "Read an activity",
+            "readOnlyHint": true,
+            "destructiveHint": false,
+            "idempotentHint": true,
+            "openWorldHint": false
+        }
+    },
+    {
+        "name": "save_page",
+        "description": "Create or update a Page from markdown, identified by a stable key: the same key always updates the same page, so republishing from the teacher's source never duplicates it. On update only the fields you give change. Changes the course; use dry_run: true to preview. The result lists anything Moodle's HTML cleaning removed; tell the teacher.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "courseid": {
+                    "type": "integer",
+                    "description": "Course ID from list_courses"
+                },
+                "key": {
+                    "type": "string",
+                    "description": "Stable key of the page in this course, for example week4-requirements. The same key updates the same page."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Title. Required when creating; on update, omit to keep it."
+                },
+                "content": {
+                    "type": "string",
+                    "description": "Page content in markdown. Required when creating; on update, omit to keep it."
+                },
+                "section": {
+                    "type": "integer",
+                    "description": "Section number (0 is the general section). Default 0 when creating; on update, omit to keep it."
+                },
+                "visible": {
+                    "type": "boolean",
+                    "description": "Visible to students. Default true when creating; on update, omit to keep it."
+                },
+                "dry_run": {
+                    "type": "boolean",
+                    "description": "Preview only: report what would change, including the effective settings, and change nothing",
+                    "default": false
+                }
+            },
+            "required": [
+                "courseid",
+                "key"
+            ],
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "Create or update a page",
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "idempotentHint": true,
+            "openWorldHint": false
+        }
+    },
+    {
+        "name": "save_assignment",
+        "description": "Create or update an Assignment from markdown, identified by a stable key. When creating, submission_types and max_points (or scale) are required: nothing is set silently. due is when late starts, cutoff is when submission closes. On update only the fields you give change. The result shows every effective setting with weekdays: read the dates back to the teacher. Changes the course; use dry_run: true to preview.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "courseid": {
+                    "type": "integer",
+                    "description": "Course ID from list_courses"
+                },
+                "key": {
+                    "type": "string",
+                    "description": "Stable key of the assignment in this course, for example hw2. The same key updates the same assignment."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name. Required when creating. On update, omit to keep it."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description in markdown. On update, omit to keep it."
+                },
+                "section": {
+                    "type": "integer",
+                    "description": "Section number. Default 0 when creating. On update, omit to keep it."
+                },
+                "visible": {
+                    "type": "boolean",
+                    "description": "Visible to students. Default true when creating. On update, omit to keep it."
+                },
+                "submission_types": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "onlinetext or file"
+                    },
+                    "description": "What students submit: onlinetext, file, or both. Required when creating. On update, omit to keep it."
+                },
+                "max_points": {
+                    "type": "number",
+                    "description": "Grade out of this many points. When creating, give max_points or scale. On update, omit to keep it."
+                },
+                "scale": {
+                    "type": "string",
+                    "description": "Grade with this scale instead of points, by its name as in Moodle. On update, omit to keep it."
+                },
+                "due": {
+                    "type": "string",
+                    "description": "Due date, ISO 8601 (for example 2026-10-09T23:59, in the teacher's time zone). Submissions after it are marked late. \"none\" removes it. On update, omit to keep it."
+                },
+                "cutoff": {
+                    "type": "string",
+                    "description": "Cut-off date, ISO 8601: after it nothing can be submitted. Must not be before the due date. \"none\" removes it. On update, omit to keep it."
+                },
+                "dry_run": {
+                    "type": "boolean",
+                    "description": "Preview only: report what would change, including the effective settings, and change nothing",
+                    "default": false
+                }
+            },
+            "required": [
+                "courseid",
+                "key"
+            ],
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "Create or update an assignment",
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "idempotentHint": true,
+            "openWorldHint": false
+        }
+    },
+    {
+        "name": "import_questions",
+        "description": "Import questions written in GIFT or Moodle XML into a named category of the course's shared question bank (or a quiz's own bank), with Moodle's own importer. The category is created if missing. All or nothing: on a parse error nothing is imported and the error names the faulty question. Returns the new question IDs. Changes the course; use dry_run: true to check the questions first.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "courseid": {
+                    "type": "integer",
+                    "description": "Course ID from list_courses"
+                },
+                "format": {
+                    "type": "string",
+                    "description": "gift or xml (Moodle XML)"
+                },
+                "questions": {
+                    "type": "string",
+                    "description": "The questions in that format. GIFT: one question per block, blocks separated by a blank line, for example \"::Q1:: 2+2? {=4 ~3 ~5}\"."
+                },
+                "category": {
+                    "type": "string",
+                    "description": "Category name, for example \"Week 4\"; created if missing"
+                },
+                "quiz_cmid": {
+                    "type": "integer",
+                    "description": "Import into this quiz's own bank instead of the course's shared bank; 0 for the shared bank",
+                    "default": 0
+                },
+                "dry_run": {
+                    "type": "boolean",
+                    "description": "Preview only: report what would change, including the effective settings, and change nothing",
+                    "default": false
+                }
+            },
+            "required": [
+                "courseid",
+                "format",
+                "questions",
+                "category"
+            ],
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "Import questions",
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "idempotentHint": false,
+            "openWorldHint": false
+        }
+    },
+    {
+        "name": "create_quiz",
+        "description": "Create an empty Quiz: name, introduction, open and close times, time limit, attempts, question shuffling and a review preset (practice: answers shown after each attempt; exam: only after the quiz closes). Hidden by default until questions are added. Then use add_questions_to_quiz. Changes the course; use dry_run: true to preview.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "courseid": {
+                    "type": "integer",
+                    "description": "Course ID from list_courses"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Quiz name"
+                },
+                "intro": {
+                    "type": "string",
+                    "description": "Introduction in markdown",
+                    "default": ""
+                },
+                "section": {
+                    "type": "integer",
+                    "description": "Section number",
+                    "default": 0
+                },
+                "key": {
+                    "type": "string",
+                    "description": "Optional stable key (ID number) of the quiz",
+                    "default": ""
+                },
+                "open": {
+                    "type": "string",
+                    "description": "Opens at, ISO 8601; empty for open now",
+                    "default": ""
+                },
+                "close": {
+                    "type": "string",
+                    "description": "Closes at, ISO 8601; empty for never",
+                    "default": ""
+                },
+                "time_limit_minutes": {
+                    "type": "integer",
+                    "description": "Time limit in minutes; 0 for none",
+                    "default": 0
+                },
+                "attempts": {
+                    "type": "integer",
+                    "description": "Attempts allowed; 0 for unlimited",
+                    "default": 0
+                },
+                "shuffle_questions": {
+                    "type": "boolean",
+                    "description": "Shuffle question order for each attempt",
+                    "default": false
+                },
+                "review": {
+                    "type": "string",
+                    "description": "practice: answers and feedback shown right after each attempt; exam: shown only after the quiz closes",
+                    "default": "practice"
+                },
+                "visible": {
+                    "type": "boolean",
+                    "description": "Visible to students. Hidden is safer until questions are added.",
+                    "default": false
+                },
+                "dry_run": {
+                    "type": "boolean",
+                    "description": "Preview only: report what would change, including the effective settings, and change nothing",
+                    "default": false
+                }
+            },
+            "required": [
+                "courseid",
+                "name"
+            ],
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "Create a quiz",
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "idempotentHint": false,
+            "openWorldHint": false
+        }
+    },
+    {
+        "name": "add_questions_to_quiz",
+        "description": "Add questions to a quiz: specific questions by ID, and/or a number of random questions drawn from a category by name, each with a mark; optionally repaginate. Fails without changes if the category holds fewer questions than requested, or if students already attempted the quiz. Changes the course; use dry_run: true to preview.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "quiz_cmid": {
+                    "type": "integer",
+                    "description": "Course module ID of the quiz, from create_quiz or course_overview"
+                },
+                "question_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "description": "Question ID"
+                    },
+                    "description": "Specific questions to add, by the IDs import_questions returned"
+                },
+                "random_category": {
+                    "type": "string",
+                    "description": "Category to draw random questions from, by name",
+                    "default": ""
+                },
+                "random_count": {
+                    "type": "integer",
+                    "description": "How many random questions to add",
+                    "default": 0
+                },
+                "random_from_quiz_bank": {
+                    "type": "boolean",
+                    "description": "The random category is in the quiz's own bank (default: the course's shared bank)",
+                    "default": false
+                },
+                "mark": {
+                    "type": "number",
+                    "description": "Mark of each added question",
+                    "default": 1
+                },
+                "questions_per_page": {
+                    "type": "integer",
+                    "description": "Repaginate the quiz with this many questions per page; 0 to leave the paging as it is",
+                    "default": 0
+                },
+                "max_grade": {
+                    "type": "number",
+                    "description": "Maximum grade of the quiz; 0 (the default) makes it equal to what the questions are worth together, so students see the marks you set here",
+                    "default": 0
+                },
+                "dry_run": {
+                    "type": "boolean",
+                    "description": "Preview only: report what would change, including the effective settings, and change nothing",
+                    "default": false
+                }
+            },
+            "required": [
+                "quiz_cmid"
+            ],
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "Add questions to a quiz",
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "idempotentHint": false,
+            "openWorldHint": false
+        }
+    },
+    {
+        "name": "message_students",
+        "description": "Send a personal message (markdown) from the teacher to students of a course: by user IDs, a group, or all students. Each gets a separate one-to-one message. Reaches students, so it needs confirmation: the first call only returns a preview and a confirmation_token; show the preview to the teacher and call again with the token only after they approve.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "courseid": {
+                    "type": "integer",
+                    "description": "Course ID from list_courses"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "The message in markdown"
+                },
+                "userids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "description": "User ID"
+                    },
+                    "description": "Recipients by user ID (from list_participants or list_submissions). Give userids, groupid or all_students."
+                },
+                "groupid": {
+                    "type": "integer",
+                    "description": "All students of this group",
+                    "default": 0
+                },
+                "all_students": {
+                    "type": "boolean",
+                    "description": "All students of the course",
+                    "default": false
+                },
+                "confirmation_token": {
+                    "type": "string",
+                    "description": "Leave empty on the first call, which only returns a preview. After the teacher explicitly approves the preview, call again with exactly the same arguments and the confirmation_token from the preview.",
+                    "default": ""
+                }
+            },
+            "required": [
+                "courseid",
+                "message"
+            ],
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "Message students",
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": false
+        }
+    },
+    {
+        "name": "post_announcement",
+        "description": "Post an announcement (subject and markdown) to the course's announcements forum; Moodle then notifies subscribers. Reaches students, so it needs confirmation: the first call only returns a preview with warnings and a confirmation_token; call again with the token only after the teacher approves.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "courseid": {
+                    "type": "integer",
+                    "description": "Course ID from list_courses"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "Subject"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "The announcement in markdown"
+                },
+                "confirmation_token": {
+                    "type": "string",
+                    "description": "Leave empty on the first call, which only returns a preview. After the teacher explicitly approves the preview, call again with exactly the same arguments and the confirmation_token from the preview.",
+                    "default": ""
+                }
+            },
+            "required": [
+                "courseid",
+                "subject",
+                "message"
+            ],
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "Post an announcement",
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": false
+        }
+    },
+    {
+        "name": "grade_submission",
+        "description": "Save grades the teacher decided on for one or more students of an assignment: points within the maximum, or a scale item by name, with an optional feedback comment. Never decide grades yourself. Needs confirmation: the first call returns a preview (current and new grade, whether students see it) and a confirmation_token; call again with the token only after the teacher approves.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "cmid": {
+                    "type": "integer",
+                    "description": "Course module ID of the assignment"
+                },
+                "grades": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "userid": {
+                                "type": "integer",
+                                "description": "Student user ID"
+                            },
+                            "grade": {
+                                "type": "string",
+                                "description": "Points (for example \"5\" or \"7.5\") within the maximum, or the name of a scale item (for example \"Complete\") on a scale-graded assignment"
+                            },
+                            "feedback": {
+                                "type": "string",
+                                "description": "Optional feedback comment in markdown",
+                                "default": ""
+                            }
+                        },
+                        "required": [
+                            "userid",
+                            "grade"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "description": "One entry per student"
+                },
+                "workflow_state": {
+                    "type": "string",
+                    "description": "Only with marking workflow: the state to save the grades in (default readyforrelease: graded, not visible to students; released makes them visible)",
+                    "default": ""
+                },
+                "confirmation_token": {
+                    "type": "string",
+                    "description": "Leave empty on the first call, which only returns a preview. After the teacher explicitly approves the preview, call again with exactly the same arguments and the confirmation_token from the preview.",
+                    "default": ""
+                }
+            },
+            "required": [
+                "cmid",
+                "grades"
+            ],
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "Grade submissions",
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": false
+        }
+    },
+    {
+        "name": "send_feedback",
+        "description": "Tell the nitro team what is missing or broken: when a teacher wants something nitro has no tool for, or a tool behaves wrongly, offer to send feedback and call this. It mails the text to the address the site configured, with the site name and the nitro and Moodle versions, and nothing else: no course content, no student data. Needs confirmation: the first call returns the exact message and a confirmation_token; send only after the teacher has read it and approved.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "description": "What is missing or broken, in the teacher's words or yours. Describe what the teacher wanted to do and what nitro could not do. Write it so it is useful without the course: no student names, no course content. If the teacher wants an answer, ask them whether to include their email address in the text."
+                },
+                "tool": {
+                    "type": "string",
+                    "description": "The tool this is about, if any, for example list_submissions",
+                    "default": ""
+                },
+                "confirmation_token": {
+                    "type": "string",
+                    "description": "Leave empty on the first call, which only returns a preview. After the teacher explicitly approves the preview, call again with exactly the same arguments and the confirmation_token from the preview.",
+                    "default": ""
+                }
+            },
+            "required": [
+                "message"
+            ],
+            "additionalProperties": false
+        },
+        "annotations": {
+            "title": "Send feedback about nitro",
+            "readOnlyHint": false,
+            "destructiveHint": true,
+            "idempotentHint": false,
+            "openWorldHint": false
+        }
+    }
+]

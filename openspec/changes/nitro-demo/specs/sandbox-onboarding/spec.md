@@ -40,3 +40,14 @@ Each personal course SHALL have its own 20 fictitious students, created for that
 #### Scenario: Fictitious student login
 - **WHEN** someone tries to log in as a fictitious student
 - **THEN** the login is refused
+
+### Requirement: GoSchool-branded sandbox
+The sandbox SHALL look like part of the GoSchool brand world, following the parent GoSchool design system (palette, typography, logo): the site name, logo, compact logo, favicon, brand colour and login page SHALL be GoSchool's. Branding SHALL be applied to the sandbox only, through theme settings or a sandbox-only theme, and MUST NOT be part of `local_nitro` or change how nitro looks on a faculty Moodle.
+
+#### Scenario: Attendee opens the sandbox
+- **WHEN** an attendee opens the sandbox login page or their demo course
+- **THEN** they see the GoSchool logo, colours and site name, not the default Moodle look
+
+#### Scenario: Faculty install
+- **WHEN** a faculty admin installs `local_nitro`
+- **THEN** their site's theme and branding are unchanged

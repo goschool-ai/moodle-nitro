@@ -31,7 +31,11 @@ Lets the AI turn course material into questions and quizzes, the largest gain ov
 - **THEN** the quiz exists with those settings and shows answers after each attempt
 
 ### Requirement: Add questions to a quiz
-`add_questions_to_quiz` SHALL add specific questions by ID, or a number of random questions drawn from a category, to a quiz, with a mark per question and a number of questions per page. It MUST require `mod/quiz:manage` in the quiz and `moodle/question:useall` in the source bank.
+`add_questions_to_quiz` SHALL add specific questions by ID, or a number of random questions drawn from a category, to a quiz, with a mark per question and a number of questions per page, and SHALL set the quiz's maximum grade to what the questions are worth together unless `max_grade` gives another value. It MUST require `mod/quiz:manage` in the quiz and `moodle/question:useall` in the source bank.
+
+#### Scenario: Maximum grade follows the questions
+- **WHEN** questions worth 8 marks together are added to a quiz
+- **THEN** the quiz's maximum grade becomes 8, so Moodle does not scale the marks, unless the teacher gives a maximum of their own
 
 #### Scenario: Random questions from a category
 - **WHEN** a teacher adds 10 random questions from category "Week 4" that holds 15 questions

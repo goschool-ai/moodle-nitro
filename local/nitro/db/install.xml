@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/nitro/db" VERSION="20260919" COMMENT="XMLDB file for local_nitro"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_nitro_client" COMMENT="OAuth clients registered dynamically or by an admin. CIMD clients are not stored here.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="clientid" TYPE="char" LENGTH="64" NOTNULL="true" SEQUENCE="false" COMMENT="Public client identifier"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="Name declared by the client or given by the admin"/>
+        <FIELD NAME="secrethash" TYPE="char" LENGTH="64" NOTNULL="false" SEQUENCE="false" COMMENT="SHA-256 of the client secret; null for public clients"/>
+        <FIELD NAME="authmethod" TYPE="char" LENGTH="30" NOTNULL="true" DEFAULT="none" SEQUENCE="false" COMMENT="none, client_secret_post or client_secret_basic"/>
+        <FIELD NAME="redirecturis" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="JSON array of redirect URIs"/>
+        <FIELD NAME="origin" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="dcr or admin"/>
+        <FIELD NAME="createdby" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="Admin who registered the client"/>
+        <FIELD NAME="timefirstused" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="When the client first obtained a token; null if never"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="createdby" TYPE="foreign" FIELDS="createdby" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="clientid" UNIQUE="true" FIELDS="clientid"/>
+        <INDEX NAME="origin-timefirstused" UNIQUE="false" FIELDS="origin, timefirstused"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="local_nitro_code" COMMENT="Single-use authorization codes">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="codehash" TYPE="char" LENGTH="64" NOTNULL="true" SEQUENCE="false" COMMENT="SHA-256 of the code"/>
+        <FIELD NAME="clientid" TYPE="char" LENGTH="1333" NOTNULL="true" SEQUENCE="false" COMMENT="Client ID, or the CIMD URL"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="redirecturi" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="codechallenge" TYPE="char" LENGTH="128" NOTNULL="true" SEQUENCE="false" COMMENT="PKCE S256 challenge"/>
+        <FIELD NAME="scope" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="clientname" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="Client name shown at consent, kept for the grant"/>
+        <FIELD NAME="expires" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="codehash" UNIQUE="true" FIELDS="codehash"/>
+        <INDEX NAME="expires" UNIQUE="false" FIELDS="expires"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="local_nitro_grant" COMMENT="A user's approval of one client; what the connections page lists and revokes">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="clientid" TYPE="char" LENGTH="1333" NOTNULL="true" SEQUENCE="false" COMMENT="Client ID, or the CIMD URL"/>
+        <FIELD NAME="clientname" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="redirecthost" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="scope" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="timelastused" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_nitro_token" COMMENT="Access and refresh tokens of a grant">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="grantid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="tokentype" TYPE="char" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="access or refresh"/>
+        <FIELD NAME="tokenhash" TYPE="char" LENGTH="64" NOTNULL="true" SEQUENCE="false" COMMENT="SHA-256 of the token"/>
+        <FIELD NAME="used" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Refresh token already rotated; presenting it again revokes the grant"/>
+        <FIELD NAME="expires" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="grantid" TYPE="foreign" FIELDS="grantid" REFTABLE="local_nitro_grant" REFFIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="tokenhash" UNIQUE="true" FIELDS="tokenhash"/>
+        <INDEX NAME="expires" UNIQUE="false" FIELDS="expires"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="local_nitro_confirm" COMMENT="Pending confirmations for writes that reach students">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="tool" TYPE="char" LENGTH="100" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="argshash" TYPE="char" LENGTH="64" NOTNULL="true" SEQUENCE="false" COMMENT="SHA-256 of the canonicalised arguments"/>
+        <FIELD NAME="tokenhash" TYPE="char" LENGTH="64" NOTNULL="true" SEQUENCE="false" COMMENT="SHA-256 of the confirmation token"/>
+        <FIELD NAME="used" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="expires" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="tokenhash" UNIQUE="true" FIELDS="tokenhash"/>
+        <INDEX NAME="expires" UNIQUE="false" FIELDS="expires"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>

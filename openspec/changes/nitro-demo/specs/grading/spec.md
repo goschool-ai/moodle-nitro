@@ -7,6 +7,10 @@ Lets the teacher record the grades they decided on (for example, accepting a bat
 ### Requirement: Grade submissions
 `grade_submission` SHALL save grades for one or more students on one assignment. A grade SHALL be a number within the assignment's maximum for point grading, or the name of a scale item (for example "Complete") for scale grading. An optional markdown feedback comment per student SHALL be saved as the assignment's feedback comment. It MUST require `mod/assign:grade` in the assignment's context and is subject to the confirmation protocol of `write-confirmation`.
 
+#### Scenario: The teacher sees whose grade it is
+- **WHEN** `grade_submission` returns a preview
+- **THEN** every entry carries the student's name, not only their user ID
+
 #### Scenario: Accept several submissions
 - **WHEN** a teacher confirms grade "Complete" for five students on a scale-graded assignment
 - **THEN** the five grades are saved, appear in the gradebook, and the result lists each student with the saved grade

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.28/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.28",
+  "version": "0.1.0",
+  "id": "{{APP_ID}}",
+  "developer": {
+    "name": "GoSchool",
+    "websiteUrl": "https://goschool.ai",
+    "privacyUrl": "https://goschool.ai/privacy",
+    "termsOfUseUrl": "https://goschool.ai/terms"
+  },
+  "name": {
+    "short": "nitro – {{SITE_NAME}}",
+    "full": "nitro: {{SITE_NAME}} Moodle for Copilot Cowork"
+  },
+  "description": {
+    "short": "Run your Moodle course from Copilot Cowork",
+    "full": "Read your courses, participants and submissions, publish pages and assignments, build quizzes, and message students or grade them after your approval, in {{SITE_NAME}} Moodle, with your own Moodle permissions."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#4B2E83",
+  "agentConnectors": [
+    {
+      "id": "nitro-moodle",
+      "displayName": "{{SITE_NAME}} Moodle",
+      "description": "The teacher's Moodle courses through nitro: read, write content and quizzes, and reach students after approval.",
+      "toolSource": {
+        "remoteMcpServer": {
+          "mcpServerUrl": "{{MCP_URL}}",
+          "mcpToolDescription": {
+            "file": "./tools/nitro-tools.json"
+          }{{AUTHORIZATION}}
+        }
+      }
+    }
+  ]
+}

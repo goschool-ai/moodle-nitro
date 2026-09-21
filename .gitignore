@@ -8,3 +8,4 @@ node_modules/
 .impeccable/questions/
 .impeccable/mocks/**/*.png
 !.impeccable/mocks/decision/week.png
+copilot/build/

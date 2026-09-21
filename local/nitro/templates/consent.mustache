@@ -1,0 +1,64 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_nitro/consent
+
+    The OAuth consent screen.
+
+    Example context (json):
+    {
+        "clientname": "Claude",
+        "redirecthost": "claude.ai",
+        "loopback": false,
+        "selfregistered": false,
+        "offline": true,
+        "username": "Anna Kovács",
+        "notice": "This is a sandbox: do not enter real student data.",
+        "action": "https://moodle.example/local/nitro/oauth/authorize.php",
+        "sesskey": "abc",
+        "params": [{"name": "client_id", "value": "https://claude.ai/oauth/mcp-oauth-client-metadata"}]
+    }
+}}
+<div class="local_nitro-consent card mx-auto" style="max-width: 36rem;">
+    <div class="card-body">
+        <h2 class="h4 card-title">{{#str}} consentheading, local_nitro, {{clientname}} {{/str}}</h2>
+        <p>{{#str}} consentredirect, local_nitro, {{redirecthost}} {{/str}}</p>
+        {{#selfregistered}}
+        <div class="alert alert-warning" role="alert">{{#str}} consentselfregistered, local_nitro {{/str}}</div>
+        {{/selfregistered}}
+        {{#loopback}}
+        <div class="alert alert-warning" role="alert">{{#str}} consentloopback, local_nitro {{/str}}</div>
+        {{/loopback}}
+        <p>{{#str}} consentexplain, local_nitro, {{username}} {{/str}}</p>
+        <ul>
+            <li>{{#str}} consentread, local_nitro {{/str}}</li>
+            <li>{{#str}} consentwrite, local_nitro {{/str}}</li>
+            <li>{{#str}} consentconfirm, local_nitro {{/str}}</li>
+            {{#offline}}<li>{{#str}} consentoffline, local_nitro {{/str}}</li>{{/offline}}
+        </ul>
+        <p class="text-muted small">{{#str}} consentrevoke, local_nitro {{/str}}</p>
+        {{#notice}}
+        <div class="alert alert-info" role="note">{{{notice}}}</div>
+        {{/notice}}
+        <form method="post" action="{{action}}" class="d-flex gap-2">
+            <input type="hidden" name="sesskey" value="{{sesskey}}">
+            {{#params}}<input type="hidden" name="{{name}}" value="{{value}}">{{/params}}
+            <button type="submit" name="decision" value="approve" class="btn btn-primary">{{#str}} consentapprove, local_nitro {{/str}}</button>
+            <button type="submit" name="decision" value="deny" class="btn btn-secondary">{{#str}} consentdeny, local_nitro {{/str}}</button>
+        </form>
+    </div>
+</div>

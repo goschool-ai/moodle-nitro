@@ -29,6 +29,14 @@ Delivery SHALL go through Moodle's messaging system, so recipients' messaging pr
 - **WHEN** a teacher confirms an announcement "Bring your laptop on Monday"
 - **THEN** a discussion appears in the course's announcements forum, and the result reports how many users are subscribed and will be notified
 
+#### Scenario: Students who cannot be emailed
+- **WHEN** fewer people will be emailed than can read the course, because their accounts cannot sign in, are suspended or were never confirmed
+- **THEN** the preview says how many of how many get mail and why, and that everyone still sees the announcement in the course
+
+#### Scenario: Plain text reads as written
+- **WHEN** the message contains bold text and single line breaks, such as a two-line signature
+- **THEN** the plain text version keeps the words as written and the line breaks, and does not upper-case the bold parts
+
 #### Scenario: Hidden course
 - **WHEN** the course is hidden from students at the time of the preview
 - **THEN** the preview warns that students cannot see the course and will not be able to open the announcement, so the teacher can make the course visible first

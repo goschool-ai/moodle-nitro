@@ -1,0 +1,6 @@
+# nitro: root OAuth discovery URLs, served by local_nitro (from the plugin's settings page).
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^\.well-known/oauth-protected-resource(/.*)?$ /local/nitro/oauth/metadata.php/.well-known/oauth-protected-resource [END]
+    RewriteRule ^\.well-known/(oauth-authorization-server|openid-configuration)(/.*)?$ /local/nitro/oauth/metadata.php/.well-known/$1 [END]
+</IfModule>

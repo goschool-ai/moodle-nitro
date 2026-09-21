@@ -11,6 +11,10 @@ Every tool that changes Moodle data SHALL accept a `dry_run` flag. With `dry_run
 - **WHEN** a teacher calls `save_page` with `dry_run: true` for an existing key
 - **THEN** nothing is changed and the result says the page would be updated, lists the fields that would change, and reports any content Moodle's HTML cleaning would remove
 
+#### Scenario: A preview invents no identifiers
+- **WHEN** a dry run would create an activity, a question or a category
+- **THEN** the result carries no ID or URL for it, and says that nothing was saved and that a real run creates the records
+
 ### Requirement: Confirmation for writes that reach students
 Tools that notify students or change what students see of their results (in this change: `message_students`, `post_announcement`, `grade_submission`) MUST NOT act on the first call. The first call SHALL return a preview and a confirmation token; the action SHALL be executed only when the tool is called again with the same arguments and that token.
 

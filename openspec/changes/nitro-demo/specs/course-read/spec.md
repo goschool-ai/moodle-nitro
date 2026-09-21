@@ -7,6 +7,10 @@ Gives the AI the read access a teacher needs to answer the daily question "where
 ### Requirement: List the teacher's courses
 `list_courses` SHALL return the courses in which the user holds `local/nitro:use` and can manage or grade content, including courses hidden from students, with course ID, short name, full name, visibility and start and end dates.
 
+#### Scenario: Which Moodle this is
+- **WHEN** `list_courses` returns
+- **THEN** the result names the site and its address, so an AI connected to more than one Moodle can say which one the courses come from
+
 #### Scenario: Teacher with several courses
 - **WHEN** a teacher of courses A and B, who is a student in course C, calls `list_courses`
 - **THEN** A and B are returned and C is not
@@ -52,6 +56,49 @@ Gives the AI the read access a teacher needs to answer the daily question "where
 - **WHEN** students submitted an online text containing a repository URL and the teacher sets `include_content`
 - **THEN** each entry contains the text and the URL listed as a link
 
+#### Scenario: Overdue submission
+- **WHEN** a student has submitted nothing and the deadline (with any extension) has passed
+- **THEN** their entry is marked overdue
+
 #### Scenario: Late submission
 - **WHEN** a student submitted after the due date without an extension
 - **THEN** their entry is marked late
+
+### Requirement: Read forum discussions
+`list_forum_posts` SHALL return the discussions of a course's forums with their posts: forum name, discussion subject, author, time, and the message as text, newest discussion first. It SHALL take either a course (all forums the user may see) or one forum by course module ID, and SHALL limit how many discussions and posts it returns. It MUST apply the same access rules as the web UI (`mod/forum:viewdiscussion` per forum, group mode, and posts hidden until a user has posted in a Q&A forum are not returned).
+
+#### Scenario: Reading the announcements
+- **WHEN** a teacher asks what was announced in their course
+- **THEN** the discussions of the announcements forum are returned with subject, author, time and text
+
+#### Scenario: Replies
+- **WHEN** a discussion has replies
+- **THEN** the replies are returned under their discussion, in order, with their authors
+
+#### Scenario: Forum the user cannot see
+- **WHEN** a course contains a forum hidden from the user
+- **THEN** its discussions are not returned
+
+
+### Requirement: Read an activity
+`read_activity` SHALL return, for one course module, its type, name, visibility, URL, description and — where the activity carries text of its own (page, book chapter list, label, assignment instructions, quiz or forum intro, url target) — that text, so the AI can quote or rewrite existing content instead of asking the teacher to copy it out of the browser. It SHALL return the text as plain text by default and the original HTML when `include_html` is set, SHALL list the activity's dates where it has them, and SHALL say so in a note when the activity keeps no readable text. It MUST require `local/nitro:use` in the course and the same view access as the web UI.
+
+#### Scenario: Reading a page
+- **WHEN** a teacher asks what is on the week 4 page
+- **THEN** the page's content is returned as text
+
+#### Scenario: Rewriting existing content
+- **WHEN** the AI is asked to extend a page it did not write
+- **THEN** it can read the current content with `include_html` and save the edited HTML back with `save_page`
+
+#### Scenario: Assignment instructions
+- **WHEN** the module is an assignment
+- **THEN** its description and due dates are returned
+
+#### Scenario: Activity with no text
+- **WHEN** the module is an uploaded file with no description
+- **THEN** the result carries a note that the activity keeps no readable text, instead of an empty answer
+
+#### Scenario: Activity the user cannot see
+- **WHEN** a teacher without access to the course calls `read_activity`
+- **THEN** the call is refused

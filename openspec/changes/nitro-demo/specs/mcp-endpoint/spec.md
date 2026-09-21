@@ -49,6 +49,10 @@ The endpoint MUST reject every request that does not carry a valid OAuth access 
 - **WHEN** a site admin removes a tool from the allowlist
 - **THEN** the tool disappears from `tools/list` and calling it returns an error
 
+#### Scenario: A new version brings a new tool
+- **WHEN** a plugin upgrade adds a tool
+- **THEN** the upgrade adds it to the allowlist, so it is listed without the admin having to find it. For the demo the upgrade adds every tool missing from the allowlist, so a tool the admin removed earlier comes back and has to be removed again; remembering removals is left to the pilot
+
 ### Requirement: Tool invocation
 `tools/call` SHALL validate the arguments against the tool's parameter definition, run the tool, and return its result as MCP tool content. Failures inside a tool SHALL be returned as a tool result with `isError: true` and a human-readable message, so the AI can react to them.
 

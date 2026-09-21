@@ -62,7 +62,7 @@ The plugin's settings page SHALL fetch the site's own discovery URLs (the plugin
 - **THEN** the plugin-served discovery URLs are shown as working, the root URLs as missing, and the rewrite rule for the detected web server is shown as optional
 
 ### Requirement: No third-party data flow
-The plugin MUST NOT send course or user data anywhere other than back to the requesting client in the response, and MUST NOT store student data outside Moodle. The only outbound requests the plugin makes are fetches of client metadata documents from allowed hosts, which carry no course or user data.
+The plugin MUST NOT send course or user data anywhere other than back to the requesting client in the response, and MUST NOT store student data outside Moodle. The plugin makes two kinds of outbound request, neither carrying course or student data: fetches of client metadata documents from allowed hosts, and the feedback message of `send_feedback`, which the teacher approved and which carries only their text and the site and version information.
 
 #### Scenario: Tool call makes no outbound request
 - **WHEN** any tool is called
@@ -71,3 +71,7 @@ The plugin MUST NOT send course or user data anywhere other than back to the req
 #### Scenario: Client metadata fetch
 - **WHEN** the authorization server fetches a client metadata document
 - **THEN** the request goes only to an allowed CIMD host and contains no user or course data
+
+#### Scenario: Feedback carries no course data
+- **WHEN** a teacher approves sending feedback about nitro
+- **THEN** the message contains only their text, the site name and URL, and the nitro and Moodle versions

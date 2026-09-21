@@ -136,6 +136,10 @@ The token endpoint SHALL accept a refresh token to issue a new access token and 
 - **WHEN** an already used refresh token is presented again
 - **THEN** the response is `invalid_grant` and all tokens of that grant are revoked
 
+#### Scenario: Refresh after the site's caches are purged
+- **WHEN** a client identified by a Client ID Metadata Document refreshes its token after the site's caches were purged, for example by a plugin upgrade
+- **THEN** it receives new tokens without the metadata document being fetched again, because the client is known from its existing grant; the connection does not drop
+
 ### Requirement: Users see and revoke their connections
 Every user SHALL have a page, linked from their profile, listing the AI clients they have approved, with client name, redirect host, approval time and last use, and SHALL be able to revoke each one. Revocation MUST invalidate all access and refresh tokens of that grant immediately.
 
