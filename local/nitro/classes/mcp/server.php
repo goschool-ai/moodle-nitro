@@ -48,8 +48,8 @@ class server {
         Pages and assignments are identified by a stable key: calling save_page or save_assignment again with the same
         key updates the same activity instead of creating a new one.
 
-        For a quiz: import the questions first (import_questions creates the category), then create_quiz, then
-        add_questions_to_quiz.
+        For a quiz: import the questions first (import_questions creates the category), then create_quiz (hidden),
+        then add_questions_to_quiz, with make_visible when the teacher wants it open straight away.
 
         Anything that reaches students (message_students, post_announcement, grade_submission) never happens on the
         first call. The first call returns a preview and a confirmation_token. Show the preview to the teacher, word

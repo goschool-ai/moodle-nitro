@@ -66,7 +66,8 @@ class create_quiz extends external_api {
                 . 'attempt; exam: shown only after the quiz closes', VALUE_DEFAULT, 'practice'),
             'visible' => new external_value(
                 PARAM_BOOL,
-                'Visible to students. Hidden is safer until questions are added.',
+                'Visible to students. Leave it hidden and pass make_visible to add_questions_to_quiz instead, so '
+                    . 'students never open an empty quiz.',
                 VALUE_DEFAULT,
                 false
             ),

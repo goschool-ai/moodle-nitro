@@ -54,6 +54,15 @@ class provisioner {
     /** @var int[] Students whose submission is already graded. */
     private const GRADED = [0, 1];
 
+    /** @var int[] Students who submitted on time but forgot the repository link. */
+    private const NOLINK = [6, 11];
+
+    /** @var string[] What those students wrote instead of a link. */
+    private const NOLINK_TEXTS = [
+        '<p>Kész a 2. beadandó, a repót még feltöltöm.</p>',
+        '<p>Beadom a 2. házit. A kódot e-mailben küldöm.</p>',
+    ];
+
     /**
      * The role that grants local/nitro:use in a course; created when missing.
      *
@@ -196,11 +205,13 @@ class provisioner {
             $submission->timemodified = $time;
             $DB->update_record('assign_submission', $submission);
             $username = "demo{$course->id}.s" . ($i + 1);
+            $nolink = array_search($i, self::NOLINK, true);
             $DB->insert_record('assignsubmission_onlinetext', [
                 'assignment' => $cm->instance,
                 'submission' => $submission->id,
-                'onlinetext' => '<p>Kész a 2. beadandó. Repó: <a href="https://git.example.org/' . $username
-                    . '/hazi2">https://git.example.org/' . $username . '/hazi2</a></p>',
+                'onlinetext' => $nolink !== false ? self::NOLINK_TEXTS[$nolink]
+                    : '<p>Kész a 2. beadandó. Repó: <a href="https://git.example.org/' . $username
+                        . '/hazi2">https://git.example.org/' . $username . '/hazi2</a></p>',
                 'onlineformat' => FORMAT_HTML,
             ]);
             if (in_array($i, self::GRADED, true)) {
@@ -329,5 +340,4 @@ class provisioner {
             'enddate' => 0,
         ]);
     }
-
 }

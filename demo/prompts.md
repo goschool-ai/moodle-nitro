@@ -1,6 +1,6 @@
 # Demo prompts – BME Oktatói Klub, 2026-10-06
 
-Every run starts from a fresh demo course: sign up a new account on the sandbox, wait for "Demo NN – Haladó programozás", then connect Claude to `https://moodle.tilosazai.org/local/nitro/mcp.php`. Messages, grades and announcements change the course, so a course is good for one run only.
+Every run starts from a fresh demo course: sign up a new account on the sandbox, wait for "Demo NN – Haladó programozás", then connect Claude to `https://moodle.tilosazai.org/local/nitro/mcp.php`. Messages, grades and announcements change the course, so a course is good for one run only. For the stage, sign up the account the day before (task 11.4) and do not touch its course afterwards: the seeded dates follow the signup day, so a course made more than two days early has its final deadline behind it.
 
 The prompts name no tools. Claude has to find the way from the server instructions alone (task 11.1). If it needs an extra hint, note which prompt and what it got wrong.
 
@@ -26,13 +26,13 @@ Expected: sent, with the number delivered. On the sandbox the fictitious student
 
 > Nézd meg a beadott munkákat: van-e mindegyikben git repó link? Akiknél van, azokat fogadd el. A késve beadottakat a követelmények szerint pontozd.
 
-Expected: it reads the submissions with their content and reads the requirements page (late work: at most half points). The preview has names: 10 points for on time, 5 for late, and it flags submissions without a link instead of grading them.
+Expected: it reads the submissions with their content and reads the requirements page (late work: at most half points). The preview has names: 10 points for on time, 5 for late. Two on-time submissions have no repository link ("a repót még feltöltöm", "e-mailben küldöm"); it flags them instead of grading them. Two on-time submissions are already graded 10 in the seed; it should leave them alone or say so.
 
 > Rendben, mentsd el.
 
 **4. Announcement**
 
-> Tegyél ki egy közleményt: a 2. beadandó értékelése elkészült, és jövő héten a rekurzióval folytatjuk. Előbb mutasd meg.
+> Tegyél ki egy közleményt: a 2. beadandó értékelése elkészült, és a 4. heti rekurziós anyaghoz hamarosan gyakorló kvíz jön. Előbb mutasd meg.
 
 Expected: a preview that says how many will be emailed and why fewer than the whole class (fictitious accounts).
 
@@ -44,9 +44,9 @@ Expected: a preview that says how many will be emailed and why fewer than the wh
 
 > A 4. heti anyagból írj 8 feleletválasztós gyakorlókérdést, és csinálj belőlük egy gyakorló kvízt péntek éjfélig, amit bármennyiszer kitölthetnek. Legyen rögtön látható a hallgatóknak.
 
-Expected: it reads the week-4 page itself (`read_activity`), imports the questions, creates the quiz visible with the practice review settings, and adds the questions. The maximum grade equals the question total (8). It gives the quiz link.
+Expected: it reads the week-4 page itself (`read_activity`), imports the questions, creates the quiz hidden with the practice review settings, then adds the questions and makes the quiz visible in the same step, so students never see it empty. The maximum grade equals the question total (8). It gives the quiz link.
 
-Say "legyen rögtön látható" (visible straight away) in the prompt: nitro cannot change a quiz after it has been created (pilot scope), so visibility has to be right the first time.
+Keep "legyen rögtön látható" (visible straight away) in the prompt: nitro cannot change a quiz after it has been created (pilot scope), so the quiz has to be opened while the questions are added.
 
 **6. Show it**
 

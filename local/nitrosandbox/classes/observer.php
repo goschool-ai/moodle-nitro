@@ -52,8 +52,11 @@ class observer {
         if (!get_config('local_nitrosandbox', 'enabled')) {
             return;
         }
-        $user = $DB->get_record('user', ['id' => $userid, 'deleted' => 0],
-            'id, confirmed, auth, suspended, timecreated');
+        $user = $DB->get_record(
+            'user',
+            ['id' => $userid, 'deleted' => 0],
+            'id, confirmed, auth, suspended, timecreated'
+        );
         if (
             !$user || !$user->confirmed || $user->suspended || $user->auth === 'nologin'
                 || isguestuser($user) || is_siteadmin($user)

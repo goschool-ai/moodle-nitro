@@ -171,6 +171,7 @@ class template {
         Írj rekurzív függvényt, amely bejár egy könyvtárszerkezetet, és kiírja a fájlokat méret szerint csökkenő sorrendben.
 
         - A megoldást git repóban add be; a Moodle-be a repó linkjét másold be.
-        - **Határidő:** péntek 23:59. Utána vasárnap 20:00-ig még beadható, de legfeljebb fél pontot ér.
+        - **Határidő:** a feladat oldalán látható határidő és végső határidő.
+        - A határidő után, a végső határidőig még beadható, de legfeljebb fél pontot ér.
         MD;
 }

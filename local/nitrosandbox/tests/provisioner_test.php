@@ -95,6 +95,10 @@ final class provisioner_test extends \advanced_testcase {
         $graded = $call('graded')['students'];
         $this->assertCount(2, $graded);
         $this->assertStringStartsWith('https://git.example.org/', $graded[0]['links'][0]);
+        // Two on-time submissions have no repository link, so "flag the ones without a link" has answers.
+        $submitted = array_filter($call('all')['students'], fn($s) => $s['status'] === 'submitted');
+        $this->assertCount(16, $submitted);
+        $this->assertCount(2, array_filter($submitted, fn($s) => empty($s['links'])));
         $never = \local_nitro\external\list_participants::execute($courseid, 'student', 0, true, false)['participants'];
         $this->assertCount(3, $never);
     }
@@ -123,8 +127,12 @@ final class provisioner_test extends \advanced_testcase {
         $this->template();
         $teacher = $this->teacher();
         $courseid = provisioner::provision($teacher->id);
-        $students = get_role_users($DB->get_field('role', 'id', ['shortname' => 'student']),
-            \context_course::instance($courseid), false, 'u.*');
+        $students = get_role_users(
+            $DB->get_field('role', 'id', ['shortname' => 'student']),
+            \context_course::instance($courseid),
+            false,
+            'u.*'
+        );
         $student = reset($students);
 
         $failure = null;

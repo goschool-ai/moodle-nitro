@@ -50,9 +50,12 @@ class course_overview extends external_api {
      * @return array
      */
     public static function execute(int $courseid): array {
-        global $USER;
+        global $USER, $DB;
         ['courseid' => $courseid] = self::validate_parameters(self::execute_parameters(), ['courseid' => $courseid]);
         $context = access::require_course($courseid);
+        // Core's activity dates for an assignment end at the due date; the cut-off is what "can they still
+        // submit?" depends on.
+        $cutoffs = $DB->get_records_menu('assign', ['course' => $courseid], '', 'id, cutoffdate');
 
         $modinfo = get_fast_modinfo($courseid);
         $course = $modinfo->get_course();
@@ -76,11 +79,7 @@ class course_overview extends external_api {
                     'type' => $cm->modname,
                     'name' => $cm->get_formatted_name(),
                     'visible' => (bool) $cm->visible,
-                    'dates' => array_map(fn($date) => [
-                        'type' => (string) ($date['dataid'] ?? ''),
-                        'label' => (string) $date['label'],
-                        'date' => dates::iso((int) $date['timestamp']),
-                    ], \core\activity_dates::get_dates_for_module($cm, $USER->id)),
+                    'dates' => self::dates($cm, (int) ($cutoffs[$cm->instance] ?? 0)),
                 ];
             }
             $sections[] = [
@@ -101,6 +100,27 @@ class course_overview extends external_api {
             'students' => count_enrolled_users($context, 'mod/assign:submit', 0, true),
             'sections' => $sections,
         ];
+    }
+
+    /**
+     * The dates of an activity as the teacher sees them, plus an assignment's cut-off.
+     *
+     * @param \cm_info $cm
+     * @param int $cutoff the assignment's cut-off date, 0 for none or for other activities
+     * @return array
+     */
+    private static function dates(\cm_info $cm, int $cutoff): array {
+        global $USER;
+        $dates = array_map(fn($date) => [
+            'type' => (string) ($date['dataid'] ?? ''),
+            'label' => (string) $date['label'],
+            'date' => dates::iso((int) $date['timestamp']),
+        ], \core\activity_dates::get_dates_for_module($cm, $USER->id));
+        if ($cm->modname === 'assign' && $cutoff > 0) {
+            $dates[] = ['type' => 'cutoffdate', 'label' => get_string('cutoffdate', 'assign') . ':',
+                'date' => dates::iso($cutoff)];
+        }
+        return $dates;
     }
 
     /**

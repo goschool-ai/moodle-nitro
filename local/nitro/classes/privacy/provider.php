@@ -67,6 +67,16 @@ class provider implements
             'tool' => 'privacy:metadata:confirm:tool',
             'timecreated' => 'privacy:metadata:grant:timecreated',
         ], 'privacy:metadata:confirm');
+        // Tool results go to the AI client the user connected, and from there to that client's provider.
+        $collection->add_external_location_link('aiclient', [
+            'coursecontent' => 'privacy:metadata:aiclient:coursecontent',
+            'participants' => 'privacy:metadata:aiclient:participants',
+            'submissions' => 'privacy:metadata:aiclient:submissions',
+            'grades' => 'privacy:metadata:aiclient:grades',
+        ], 'privacy:metadata:aiclient');
+        $collection->add_external_location_link('feedback', [
+            'message' => 'privacy:metadata:feedback:message',
+        ], 'privacy:metadata:feedback');
         return $collection;
     }
 

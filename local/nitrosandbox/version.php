@@ -28,7 +28,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_nitrosandbox';
-$plugin->version = 2026092000;
+$plugin->version = 2026092201;
 $plugin->requires = 2025041400; // Moodle 5.0.
 $plugin->maturity = MATURITY_ALPHA;
 $plugin->release = '0.1.0';

@@ -37,7 +37,7 @@ final class course_overview_test extends tool_testcase {
         $gen->create_module('page', ['course' => $this->course->id, 'section' => 1, 'name' => 'Week 4',
             'idnumber' => 'week4-page']);
         $assign = $gen->create_module('assign', ['course' => $this->course->id, 'section' => 1, 'name' => 'Homework 2',
-            'idnumber' => 'hw2', 'duedate' => $due]);
+            'idnumber' => 'hw2', 'duedate' => $due, 'cutoffdate' => $due + 2 * DAYSECS]);
         $gen->create_module('quiz', ['course' => $this->course->id, 'section' => 2, 'name' => 'Draft quiz', 'visible' => 0]);
         $this->setUser($this->teacher);
 
@@ -55,6 +55,9 @@ final class course_overview_test extends tool_testcase {
         $duedates = array_column($week['hw2']['dates'], 'date', 'type');
         $this->assertSame((new \DateTimeImmutable('@' . $due))->setTimezone(\core_date::get_user_timezone_object())
             ->format(DATE_ATOM), $duedates['duedate']);
+        // The cut-off decides whether students can still submit; core's activity dates leave it out.
+        $this->assertSame((new \DateTimeImmutable('@' . ($due + 2 * DAYSECS)))
+            ->setTimezone(\core_date::get_user_timezone_object())->format(DATE_ATOM), $duedates['cutoffdate']);
         $quiz = $result['sections'][2]['activities'][0];
         $this->assertSame('Draft quiz', $quiz['name']);
         $this->assertFalse($quiz['visible']);

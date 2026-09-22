@@ -68,6 +68,13 @@ class add_questions_to_quiz extends external_api {
                 VALUE_DEFAULT,
                 0
             ),
+            'make_visible' => new external_value(
+                PARAM_BOOL,
+                'Make the quiz visible to students once the '
+                . 'questions are in; use this rather than creating the quiz visible, so students never see it empty',
+                VALUE_DEFAULT,
+                false
+            ),
             'dry_run' => dry_run::param(),
         ]);
     }
@@ -83,6 +90,7 @@ class add_questions_to_quiz extends external_api {
      * @param float $mark
      * @param int $questionsperpage
      * @param float $maxgrade
+     * @param bool $makevisible
      * @param bool $dryrun
      * @return array
      */
@@ -95,19 +103,25 @@ class add_questions_to_quiz extends external_api {
         float $mark = 1,
         int $questionsperpage = 0,
         float $maxgrade = 0,
+        bool $makevisible = false,
         bool $dryrun = false
     ): array {
         global $CFG, $DB;
         require_once($CFG->dirroot . '/mod/quiz/locallib.php');
         require_once($CFG->libdir . '/questionlib.php');
+        require_once($CFG->dirroot . '/course/lib.php');
         $params = self::validate_parameters(self::execute_parameters(), [
             'quiz_cmid' => $quizcmid, 'question_ids' => $questionids, 'random_category' => $randomcategory,
             'random_count' => $randomcount, 'random_from_quiz_bank' => $randomfromquizbank, 'mark' => $mark,
-            'questions_per_page' => $questionsperpage, 'max_grade' => $maxgrade, 'dry_run' => $dryrun,
+            'questions_per_page' => $questionsperpage, 'max_grade' => $maxgrade, 'make_visible' => $makevisible,
+            'dry_run' => $dryrun,
         ]);
         qbank::require_moodle_5();
         $context = access::require_module($params['quiz_cmid']);
         require_capability('mod/quiz:manage', $context);
+        if ($params['make_visible']) {
+            require_capability('moodle/course:activityvisibility', $context);
+        }
         [$course, $cm] = get_course_and_cm_from_cmid($params['quiz_cmid'], 'quiz');
         $quiz = $DB->get_record('quiz', ['id' => $cm->instance], '*', MUST_EXIST);
 
@@ -189,6 +203,10 @@ class add_questions_to_quiz extends external_api {
                 $DB->set_field('quiz', 'questionsperpage', $params['questions_per_page'], ['id' => $quiz->id]);
             }
             $settings = quiz_settings::create($quiz->id);
+            if ($params['make_visible']) {
+                // Also rebuilds the course cache, so the course page shows the quiz at once.
+                set_coursemodule_visible($params['quiz_cmid'], 1);
+            }
             $calculator = $settings->get_grade_calculator();
             $calculator->recompute_quiz_sumgrades();
             $quiz = $DB->get_record('quiz', ['id' => $quiz->id], '*', MUST_EXIST);
@@ -211,6 +229,7 @@ class add_questions_to_quiz extends external_api {
                 'total_marks' => (float) $quiz->sumgrades,
                 'max_grade' => (float) $quiz->grade,
                 'marks_match_max_grade' => abs((float) $quiz->grade - (float) $quiz->sumgrades) < 0.0001,
+                'visible' => (bool) $DB->get_field('course_modules', 'visible', ['id' => $params['quiz_cmid']]),
             ];
         };
         return dry_run::run($params['dry_run'], (int) $course->id, $write);
@@ -242,6 +261,7 @@ class add_questions_to_quiz extends external_api {
             'pages' => new external_value(PARAM_INT, 'Pages in the quiz now'),
             'total_marks' => new external_value(PARAM_FLOAT, 'Sum of the question marks'),
             'max_grade' => new external_value(PARAM_FLOAT, 'Maximum grade the total is scaled to'),
+            'visible' => new external_value(PARAM_BOOL, 'Visible to students'),
             'marks_match_max_grade' => new external_value(PARAM_BOOL, 'The questions are worth exactly the '
                 . 'maximum grade, so Moodle does not scale the marks'),
         ]);

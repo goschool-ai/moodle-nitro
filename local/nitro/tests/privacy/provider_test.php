@@ -47,9 +47,38 @@ final class provider_test extends \core_privacy\tests\provider_testcase {
         $data = writer::with_context($context)->get_data([get_string('connections', 'local_nitro')]);
         $this->assertSame('Claude', $data->connections[0]['client']);
 
+        $DB->insert_record('local_nitro_code', ['codehash' => 'c1', 'clientid' => 'x', 'userid' => $user->id,
+            'redirecturi' => 'http://localhost/callback', 'codechallenge' => 'y', 'scope' => 'nitro',
+            'expires' => time() + 600, 'timecreated' => time()]);
+        $DB->insert_record('local_nitro_confirm', ['userid' => $user->id, 'tool' => 'message_students',
+            'argshash' => 'a', 'tokenhash' => 't', 'used' => 0, 'expires' => time() + 600, 'timecreated' => time()]);
+
         provider::delete_data_for_user($approved);
+        $this->assertSame(0, $DB->count_records('local_nitro_code', ['userid' => $user->id]));
+        $this->assertSame(0, $DB->count_records('local_nitro_confirm', ['userid' => $user->id]));
         $this->assertSame(0, $DB->count_records('local_nitro_grant', ['userid' => $user->id]));
         $this->assertSame(1, $DB->count_records('local_nitro_grant', ['userid' => $other->id]));
         $this->assertSame(1, $DB->count_records('local_nitro_token'));
+    }
+
+    public function test_metadata_declares_what_leaves_moodle(): void {
+        $items = provider::get_metadata(new \core_privacy\local\metadata\collection('local_nitro'))->get_collection();
+        $byname = [];
+        foreach ($items as $item) {
+            $byname[$item->get_name()] = $item;
+        }
+        foreach (
+            ['local_nitro_grant', 'local_nitro_client', 'local_nitro_token', 'local_nitro_code',
+                'local_nitro_confirm'] as $table
+        ) {
+            $this->assertArrayHasKey($table, $byname, $table);
+        }
+        // Course and user data go to the connected AI client; the declaration has to say so.
+        $this->assertInstanceOf(\core_privacy\local\metadata\types\external_location::class, $byname['aiclient']);
+        $this->assertEqualsCanonicalizing(
+            ['coursecontent', 'participants', 'submissions', 'grades'],
+            array_keys($byname['aiclient']->get_privacy_fields())
+        );
+        $this->assertArrayHasKey('feedback', $byname);
     }
 }

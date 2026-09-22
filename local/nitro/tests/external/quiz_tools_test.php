@@ -86,7 +86,7 @@ final class quiz_tools_test extends tool_testcase {
     private function add(int $cmid, array $args): array {
         $args = array_merge(['quiz_cmid' => $cmid, 'question_ids' => [], 'random_category' => '', 'random_count' => 0,
             'random_from_quiz_bank' => false, 'mark' => 1.0, 'questions_per_page' => 0, 'max_grade' => 0.0,
-            'dry_run' => false], $args);
+            'make_visible' => false, 'dry_run' => false], $args);
         return add_questions_to_quiz::clean_returnvalue(
             add_questions_to_quiz::execute_returns(),
             add_questions_to_quiz::execute(...array_values($args))
@@ -206,6 +206,25 @@ final class quiz_tools_test extends tool_testcase {
         // The quiz is out of 3, not out of the default 10 with every mark scaled behind the teacher's back.
         $this->assertSame(3.0, $result['max_grade']);
         $this->assertTrue($result['marks_match_max_grade']);
+    }
+
+    public function test_quiz_opens_only_once_it_has_questions(): void {
+        global $DB;
+        $this->setup_course(0);
+        $this->setUser($this->teacher);
+        $imported = $this->import(self::gift(2));
+        $quiz = $this->quiz();
+        // Created hidden, so students never open an empty quiz.
+        $this->assertFalse($quiz['visible']);
+
+        $result = $this->add($quiz['cmid'], [
+            'question_ids' => array_column($imported['questions'], 'id'),
+            'make_visible' => true,
+        ]);
+
+        $this->assertTrue($result['visible']);
+        $this->assertEquals(1, $DB->get_field('course_modules', 'visible', ['id' => $quiz['cmid']]));
+        $this->assertTrue(get_fast_modinfo($this->course->id)->get_cm($quiz['cmid'])->visible == 1);
     }
 
     public function test_max_grade_the_teacher_asked_for(): void {

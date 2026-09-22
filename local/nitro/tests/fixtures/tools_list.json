@@ -424,7 +424,7 @@
                 },
                 "visible": {
                     "type": "boolean",
-                    "description": "Visible to students. Hidden is safer until questions are added.",
+                    "description": "Visible to students. Leave it hidden and pass make_visible to add_questions_to_quiz instead, so students never open an empty quiz.",
                     "default": false
                 },
                 "dry_run": {
@@ -494,6 +494,11 @@
                     "type": "number",
                     "description": "Maximum grade of the quiz; 0 (the default) makes it equal to what the questions are worth together, so students see the marks you set here",
                     "default": 0
+                },
+                "make_visible": {
+                    "type": "boolean",
+                    "description": "Make the quiz visible to students once the questions are in; use this rather than creating the quiz visible, so students never see it empty",
+                    "default": false
                 },
                 "dry_run": {
                     "type": "boolean",

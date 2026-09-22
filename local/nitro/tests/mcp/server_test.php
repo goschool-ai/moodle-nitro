@@ -189,6 +189,23 @@ final class server_test extends \advanced_testcase {
         $this->assertSame(-32602, $call['json']['error']['code']);
     }
 
+    public function test_read_only_site(): void {
+        // Unticking every tool that changes something leaves the reading tools working and nothing else.
+        set_config('tools', implode(',', \local_nitro\local\tools::READ), 'local_nitro');
+        $tools = $this->post(['jsonrpc' => '2.0', 'id' => 1, 'method' => 'tools/list'])['json']['result']['tools'];
+        $this->assertEqualsCanonicalizing(\local_nitro\local\tools::READ, array_column($tools, 'name'));
+
+        $read = $this->post(['jsonrpc' => '2.0', 'id' => 2, 'method' => 'tools/call',
+            'params' => ['name' => 'list_courses', 'arguments' => new \stdClass()]]);
+        $this->assertArrayHasKey('result', $read['json']);
+        $this->assertFalse($read['json']['result']['isError'] ?? false);
+        foreach (array_diff(\local_nitro\local\tools::ALL, \local_nitro\local\tools::READ) as $write) {
+            $call = $this->post(['jsonrpc' => '2.0', 'id' => 3, 'method' => 'tools/call',
+                'params' => ['name' => $write, 'arguments' => new \stdClass()]]);
+            $this->assertSame(-32602, $call['json']['error']['code'], $write);
+        }
+    }
+
     public function test_unknown_tool(): void {
         $call = $this->post(['jsonrpc' => '2.0', 'id' => 2, 'method' => 'tools/call',
             'params' => ['name' => 'drop_database']]);
