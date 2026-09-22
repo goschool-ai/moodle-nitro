@@ -17,6 +17,13 @@ Audiences:
 - **Microsoft 365 Copilot verified:** a Cowork connector package built with Agents Toolkit against a faculty Moodle, with DCR or a hand-registered client, tested in a tenant with Copilot licences.
 - **OAuth for production:** an admin view of all issued tokens with revocation, and tuning of lifetimes and the never-used client cap from the sandbox experience. (CIMD, DCR and the user's own connections page ship in `nitro-demo`.)
 - **Client packages (optional):** generic `SKILL.md` skills as a Claude plugin, only if the demo and sandbox show that tool descriptions alone are not enough. Teacher-specific rules stay in each teacher's own client.
+- **Institutional data-protection pack:** what a university data protection officer asks for before an institution installs this.
+  - A data-flow diagram and processing description: what leaves Moodle, to which client, on whose authority, what the plugin itself stores and for how long, and what the plugin never sends anywhere. It describes the flow as it is, including the AI provider as the processor of whatever the teacher's client reads — nitro removes the middleman, it does not remove Anthropic or Microsoft.
+  - A written statement of what can land in the AI tool's conversation history, how long the institution's own agreement with that provider keeps it, and what a teacher can do about it (revoke the grant, narrow the tools, avoid identity fields).
+  - A threat model for the MCP and OAuth surface: the assets, who could reach them (a malicious client, a compromised teacher account, a prompt-injected assistant acting through a teacher's grant, another tenant on the same Moodle), what stops each, and what is accepted.
+  - An independent code review of the plugin, by someone outside the team that wrote it, with the findings and their fixes published. (`nitro-demo` reviews the OAuth endpoints itself before going public; this is the wider, arm's-length one.)
+  - A recommended starting configuration for admins: which tools to enable for a first pilot course, and which to leave off until the institution has seen the log.
+  - A data-handling audit of the running system, walked twice: once on the pilot Moodle before a real student is in a course, and once at the end of the pilot. It checks the description against what actually happens — every field each tool returns (inventoried from the external function definitions, not from memory), what the plugin stored while it ran, what the Moodle log recorded, and what left the site and to which host, read from the server's own logs. A finding is anything that exceeds the processing description or the consent screen's promise; findings are fixed or the description is corrected, and the record is published with the pack. The walk is written so the institution's own staff can repeat it without us.
 - **Pilot readiness:** installation guide for faculty admins (including the root well-known rewrite for Copilot), open-source release, code review package, needs list collected at the demo.
 
 ## Capabilities
@@ -42,6 +49,8 @@ Course creation and enrolment (handled by the student information system), admin
 - Which faculties run Moodle, and on which versions? (asked from the pilot contact)
 - Do teachers have Microsoft 365 Copilot licences and Cowork? (asked from the pilot contact)
 - What does the institution's policy allow to be sent to an AI tool? (asked from the pilot contact)
+- Does the institution's existing agreement with its AI provider cover course content and student submissions, and does the pilot need a DPIA of its own or does it ride the one already done for that tool? (asked from the pilot contact's data protection officer)
+- Who reviews the code from outside the team, and does the institution want its own security people in that review? (asked from the pilot contact)
 - Which AI tool do teachers actually have: M365 Copilot, only Copilot Chat (not enough for Cowork), Claude, or none? Measured on the demo needs list. If most have only Copilot Chat or nothing, a GoSchool-hosted client (GoSchool is already a data processor for universities) becomes a separate product decision; nitro itself does not change, GoSchool would be one more OAuth client.
 - Is a detailed access log (who opened what) needed for grouping students by behaviour, or are submissions and completion enough?
 - For institutions moving from Canvas: November pilot or later? Who runs their Moodle, centrally or per faculty, and when does Canvas shut down?
@@ -50,3 +59,4 @@ Course creation and enrolment (handled by the student information system), admin
 
 - Extends `local_nitro` with new external functions, an admin token page, file handling and version-dependent question bank code.
 - Needs a faculty admin willing to install and review the plugin (and a web server change for Copilot discovery), and a Microsoft 365 tenant with Copilot licences.
+- Needs a data protection officer at the pilot institution to read the pack, a reviewer outside the team for the code review, and web server log access on the pilot Moodle for the audit walks (plus a window before real students are enrolled for the first one). Writing, not code: the per-tool control, data minimisation, consent statement and privacy declaration the pack documents all ship in `nitro-demo`.

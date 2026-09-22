@@ -24,11 +24,11 @@ Moodle local plugin (`local_nitro`, PHP), Moodle 5.x. Every nitro page is Moodle
 
 ## Product Purpose
 
-With nitro, a teacher can run their Moodle course from their own AI assistant (Claude, Microsoft Copilot): reading the course, sending messages to students, writing content and quizzes. It works with exactly the permissions the teacher has in the web UI, and the data goes to no third party. Success means a teacher connects by pasting one URL and signing in, sees what they are allowing, and can take it back at any time. Nothing reaches students without their approval.
+With nitro, a teacher can run their Moodle course from their own AI assistant (Claude, Microsoft Copilot): reading the course, sending messages to students, writing content and quizzes. It works with exactly the permissions the teacher has in the web UI, with no service in between: the data goes straight between Moodle and the teacher's own AI client, never through GoSchool. The provider of that client (Anthropic for Claude, Microsoft for Copilot) processes what the teacher sends it, which is the institution's choice to make. Success means a teacher connects by pasting one URL and signing in, sees what they are allowing, and can take it back at any time. Nothing reaches students without their approval.
 
 ## Positioning
 
-Moodle itself becomes the MCP server, with no intermediary service. Core Moodle web services cannot create content, and a third-party connector would carry student data through another company. nitro writes with Moodle's own APIs, under the teacher's own permissions. It is part of the GoSchool product family: GoSchool is the university's AI for students, and nitro is how teachers work in their own AI client (as GoSchool's surfaces plan says: teacher work goes through MCP, in the teacher's own client).
+Moodle itself becomes the MCP server, with no intermediary service. Core Moodle web services cannot create content, and a hosted connector would carry student data through a third company on top of the AI client the institution has already chosen. nitro writes with Moodle's own APIs, under the teacher's own permissions. It is part of the GoSchool product family: GoSchool is the university's AI for students, and nitro is how teachers work in their own AI client (as GoSchool's surfaces plan says: teacher work goes through MCP, in the teacher's own client).
 
 ## Operating Context
 

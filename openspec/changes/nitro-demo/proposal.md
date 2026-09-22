@@ -12,11 +12,12 @@ The first deadline is a live demo on 2026-10-06, on the sandbox Moodle (moodle.t
 - An MCP endpoint at `/local/nitro/mcp.php` (Streamable HTTP, JSON-RPC 2.0, `tools/list`, `tools/call`) that exposes an allowlist of tools, with guidance for the AI in tool descriptions and the server `instructions` field.
 - An OAuth 2.1 authorization server inside Moodle: authorization code + PKCE; Client ID Metadata Documents (so Claude needs no registration), dynamic client registration with client secrets (as Microsoft 365 Copilot requires), and admin-registered clients; a configurable redirect allowlist with Claude and Microsoft defaults; login through the normal Moodle login (and therefore the faculty SSO); and a page in the user's profile to see and revoke connected AI tools. OAuth is mandatory because Copilot Cowork connectors do not support API keys.
 - OAuth discovery served by the plugin, with an optional root `/.well-known/` rewrite and an admin self-check that shows whether it is needed.
-- An access gate capability `local/nitro:use`; every tool checks the same Moodle capabilities the web UI would.
+- An access gate capability `local/nitro:use`; every tool checks the same Moodle capabilities the web UI would; and a site setting that allows or denies each tool one by one, so an admin can run a read-only site or keep grading out of the AI's reach.
+- Said out loud where it matters: the consent screen states what the client can read and that it reaches the client's provider and may stay in that conversation's history, and Moodle's privacy API declares what the plugin stores and that course data leaves for the connected client. The data-flow diagram, the processing description for a data protection officer, the threat model and an independent code review are `nitro-pilot`.
 - Server-side confirmation for every write that reaches students (messages, announcements, grades): preview first, execute only with a confirmation token. `dry_run` for every write.
 - An audit event for every tool call in the Moodle event log.
 - Demo tool set:
-  - read: `list_courses`, `course_overview`, `list_participants` (with last course access), `list_submissions` (with grading state and submitted text, links and file names)
+  - read: `list_courses`, `course_overview`, `list_participants` (with last course access), `list_submissions` (with grading state, and submitted text, links and file names only when the call asks for them)
   - content: `save_page`, `save_assignment`: create or update by a stable key, markdown in, partial updates leave other settings untouched, no silent defaults, and a report of anything Moodle's HTML cleaning removed
   - quiz: `import_questions` (GIFT / Moodle XML), `create_quiz`, `add_questions_to_quiz` (fixed and random questions)
   - students: `message_students`, `post_announcement`, `grade_submission` (points or scale, with an optional feedback comment)
@@ -29,7 +30,7 @@ The first deadline is a live demo on 2026-10-06, on the sandbox Moodle (moodle.t
 ### New Capabilities
 - `mcp-endpoint`: the MCP transport, tool discovery and invocation, allowlist, schema generation from external function definitions, server instructions.
 - `oauth-server`: authorization code + PKCE flow; CIMD, dynamic and admin client registration; redirect allowlist; token issuance, expiry, validation and user revocation; discovery metadata.
-- `access-control`: the `local/nitro:use` gate, per-call context and capability checks, data minimisation of read results, site-level kill switch, consent-screen notice, discovery self-check.
+- `access-control`: the `local/nitro:use` gate, per-call context and capability checks, data minimisation of read results, per-tool admin control, site-level kill switch, a consent screen that states what the client can reach, the admin consent notice, discovery self-check, privacy API declaration.
 - `write-confirmation`: `dry_run` for all writes; preview-then-confirm for writes that reach students.
 - `audit-log`: a Moodle event for every tool call.
 - `course-read`: the teacher's courses, course overview, participants with last access, assignment submissions with their content and grading state, and forum discussions with their posts.
@@ -47,11 +48,12 @@ The first deadline is a live demo on 2026-10-06, on the sandbox Moodle (moodle.t
 
 - Course creation and enrolment (handled by the student information system), admin operations, an AI running inside Moodle, automatic grading without human approval.
 - In `nitro-pilot`: file and PDF upload, labels, URLs, sections, visibility, forums, course front page, inbox reading, calendar, extensions, question editing, quiz results, completion, Moodle 4.5 support, client-side skill packages, admin view of all issued tokens.
+- In `nitro-pilot`: the institutional data-protection pack (data-flow diagram, processing description, the statement about conversation history, threat model, independent code review, recommended admin configuration, the data-handling audit of the running system). What the plugin itself must do for them — per-tool control, data minimisation, the consent statement, the privacy declaration — is in this change.
 - Real student data on the sandbox: the sandbox has no data protection agreement with any university and holds fictitious students only.
 
 ## Impact
 
-- New code: `local/nitro` plugin (`version.php`, `db/access.php`, `db/services.php`, `db/install.xml`, `db/events`, `classes/external/*`, `classes/mcp/*`, `classes/oauth/*`, `mcp.php`, OAuth endpoints, settings page, profile page).
+- New code: `local/nitro` plugin (`version.php`, `db/access.php`, `db/services.php`, `db/install.xml`, `db/events`, `classes/external/*`, `classes/mcp/*`, `classes/oauth/*`, `classes/privacy/provider.php`, `mcp.php`, OAuth endpoints, settings page, profile page).
 - New code, sandbox only: `local/nitrosandbox` plugin and a template demo course backup.
 - New database tables for OAuth clients, authorization codes, tokens and pending confirmations.
 - Security: an OAuth server with open client registration is public on the internet from 2026-10-06, so the OAuth endpoints get a security review before 2026-10-02.

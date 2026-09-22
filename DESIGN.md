@@ -234,8 +234,9 @@ The inherited GoSchool palette, plus a lavender family that belongs to the assis
 - **Ink Mute** (`ink-mute`): chat timestamps and the sub-lines of the verb lists.
 - **Warm Paper Cream** (`warm-paper-cream`): the page ground; also text on purple markers and on the dark band.
 - **Studio White** (`studio-white`): the trust section's field and the copy field.
+- **Soft Study Surface** (`soft-study-surface`): the ground of the comparison section, so it separates from the cream sections around it without becoming a second white field.
 - **Chat Paper**, **Chat Border**, **Teacher Bubble**, **Chat Tag Grey**: the chat window's own surface, its 1px border, the teacher's bubble, and the "illusztráció" label.
-- **Hairline** (`hairline`): 1px dividers above the clients block and between verb-list rows.
+- **Hairline** (`hairline`): 1px dividers above the clients block, between verb-list rows, and between comparison rows.
 - **Dark Band Lead / Body** (`dark-band-lead`, `dark-band-body`): secondary text on anthracite.
 
 ### Named Rules
@@ -330,6 +331,9 @@ A definition list on the white trust field, two columns from 48rem. Each item op
 ### Verb lists
 Three columns, each a 1.75rem verb head over a list of rows separated by hairlines, each row a claim with a 0.9rem `ink-mute` sub-line.
 
+### Comparison rows
+Paired rows on the soft study surface, hairline-separated: each row is one claim about Moodle's own AI beside the matching nitro claim, two columns from 56rem and stacked below it. Every cell names its side in a 0.78rem uppercase label — `ink-mute` for Moodle AI, purple for nitro — and the Moodle side's text sits in `ink-soft` while nitro's stays ink. A 0.95rem `ink-mute` note closes the block with what nitro does not yet do. No rules, tilts or fills: the comparison is a reading, not a scoreboard.
+
 ### Dark admin band
 The admin section on anthracite with cream text. Heads open on 4px mint leading rules; list markers and links are sticker-mint; inline code sits on 10% cream; the milestones table uses tabular numerals, mint row heads and 16% cream dividers; focus rings are spark-yellow.
 
@@ -348,6 +352,7 @@ Cream, 2.5rem padding, the GoSchool logo at 7rem and one line of `ink-soft` 0.9r
 - **Do** colour leading rules by meaning (purple principle, mint outcome, magenta limit) and use mint only on the dark band.
 - **Do** give every sticker and pill the sticker lift and a counter-clockwise tilt.
 - **Do** keep the Hungarian and English pages structurally identical, sharing `site.css`.
+- **Do** state what nitro cannot do yet wherever the page compares it to something that ships today.
 
 ### Don't:
 - **Don't** use `--k` outside the hero, or rem units inside it above 60rem.

@@ -14,6 +14,7 @@
 - [x] 2.2 Define `local/nitro:use` in `db/access.php` without default role archetypes; verify it shows in role definitions
 - [x] 2.3 Add `db/install.xml` tables for clients, codes, tokens and confirmations; verify install and uninstall on the dev site
 - [x] 2.4 Add the `tool_called` event class; verify with a PHPUnit test that it appears in the log store without content fields
+- [ ] 2.5 `classes/privacy/provider.php` declaring the plugin's tables with their fields and purpose and the transmission of course and user data to the connected client, with export and deletion; verify with PHPUnit that the metadata is complete and that deleting a user removes their tokens, codes and pending confirmations
 
 ## 3. OAuth server
 
@@ -23,7 +24,7 @@
 - [x] 3.4 Dynamic client registration for public and confidential clients (secret issued and hashed), never-used cap and DCR switch; verify each registration scenario with PHPUnit
 - [x] 3.5 Admin page to register, list and delete clients by hand; verify with a Behat scenario
 - [x] 3.6 Scheduled task deleting dynamic clients without a token after 7 days; verify with PHPUnit
-- [x] 3.7 Authorization endpoint with `require_login()`, client and redirect URI validation, PKCE S256, `resource` check, `local/nitro:use` check and consent screen (client name, redirect host, loopback warning, admin notice); verify each authorization scenario with PHPUnit or Behat
+- [ ] 3.7 Authorization endpoint with `require_login()`, client and redirect URI validation, PKCE S256, `resource` check, `local/nitro:use` check and consent screen (client name, redirect host, loopback warning, what the client can read and that it reaches the provider and may stay in the conversation history, the separate approval for writes, admin notice); verify each authorization scenario with PHPUnit or Behat
 - [x] 3.8 Token endpoint (form-urlencoded) for code exchange with client authentication for confidential clients, and refresh rotation with reuse detection; verify each token scenario with PHPUnit
 - [x] 3.9 Bearer token validation helper that rejects expired, revoked, suspended-user and disabled-plugin cases; verify with PHPUnit
 - [x] 3.10 Connections page in the user profile listing grants with last use, and revoking them; verify the revocation scenario with Behat
@@ -36,6 +37,7 @@
 - [x] 4.3 `tools/call` dispatch as the token user, argument validation, `isError` mapping for exceptions and capability failures, event triggering; verify with PHPUnit
 - [x] 4.4 Course-level `local/nitro:use` check for every tool that targets a course; verify the "gate granted in one course only" scenario
 - [x] 4.5 Deploy to the sandbox and connect Claude by pasting only the MCP URL; verify CIMD, login, consent, `initialize` and `tools/list` succeed
+- [ ] 4.6 Per-tool enabling from the settings allowlist; verify with PHPUnit that a disabled tool is absent from `tools/list` and refused on call, that the others keep working, and that unticking every write tool leaves a read-only site
 
 ## 5. Read tools (skeleton milestone, 2026-09-25)
 
