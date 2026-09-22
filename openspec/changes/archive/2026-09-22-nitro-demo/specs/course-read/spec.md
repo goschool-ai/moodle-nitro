@@ -26,6 +26,10 @@ Gives the AI the read access a teacher needs to answer the daily question "where
 - **WHEN** a teacher calls `course_overview` for their course
 - **THEN** the result lists every section with its activities and their due dates, and the student count
 
+#### Scenario: Final deadline in the overview
+- **WHEN** an assignment has a cut-off date after its due date
+- **THEN** the overview lists the cut-off date next to the due date, so whether students can still submit is visible without reading the submissions
+
 #### Scenario: Hidden activities
 - **WHEN** the course contains hidden activities
 - **THEN** they are included and marked as hidden, as a teacher sees them in the web UI

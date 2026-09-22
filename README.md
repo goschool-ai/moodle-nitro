@@ -64,9 +64,10 @@ From 2026-10-07, teachers can try nitro themselves on the sandbox, moodle.tilosa
 
 ## Specs and roadmap
 
-The project is planned with [OpenSpec](https://github.com/Fission-AI/OpenSpec). Requirements, design and tasks are in `openspec/changes/`:
+The project is planned with [OpenSpec](https://github.com/Fission-AI/OpenSpec).
 
-- [`nitro-demo`](openspec/changes/nitro-demo/): what the demo needs, with the full proposal, specs, design and tasks.
+- [`openspec/specs/`](openspec/specs/): what nitro does now, one spec per capability (OAuth server, MCP endpoint, access control, the tools, sandbox onboarding).
+- [`nitro-demo`](openspec/changes/archive/2026-09-22-nitro-demo/): the finished first round, with its proposal, design and tasks. What is left before the demo is in [`demo/checklist.md`](demo/checklist.md).
 - [`nitro-pilot`](openspec/changes/nitro-pilot/): the rest of the scope for the pilot. For now this is a proposal only.
 
 | Date | Milestone | Done when |

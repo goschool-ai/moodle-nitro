@@ -23,7 +23,7 @@ When a new user completes signup on the sandbox, a personal copy of the demo cou
 - **THEN** each has their own course, and neither is enrolled in or can see the other's course
 
 ### Requirement: Isolated fictitious students
-Each personal course SHALL have its own 20 fictitious students, created for that course only, with submissions that include on-time, late and missing cases. Fictitious students MUST NOT be able to log in and MUST NOT have a deliverable email address.
+Each personal course SHALL have its own 20 fictitious students, created for that course only, with submissions that include on-time, late and missing cases, and on-time submissions without the required repository link. The assignment's description MUST NOT state dates of its own, because the seeded dates follow the signup day. Fictitious students MUST NOT be able to log in and MUST NOT have a deliverable email address.
 
 #### Scenario: Students do not overlap
 - **WHEN** a teacher lists the participants of their demo course
