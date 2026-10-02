@@ -12,7 +12,7 @@ What is left before the demo. The build itself is done and archived as the OpenS
   - [ ] Run 5
   - [ ] Fallback video recorded
 - [ ] **11.6 Attendee path.** On a clean browser, as a new user: sign up on the sandbox, connect Claude with the MCP URL only, ask the attendee prompt from [prompts.md](prompts.md). Done when it works without admin help. Also check whether a free Claude account can add a custom connector: BME has no Microsoft 365 Copilot licence, so Claude is the attendees' way in.
-- [ ] **11.7 Needs-list form.** The form is live at https://moodle.tilosazai.org/mod/feedback/view.php?id=790 (it asks "Which AI tool do you have now: M365 Copilot, only Copilot Chat, Claude, none?"). Put its link, or a QR code, on the last slide.
+- [ ] **11.7 Needs-list form.** The form is live at https://moodle.goschool.ai/mod/feedback/view.php?id=790 (it asks "Which AI tool do you have now: M365 Copilot, only Copilot Chat, Claude, none?"). Put its link, or a QR code, on the last slide.
 
 ## The day before (2026-10-05)
 

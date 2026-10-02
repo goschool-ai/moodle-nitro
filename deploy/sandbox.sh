@@ -1,5 +1,5 @@
 #!/bin/sh
-# Deploys local_nitro and local_nitrosandbox to the sandbox (moodle.tilosazai.org, host sbc).
+# Deploys local_nitro and local_nitrosandbox to the sandbox (moodle.goschool.ai, host sbc).
 #
 # The sandbox image has Moodle's code baked in, so the plugins are bind-mounted read-only into the web
 # and cron containers from /data/moodle/plugins, together with the root OAuth discovery rewrite.
@@ -49,6 +49,6 @@ fi
 for p in /local/nitro/oauth/metadata.php/.well-known/openid-configuration \
          /.well-known/oauth-protected-resource/local/nitro/mcp.php \
          /.well-known/oauth-authorization-server/local/nitro/oauth/metadata.php; do
-  printf '%s %s\n' "$(curl -s -o /dev/null -w '%{http_code}' "https://moodle.tilosazai.org$p")" "$p"
+  printf '%s %s\n' "$(curl -s -o /dev/null -w '%{http_code}' "https://moodle.goschool.ai$p")" "$p"
 done
-curl -s -o /dev/null -w '%{http_code} POST mcp.php without token (expect 401)\n' -X POST https://moodle.tilosazai.org/local/nitro/mcp.php
+curl -s -o /dev/null -w '%{http_code} POST mcp.php without token (expect 401)\n' -X POST https://moodle.goschool.ai/local/nitro/mcp.php

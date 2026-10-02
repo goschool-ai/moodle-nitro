@@ -38,7 +38,7 @@ Moodle itself becomes the MCP server, with no intermediary service. Core Moodle 
   - accepting submissions;
   - announcements;
   - pages and assignments republished from markdown.
-- Live demo: 2026-10-06, on the sandbox moodle.tilosazai.org (Moodle 5.2.2). After that, a pilot in November.
+- Live demo: 2026-10-06, on the sandbox moodle.goschool.ai (Moodle 5.2.3). After that, a pilot in November.
 - OAuth sign-in goes through the normal Moodle login and faculty SSO. Claude identifies itself with CIMD, and Copilot uses DCR or a manually registered client.
 - Requirements live in `openspec/specs/`; the finished demo round is archived in `openspec/changes/archive/2026-09-22-nitro-demo`, and the next round is `openspec/changes/nitro-pilot`.
 
@@ -71,7 +71,7 @@ Moodle itself becomes the MCP server, with no intermediary service. Core Moodle 
 ## Evidence on Hand
 
 - The real Canvas workflow of the Advanced programming course, in the teacher's own Claude Code sessions and scripts (a private course repository).
-- The sandbox: moodle.tilosazai.org, Moodle 5.2.2.
+- The sandbox: moodle.goschool.ai, Moodle 5.2.3.
 - Absences that must not be invented:
   - no pilot user and no user feedback;
   - Microsoft Copilot has not been tested end to end;

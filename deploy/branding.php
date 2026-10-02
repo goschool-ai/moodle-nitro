@@ -1,5 +1,5 @@
 <?php
-// GoSchool branding and the sandbox notices for moodle.tilosazai.org. Run inside the web container:
+// GoSchool branding and the sandbox notices for moodle.goschool.ai. Run inside the web container:
 //   php /var/www/html/public/../branding.php --assets=/tmp/branding
 define('CLI_SCRIPT', true);
 require('/var/www/html/config.php');

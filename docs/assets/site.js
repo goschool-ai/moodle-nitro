@@ -29,7 +29,7 @@
     var cta = document.querySelector('[data-state="cta"]');
     var sticker = document.querySelector('[data-state="sticker"]');
     if (cta) {
-      cta.href = "https://moodle.tilosazai.org/login/signup.php";
+      cta.href = "https://moodle.goschool.ai/login/signup.php";
       cta.textContent = hu ? "Kérj próbakurzust" : "Get a trial course";
     }
     if (sticker) sticker.textContent = hu ? "nyitva a próbakurzus" : "trial course open";

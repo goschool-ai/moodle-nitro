@@ -60,7 +60,7 @@ The demo tool set follows a real teaching week, taken from a course already run 
 
 ## Try it on the sandbox
 
-From 2026-10-07, teachers can try nitro themselves on the sandbox, moodle.tilosazai.org. Signing up creates a personal demo course with fictitious students and submissions. After that, add the connector URL above to Claude. The sandbox is for trying things out only: do not put real student data on it.
+From 2026-10-07, teachers can try nitro themselves on the sandbox, moodle.goschool.ai. Signing up creates a personal demo course with fictitious students and submissions. After that, add the connector URL above to Claude. The sandbox is for trying things out only: do not put real student data on it.
 
 ## Specs and roadmap
 
@@ -74,7 +74,7 @@ The project is planned with [OpenSpec](https://github.com/Fission-AI/OpenSpec).
 | --- | --- | --- |
 | 2026-09-25 | Skeleton | MCP endpoint with OAuth runs on the sandbox, Claude connects, read tools work |
 | 2026-10-02 | Demo-ready | content, quiz, messaging, announcement and grading tools work; the demo script runs cleanly three times |
-| 2026-10-06 | Live demo | live demo on moodle.tilosazai.org, needs list from teachers |
+| 2026-10-06 | Live demo | live demo on moodle.goschool.ai, needs list from teachers |
 | 2026-10-07 | Sandbox open | attendees sign up and connect on their own, without admin help |
 | 2026-11 | Pilot | installed on one institution's Moodle, 3–5 teachers, after code review |
 

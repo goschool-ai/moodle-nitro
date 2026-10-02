@@ -9,3 +9,5 @@ node_modules/
 .impeccable/mocks/**/*.png
 !.impeccable/mocks/decision/week.png
 copilot/build/
+.gstack/
+.env

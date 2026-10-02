@@ -486,7 +486,7 @@
       "kind": "input",
       "refersTo": "copy-field",
       "description": "The connector URL with its joined copy button.",
-      "html": "<div class=\"ds-copy\"><code>https://moodle.tilosazai.org/local/nitro/mcp.php</code><button type=\"button\">Másolás</button></div>",
+      "html": "<div class=\"ds-copy\"><code>https://moodle.goschool.ai/local/nitro/mcp.php</code><button type=\"button\">Másolás</button></div>",
       "css": ".ds-copy{display:flex;align-items:stretch;max-width:26rem;border:1.5px solid #383541;border-radius:8px;background:#fff;overflow:hidden;font-family:Sora,system-ui,sans-serif}.ds-copy code{flex:1;min-width:0;padding:.7rem .8rem;font-family:ui-monospace,\"SF Mono\",Menlo,Consolas,monospace;font-size:.82rem;line-height:1.45;color:#383541;overflow-wrap:anywhere}.ds-copy button{flex:none;border:0;border-left:1.5px solid #383541;background:#383541;color:#f0f0e6;font:inherit;font-weight:600;font-size:.9rem;padding:0 1rem;cursor:pointer;transition:background .2s}.ds-copy button:hover{background:#5926eb}.ds-copy button:focus-visible{outline:3px solid #ebd926;outline-offset:-3px}"
     },
     {
