@@ -11,3 +11,9 @@ node_modules/
 copilot/build/
 .gstack/
 .env
+
+# Local build output and working files
+output/
+tmp/
+.context/
+.impeccable/critique/
