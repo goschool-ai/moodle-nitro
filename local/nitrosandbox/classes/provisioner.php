@@ -57,6 +57,39 @@ class provisioner {
     /** @var int[] Students who submitted on time but forgot the repository link. */
     private const NOLINK = [6, 11];
 
+    /**
+     * Students who explain a decision they made, next to the repository link.
+     *
+     * Kept clear of MISSING, NOLINK and GRADED so the contrast survives: these five submit, they
+     * have a link, and they are not pre-graded. Index 3 is also LATE, which is deliberate — a late
+     * submission can still be the thought-through one.
+     *
+     * @var int[]
+     */
+    private const REASONED = [3, 7, 12, 15, 17];
+
+    /** @var string[] What those students wrote, in REASONED order. */
+    private const REASONED_TEXTS = [
+        '<p>A fal-ütközést előbb a fej koordinátáin néztem, de kanyarodáskor egy képkockával '
+            . 'késett. Írtam rá egy tesztet, és a lépés utáni állapotot ellenőrzöm helyette.</p>',
+        '<p>A visszafordulást az asszisztens egy irányváltás-tiltással oldotta meg, ez viszont két '
+            . 'gyors gombnyomásnál elbukott. Kivettem, és a legutóbb elfogadott irányhoz kötöttem.</p>',
+        '<p>Az étel néha a kígyó alatt jelent meg. Rögzített maggal reprodukáltam egy tesztben, '
+            . 'utána javítottam a generálást.</p>',
+        '<p>A reset nálam nem volt determinisztikus, mert a pontszámot nem nulláztam. A teszt ezt '
+            . 'két egymás utáni játékkal fogta meg.</p>',
+        '<p>Az asszisztens javaslatát a sorbaállított gombnyomásokra elvetettem: egyszerűbb volt, '
+            . 'de elnyelte a gyors irányváltást. A sajátomat hagytam benne, teszttel.</p>',
+    ];
+
+    /** @var string[] What everyone else wrote: the work is done, nothing about how. */
+    private const DONE_TEXTS = [
+        '',
+        '<p>Kész a 2. beadandó.</p>',
+        '<p>Működik, teszteltem.</p>',
+        '<p>Minden megvan a kiírás szerint.</p>',
+    ];
+
     /** @var string[] What those students wrote instead of a link. */
     private const NOLINK_TEXTS = [
         '<p>Kész a 2. beadandó, a repót még feltöltöm.</p>',
@@ -206,11 +239,14 @@ class provisioner {
             $DB->update_record('assign_submission', $submission);
             $username = "demo{$course->id}.s" . ($i + 1);
             $nolink = array_search($i, self::NOLINK, true);
+            $reasoned = array_search($i, self::REASONED, true);
             $DB->insert_record('assignsubmission_onlinetext', [
                 'assignment' => $cm->instance,
                 'submission' => $submission->id,
                 'onlinetext' => $nolink !== false ? self::NOLINK_TEXTS[$nolink]
-                    : '<p>Kész a 2. beadandó. Repó: <a href="https://git.example.org/' . $username
+                    : ($reasoned !== false ? self::REASONED_TEXTS[$reasoned]
+                        : self::DONE_TEXTS[$i % count(self::DONE_TEXTS)])
+                        . '<p>Repó: <a href="https://git.example.org/' . $username
                         . '/hazi2">https://git.example.org/' . $username . '/hazi2</a></p>',
                 'onlineformat' => FORMAT_HTML,
             ]);
