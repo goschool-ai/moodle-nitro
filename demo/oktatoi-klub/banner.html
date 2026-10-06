@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <title>BME Oktatói Klub · kurzuskép</title>
+  <!-- The course's face on the sandbox, drawn after the deck's cover slide.
+       Render: banner.html (1600×560, top of the course page) and banner.html?card (1200×675, course card). -->
+  <style>
+    @font-face {
+      font-family: "Sora";
+      src: url("../../docs/assets/fonts/Sora-VariableFont_wght.ttf") format("truetype");
+      font-weight: 100 800;
+    }
+
+    :root {
+      --purple: #5926eb;
+      --purple-dark: #3a2596;
+      --ink: #383541;
+      --ink-soft: #66626d;
+      --cream: #f0f0e6;
+      --lavender: #ece6fb;
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+
+    body {
+      position: relative;
+      width: 1600px;
+      height: 560px;
+      overflow: hidden;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Sora", system-ui, sans-serif;
+    }
+
+    .brand { position: absolute; top: 56px; left: 72px; display: flex; align-items: baseline; gap: 18px; }
+    .brand img { display: block; width: 150px; height: auto; }
+    .brand .divider { align-self: center; width: 1px; height: 29px; background: rgba(56, 53, 65, 0.35); }
+    .brand .nitro { font-size: 36px; font-weight: 800; letter-spacing: -0.035em; line-height: 1; }
+
+    .event { position: absolute; top: 64px; right: 72px; color: var(--ink-soft); font-size: 20px; font-weight: 600; }
+
+    .copy { position: absolute; top: 176px; left: 72px; width: 1000px; }
+    h1 { font-size: 92px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.98; }
+    .subtitle {
+      width: 860px;
+      margin-top: 28px;
+      color: var(--purple-dark);
+      font-size: 31px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.35;
+    }
+
+    .orbit {
+      position: absolute;
+      right: -96px;
+      bottom: -196px;
+      width: 510px;
+      height: 510px;
+      border: 54px solid var(--lavender);
+      border-radius: 50%;
+    }
+    .orbit::after {
+      position: absolute;
+      top: 63px;
+      left: 63px;
+      width: 276px;
+      height: 276px;
+      border-radius: 50%;
+      background: var(--purple);
+      content: "";
+    }
+
+    /* Course card: Moodle crops it to a wide strip around the centre, so everything sits in the middle. */
+    body.card { width: 1200px; height: 675px; }
+    .card .brand, .card .event, .card .subtitle { display: none; }
+    .card .copy { top: 0; left: 0; display: grid; width: 780px; height: 675px; padding-left: 96px; align-content: center; }
+    .card h1 { font-size: 84px; }
+    .card .orbit { right: -70px; bottom: 82px; }
+  </style>
+</head>
+<body>
+  <div class="brand"><img src="../../docs/assets/img/goschool-logo.svg" alt="GoSchool"><span class="divider"></span><span class="nitro">nitro</span></div>
+  <p class="event">BME Oktatói Klub · 2026. október 6.</p>
+  <div class="copy">
+    <h1>AI az oktató kezében.</h1>
+    <p class="subtitle">Mit adunk át az AI-nak, és mi marad a mi felelősségünk?</p>
+  </div>
+  <div class="orbit"></div>
+  <script>
+    if (location.search === "?card") document.body.classList.add("card");
+  </script>
+</body>
+</html>
