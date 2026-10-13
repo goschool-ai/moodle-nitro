@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nitro for Moodle admins</title>
+  <meta name="description" content="Install Nitro (local_nitro) on your Moodle: requirements, who may use it, where the data goes, and how it differs from Moodle's built-in AI.">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://goschool-ai.github.io/moodle-nitro/admins/">
+  <link rel="preload" href="../assets/fonts/Sora-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../assets/site.css?v=20261013">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="page-head">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="../" aria-label="GoSchool Nitro – home">
+        <img src="../assets/img/goschool-logo.svg" alt="GoSchool" width="144" height="35">
+        <span class="divider" aria-hidden="true"></span>
+        <span class="word">Nitro</span>
+      </a>
+      <ul>
+        <li><a href="../#try">Try it</a></li>
+        <li><a href="#install">Install</a></li>
+        <li><a href="#data">Data</a></li>
+        <li><a class="gh" href="https://github.com/goschool-ai/moodle-nitro"><svg class="octo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></li>
+      </ul>
+      <a class="lang" href="../hu/" hreflang="hu" lang="hu" aria-label="Magyar változat">HU</a>
+    </nav>
+    <div class="intro">
+      <h1>Nitro for Moodle admins</h1>
+      <p>Nitro is one Moodle plugin, <code>local_nitro</code>. It turns Moodle itself into the MCP server that a teacher’s AI assistant connects to, with Moodle’s own login and no service in between.</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" aria-label="Installation and operation">
+      <div class="wrap doc">
+        <div id="install">
+          <h3>Install</h3>
+          <ol>
+            <li>Copy the plugin to <code>local/nitro</code> (on Moodle 5.1 and later, <code>public/local/nitro</code>) and run the Moodle upgrade.</li>
+            <li>Add the web server rule for the root OAuth discovery URLs and make sure the <code>Authorization</code> header reaches PHP. The settings page has a Discovery check that shows what is missing.</li>
+            <li>Switch on <em>Enable nitro</em>. The plugin is installed switched off.</li>
+            <li>Grant <code>local/nitro:use</code> to the teachers who should have it.</li>
+            <li>The teacher adds <code>https://&lt;your-moodle&gt;/local/nitro/mcp.php</code> as a custom connector in Claude and logs in with their Moodle account.</li>
+          </ol>
+          <p>The <a href="https://github.com/goschool-ai/moodle-nitro/blob/main/local/nitro/README.md">installation guide</a> has the Apache and nginx rules, every setting and a troubleshooting table. It takes about 30 minutes, most of it on the web server rule.</p>
+          <p><code>local_nitrosandbox</code>, in the same repository, only builds the courses of our trial Moodle. Do not install it on an institutional Moodle.</p>
+        </div>
+
+        <div id="access">
+          <h3>Who may use it</h3>
+          <p>Nitro adds one capability, <code>local/nitro:use</code>. It is an entry gate, and no role has it by default. You grant it at site, category or course level, for example to a “Nitro user” role for a few pilot teachers, or to the Teacher role in one faculty’s category.</p>
+          <p>Every tool also checks the capability the same action needs in the Moodle web interface. A teacher can do through Claude exactly what they can do in the browser, and no more.</p>
+
+          <h3 class="spaced" id="requirements">Requirements</h3>
+          <ul>
+            <li>Moodle 5.0 or later.</li>
+            <li>HTTPS. AI clients refuse plain HTTP.</li>
+            <li>Access to the web server configuration, for the discovery rule.</li>
+            <li>Cron running every few minutes.</li>
+            <li>Outgoing mail, if you keep the feedback tool on.</li>
+          </ul>
+        </div>
+
+        <div id="data">
+          <h3>Where the data goes</h3>
+          <ul>
+            <li>Data travels directly between your Moodle and the AI client the teacher uses. It does not pass through GoSchool.</li>
+            <li>Whatever Moodle returns to Claude, Anthropic processes, as with anything else the teacher shares with Claude.</li>
+            <li>The one exception is the feedback tool. It mails the teacher’s own text, the site name and URL and the version numbers to the feedback address (by default the Nitro team at GoSchool), and only after the teacher approves the exact text. You can change the address or switch the tool off.</li>
+            <li>Messages, announcements and grades first return a preview. The server runs them only when the call is repeated with a confirmation token.</li>
+            <li>Every tool call is logged as the Moodle event <em>AI tool called</em>, with user, course and tool, without the content.</li>
+            <li>Teachers see and revoke their connections on their profile. <em>Enable nitro</em> is the kill switch: when it is off, every request is refused and existing tokens stop working.</li>
+          </ul>
+          <p>On our trial Moodle, GoSchool runs the Moodle, which is why it only holds fictitious students.</p>
+        </div>
+
+        <div id="moodle-ai">
+          <h3>Compared with Moodle’s built-in AI</h3>
+          <p>Moodle’s AI generates and summarises text and images inside the editor, with the provider you pick. Nitro works across a course from a conversation: it reads submissions and last logins, writes pages, assignments and quizzes, and sends messages and grades after the teacher approves them. The two work side by side.</p>
+          <p>Moodle’s core web services can read a course but cannot create a page, an assignment, a question or a quiz. Nitro adds those as its own functions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section admin" id="status" aria-labelledby="status-title">
+      <div class="wrap admin-grid">
+        <div>
+          <h2 id="status-title">Status</h2>
+          <p class="lead">Version 0.1.0, alpha. The trial Moodle at moodle.goschool.ai is open to teachers. The source code, the specifications and the decisions behind them are public.</p>
+        </div>
+        <div>
+          <p class="status">Planning a pilot at your institution? <a href="https://goschool.ai/contact/">Talk to us</a>.</p>
+          <p class="links">
+            <a class="gh" href="https://github.com/goschool-ai/moodle-nitro"><svg class="octo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Source on GitHub</a>
+            <a href="https://github.com/goschool-ai/moodle-nitro/blob/main/local/nitro/README.md">Installation guide</a>
+            <a href="https://github.com/goschool-ai/moodle-nitro/tree/main/openspec/specs">Specifications</a>
+            <a href="https://github.com/goschool-ai/moodle-nitro/blob/main/LICENSE">GPL v3</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <a href="https://goschool.ai/"><img src="../assets/img/goschool-logo.svg" alt="GoSchool" width="112" height="28"></a>
+      <p>Nitro is part of the <a href="https://goschool.ai/">GoSchool</a> product family · <a href="../">Nitro for teachers</a></p>
+    </div>
+  </footer>
+
+  <script src="../assets/site.js?v=20261013" defer></script>
+</body>
+</html>

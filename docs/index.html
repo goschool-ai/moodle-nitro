@@ -1,68 +1,64 @@
 <!doctype html>
-<html lang="hu">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>nitro – irányítsd a Moodle-t az AI asszisztensedből</title>
-  <meta name="description" content="A nitro Moodle-bővítmény: Claude-ból vagy Copilotból vezeted a kurzusodat, a saját Moodle-jogaiddal, és a hallgatóhoz semmi nem jut el a jóváhagyásod nélkül.">
+  <title>Nitro – your Moodle week, done from Claude</title>
+  <meta name="description" content="Nitro is a Moodle plugin. Ask Claude to follow up on late work, build a quiz or return feedback, and Nitro does it in your Moodle course, sending nothing to students until you approve it.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="alternate" hreflang="en" href="en/">
-  <link rel="alternate" hreflang="hu" href="./">
+  <link rel="canonical" href="https://goschool-ai.github.io/moodle-nitro/">
+  <link rel="alternate" hreflang="en" href="https://goschool-ai.github.io/moodle-nitro/">
+  <link rel="alternate" hreflang="hu" href="https://goschool-ai.github.io/moodle-nitro/hu/">
   <link rel="preload" href="assets/fonts/Sora-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="assets/site.css?v=f881742">
+  <link rel="stylesheet" href="assets/site.css?v=20261013">
   <script>
     (function () {
-      var d = document.documentElement;
-      d.classList.add("js");
-      try {
-        var pref = localStorage.getItem("nitro-lang");
-        var nav = (navigator.language || "").toLowerCase();
-        if (!pref && nav && nav.indexOf("hu") !== 0 && !/[?&]lang=hu/.test(location.search)) {
-          location.replace("en/");
-        }
-      } catch (e) {}
+      document.documentElement.classList.add("js");
+      // Older GoSchool links ask for the Hungarian page with ?lang=hu.
+      if (/[?&]lang=hu\b/.test(location.search)) location.replace("hu/" + location.hash);
     })();
   </script>
 </head>
 <body>
-  <a class="skip" href="#main">Ugrás a tartalomra</a>
+  <a class="skip" href="#main">Skip to content</a>
 
   <header class="hero">
-    <nav class="nav" aria-label="Fő navigáció">
-      <a class="brand" href="./" aria-label="GoSchool nitro – kezdőlap">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="./" aria-label="GoSchool Nitro – home">
         <img src="assets/img/goschool-logo.svg" alt="GoSchool" width="144" height="35">
         <span class="divider" aria-hidden="true"></span>
-        <span class="word">nitro</span>
+        <span class="word">Nitro</span>
       </a>
       <ul>
-        <li><a href="#hogyan">Hogyan működik</a></li>
-        <li><a href="#biztonsag">Biztonság</a></li>
-        <li><a href="#adminoknak">Adminoknak</a></li>
+        <li><a href="#try">Try it</a></li>
+        <li><a href="#week">What it does</a></li>
+        <li><a href="admins/">For admins</a></li>
         <li><a class="gh" href="https://github.com/goschool-ai/moodle-nitro"><svg class="octo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></li>
       </ul>
-      <a class="lang" href="en/" hreflang="en" lang="en" data-lang="en" aria-label="English version">EN</a>
+      <a class="lang" href="hu/" hreflang="hu" lang="hu" aria-label="Magyar változat">HU</a>
     </nav>
 
-    <p class="date" data-state="date">okt.&#8239;7.</p>
-    <span class="sticker sticker--date" data-state="sticker">nyílik a próbakurzus</span>
-    <h1 class="headline">Irányítsd a Moodle-t<br>az AI asszisztensedből.</h1>
-    <p class="hero-lead">Ellenőrzi a beadandókat, Moodle-tartalmat és kvízt készít, üzen a hallgatóknak – a te jogaiddal, a te jóváhagyásoddal.</p>
-    <a class="cta" href="#hogyan" data-state="cta">Próbáld ki október 7-től</a>
+    <div class="hero-copy">
+      <h1 class="headline">Your Moodle week, done in one conversation.</h1>
+      <p class="hero-lead">Ask Claude to follow up on late work, build a quiz or return feedback, and Nitro does it in your Moodle course, sending nothing to students until you approve it.</p>
+      <a class="cta" href="#try">Get a trial course</a>
+      <p class="hero-note">Works with Claude, on any plan including Free.</p>
+    </div>
 
-    <figure class="chat" aria-label="Illusztráció: egy tanítási hét egyetlen beszélgetésben">
-      <span class="tag">illusztráció</span>
-      <span class="sticker sticker--timer">11 személyes üzenet</span>
+    <figure class="chat" aria-label="Illustration: a teaching week in one conversation">
+      <span class="tag">illustration</span>
+      <span class="sticker sticker--timer">11 personal messages</span>
       <ol>
         <li class="exchange">
           <time datetime="14:41">14:41</time>
           <div>
-            <div class="turn"><span class="who">Tanár</span><span class="bubble">Hol állunk a 2. házival? Írjunk a lemaradóknak.</span></div>
+            <div class="turn"><span class="who">Teacher</span><span class="bubble">Where are we with homework 2? Let’s write to whoever is behind.</span></div>
             <div class="turn"><span class="who">Nitro</span>
-              <span class="reply"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.6 5.3 3.2 8 9 9v1c-5.8 1-8.4 3.7-9 9h-1c-.6-5.3-3.2-8-9-9v-1c5.8-1 8.4-3.7 9-9z"/></svg>Kész van 16, az első felével 5, és 7 még semmit nem adott le.</span>
+              <span class="reply"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.6 5.3 3.2 8 9 9v1c-5.8 1-8.4 3.7-9 9h-1c-.6-5.3-3.2-8-9-9v-1c5.8-1 8.4-3.7 9-9z"/></svg>16 are done, 5 have the first half, and 7 have submitted nothing.</span>
               <span class="groups">
-                <span class="group"><b>A</b><span>6 hallgató · még semmit nem adott le</span><span class="go">Mehet</span></span>
-                <span class="group"><b>B</b><span>5 hallgató · a második fele hiányzik</span><span class="go">Mehet</span></span>
-                <span class="skip-note">Dávid kimarad: délben már írtunk neki.</span>
+                <span class="group"><b>A</b><span>6 students · nothing submitted yet</span><span class="go">Send</span></span>
+                <span class="group"><b>B</b><span>5 students · second half missing</span><span class="go">Send</span></span>
+                <span class="skip-note">David is skipped: we wrote to him at noon.</span>
               </span>
             </div>
           </div>
@@ -70,19 +66,19 @@
         <li class="exchange">
           <time datetime="14:46">14:46</time>
           <div>
-            <div class="turn"><span class="who">Tanár</span><span class="approved"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>A és B jóváhagyva</span></div>
-            <div class="turn"><span class="who">Nitro</span><span class="reply"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.6 5.3 3.2 8 9 9v1c-5.8 1-8.4 3.7-9 9h-1c-.6-5.3-3.2-8-9-9v-1c5.8-1 8.4-3.7 9-9z"/></svg>11 üzenet elment, mindenkinek külön.</span></div>
+            <div class="turn"><span class="who">Teacher</span><span class="approved"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>A and B approved</span></div>
+            <div class="turn"><span class="who">Nitro</span><span class="reply"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.6 5.3 3.2 8 9 9v1c-5.8 1-8.4 3.7-9 9h-1c-.6-5.3-3.2-8-9-9v-1c5.8-1 8.4-3.7 9-9z"/></svg>11 messages sent, one to each student.</span></div>
           </div>
         </li>
         <li class="exchange">
           <time datetime="17:59">17:59</time>
           <div>
-            <div class="turn"><span class="who">Tanár</span><span class="bubble">Haladnak?</span></div>
-            <div class="turn"><span class="who">Nitro</span><span class="reply"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.6 5.3 3.2 8 9 9v1c-5.8 1-8.4 3.7-9 9h-1c-.6-5.3-3.2-8-9-9v-1c5.8-1 8.4-3.7 9-9z"/></svg>22-en készen vannak (15:30-kor még 16). Bence válaszolt: közös GitHub-fiókot használ.</span>
+            <div class="turn"><span class="who">Teacher</span><span class="bubble">Are they getting there?</span></div>
+            <div class="turn"><span class="who">Nitro</span><span class="reply"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5c.6 5.3 3.2 8 9 9v1c-5.8 1-8.4 3.7-9 9h-1c-.6-5.3-3.2-8-9-9v-1c5.8-1 8.4-3.7 9-9z"/></svg>22 are done (16 at 15:30). Ben replied: he uses a shared GitHub account.</span>
               <span class="preview">
                 <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v10H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span>
-                <span class="label"><strong>Válasz Bencének</strong> <span class="count">· a saját szálában</span></span>
-                <span class="go">Mehet</span>
+                <span class="label"><strong>Reply to Ben</strong> <span class="count">· in his own thread</span></span>
+                <span class="go">Send</span>
               </span>
             </div>
           </div>
@@ -92,162 +88,105 @@
   </header>
 
   <main id="main">
-    <section class="section" id="hogyan" aria-labelledby="hogyan-cim">
+    <section class="section" id="try" aria-labelledby="try-title">
+      <span id="hogyan"></span>
       <div class="wrap">
         <div class="section-head">
-          <h2 id="hogyan-cim">Így próbálod ki, pár perc alatt. <span class="sticker sticker--inline">okt. 7-től</span></h2>
-          <p class="lead">Október 7-től saját próbakurzust kapsz kitalált hallgatókkal, beadásokkal és késésekkel. Valódi hallgatói adat nincs benne, így nyugodtan kísérletezhetsz.</p>
+          <h2 id="try-title">Try it in three steps.</h2>
+          <p class="lead">You get your own course on our trial Moodle, with 20 fictitious students, their submissions and late work. There is no real student data in it, so experiment freely.</p>
         </div>
         <ol class="steps">
           <li>
-            <h3>Kérj próbakurzust</h3>
-            <p>Regisztrálj a próba-Moodle-ben. A kurzusod magától elkészül, és te leszel a tanára. Az első 100 jelentkezőnek tudjuk adni.</p>
-            <p class="cal"><a href="assets/nitro-okt7.ics" download>Tedd a naptáradba: október 7.</a></p>
+            <h3>Register in the trial Moodle</h3>
+            <a class="step-btn" href="https://moodle.goschool.ai/login/signup.php">Create a trial account</a>
+            <p>Moodle emails you a confirmation link. Click it, and check your spam folder if the email does not arrive. After you log in, your course is ready within a minute.</p>
+            <p class="small">The course material is in Hungarian. You can still talk to Claude in English.</p>
           </li>
           <li>
-            <h3>Add hozzá a Claude-hoz</h3>
-            <p>Másold be ezt a címet egyéni connectorként, és lépj be a próba-Moodle fiókoddal.</p>
+            <h3>Connect it to Claude</h3>
+            <p class="path">In Claude, open <b>Customize → Connectors</b>, click <b>+ Add</b>, then <b>Add custom connector</b>. Name it Nitro and paste this address:</p>
             <div class="copy">
               <code id="mcp-url">https://<wbr>moodle.goschool.ai/<wbr>local/<wbr>nitro/<wbr>mcp.php</code>
-              <button type="button" data-copy="mcp-url" data-done="Másolva">Másolás</button>
+              <button type="button" data-copy="mcp-url" data-done="Copied">Copy</button>
             </div>
+            <p class="path">Claude opens a Moodle login. Sign in with your trial Moodle account, not your university one, and approve the connection.</p>
+            <p class="small">Any Claude plan works; on Free you can add one custom connector. On a Team or Enterprise plan, an owner adds it first under Organization settings → Connectors, and then you click Connect.</p>
           </li>
           <li>
-            <h3>Kérdezz, mint egy kollégától</h3>
-            <p>„Ki van lemaradva a házival? Írj nekik személyesen.” Az üzeneteket előbb megmutatja, és csak a te „Mehet”-ed után küldi el.</p>
+            <h3>Ask like you would a colleague</h3>
+            <ul class="asks">
+              <li>Who hasn’t submitted the assignment yet? Write to each of them personally.</li>
+              <li>Make a short practice quiz from this week’s material.</li>
+              <li>Which on-time submissions are missing the repository link?</li>
+            </ul>
+            <p>Before anything reaches a student, Nitro shows you the exact messages or grades, and sends them only after you say go.</p>
           </li>
         </ol>
-        <div class="clients" aria-labelledby="honnan-cim">
-          <h3 id="honnan-cim">Honnan használhatod?</h3>
-          <ul>
-            <li><strong>Claude</strong> <span class="pill pill--now">okt. 7-től</span><span>Egyéni connectorként, olyan csomaggal, amelyben ez elérhető.</span></li>
-            <li><strong>Microsoft 365 Copilot</strong> <span class="pill pill--pilot">pilot</span><span>Ugyanazt a szabványt használja. <a href="mailto:arpad.tamasi@goschool.ai?subject=nitro%20%2B%20Copilot">Jelentkezz, ha ki akarod próbálni.</a></span></li>
-            <li><strong><img class="client-logo" src="assets/img/goschool-logo.svg" alt="GoSchool" width="112" height="28"></strong> <span class="pill pill--plan">tervezett</span><span>A GoSchool felületéről is, ugyanazzal a Moodle-jogosultsággal.</span></li>
-          </ul>
-        </div>
+        <p class="help">Stuck? <a href="https://goschool.ai/contact/">Write to us</a>.</p>
       </div>
     </section>
 
-    <section class="section compare" id="moodle-ai" aria-labelledby="moodle-ai-cim">
+    <section class="section compare" id="week" aria-labelledby="week-title">
       <div class="wrap">
         <div class="section-head">
-          <h2 id="moodle-ai-cim">Miben más, mint a Moodle beépített AI-ja?</h2>
-          <p class="lead">A Moodle AI-ja segít tartalmat írni a Moodle-ben. A nitro az egész Moodle-munkát elvégzi veled, beszélgetve. A kettő megfér egymás mellett.</p>
-        </div>
-        <ul class="compare-rows">
-          <li>
-            <span class="from"><b>Moodle AI</b>Szöveget és képet generál a szerkesztőben.</span>
-            <span class="to"><b>nitro</b>Lekérdezi a kurzust: beadások, késések, belépések.</span>
-          </li>
-          <li>
-            <span class="from"><b>Moodle AI</b>Összefoglal vagy elmagyaráz egy kurzusoldalt.</span>
-            <span class="to"><b>nitro</b>Oldalt, feladatot és kvízt ír a kurzusba.</span>
-          </li>
-          <li>
-            <span class="from"><b>Moodle AI</b>Egy művelet ott, ahol éppen kattintasz.</span>
-            <span class="to"><b>nitro</b>Több lépés egy kérésből: megnézi, megírja, kiüldi.</span>
-          </li>
-          <li>
-            <span class="from"><b>Moodle AI</b>Hallgatónak és oktatónak egyaránt szól.</span>
-            <span class="to"><b>nitro</b>Az oktató heti kurzusműveleteire való.</span>
-          </li>
-        </ul>
-        <p class="compare-note">A nitro még tervezés alatt áll; a Moodle beépített AI-ja ma is elérhető, az admin által választott szolgáltatóval. Ha a szerkesztőben kell segítség, az a Moodle AI-jának dolga marad.</p>
-      </div>
-    </section>
-
-    <section class="section trust" id="biztonsag" aria-labelledby="biztonsag-cim">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="biztonsag-cim">Az irányítás végig <span class="ul">nálad</span> marad.</h2>
-          <p class="lead">A nitro nem új szereplő a kurzusodban: a te kezedben lévő eszköz. Gyorsabban dolgozol, a saját nevedben, a saját szabályaid szerint.</p>
-        </div>
-        <dl class="rules">
-          <div>
-            <dt>A te jogaiddal</dt>
-            <dd>Pontosan azt teheti, amit te a Moodle felületén: se többet, se kevesebbet. Ahol te nem javíthatsz, ott ő sem.</dd>
-          </div>
-          <div>
-            <dt>Semmi a jóváhagyásod nélkül</dt>
-            <dd>Üzenet, közlemény, jegy: mindegyiket előbb megmutatja. A Moodle csak akkor küldi el, ha azt mondod, mehet.</dd>
-          </div>
-          <div class="outcome">
-            <dt>Bármikor visszavonhatod</dt>
-            <dd>A profilodban látod, melyik AI-eszköz fér hozzá, és egy kattintással leválasztod. Nincs kimásolható, örök kulcs.</dd>
-          </div>
-          <div class="limit">
-            <dt>Nincs köztes szolgáltatás</dt>
-            <dd>Az adat közvetlenül a Moodle és a választott AI-eszközöd között megy: hozzánk semmi nem jut el. Amit az eszköznek küldesz, azt a szolgáltatója (Claude esetén az Anthropic) feldolgozza. Minden lépés bekerül a Moodle saját naplójába.</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <section class="section" id="mit-tud" aria-labelledby="mit-tud-cim">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="mit-tud-cim">Amit egy tanítási héten megcsinál.</h2>
-          <p class="lead">A Moodle saját eszközeivel dolgozik, ezért azt is tudja, amit a Moodle webszolgáltatásai nem: oldalt, feladatot és kvízt írni.</p>
+          <h2 id="week-title">What it does in a teaching week.</h2>
+          <p class="lead">Each of these is one request in Claude. Nitro does the work in your course with Moodle’s own functions.</p>
         </div>
         <div class="verbs">
           <div>
-            <h3>Megnézi</h3>
-            <ul>
-              <li>Ki van lemaradva<span>beadások, késések, hosszabbítások</span></li>
-              <li>Ki lépett be egyáltalán<span>utolsó belépés hallgatónként</span></li>
-              <li>Hol tart a kurzus<span>szakaszok, határidők, rejtett elemek</span></li>
-            </ul>
+            <h3>Follows up on late work</h3>
+            <p class="ask">Who is behind on homework 2? Write to them.</p>
+            <p>It checks submissions and last logins, groups the students who are behind and drafts a personal message for each one.</p>
           </div>
           <div>
-            <h3>Megírja</h3>
-            <ul>
-              <li>Oldalt és feladatot<span>a saját markdown anyagodból, frissíthetően</span></li>
-              <li>Kérdéseket a kérdésbankba<span>GIFT vagy Moodle XML formában</span></li>
-              <li>Gyakorlókvízt<span>véletlen kérdésekkel, határidővel</span></li>
-            </ul>
+            <h3>Builds a quiz</h3>
+            <p class="ask">Make a ten-question practice quiz from the recursion page.</p>
+            <p>It reads your course page, adds the questions to the question bank and creates the quiz hidden, so you can check it before students see it.</p>
           </div>
           <div>
-            <h3>Kiküldi <span class="sticker">jóváhagyással</span></h3>
-            <ul>
-              <li>Személyes üzenetet<span>minden hallgatónak külön, a te hangodon</span></li>
-              <li>Közleményt<span>a kurzus hírfórumába</span></li>
-              <li>Jegyet és visszajelzést<span>amit te döntöttél el</span></li>
-            </ul>
+            <h3>Returns feedback <span class="sticker">with approval</span></h3>
+            <p class="ask">Go through the submissions and draft feedback against my criteria.</p>
+            <p>It reads each submission and drafts feedback and a grade per student. You see the whole list first, and nothing is saved until you approve.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section admin" id="adminoknak" aria-labelledby="admin-cim">
+    <section class="section trust" id="control" aria-labelledby="control-title">
+      <span id="biztonsag"></span>
       <div class="wrap">
         <div class="section-head">
-          <h2 id="admin-cim">Adminoknak</h2>
-          <p class="lead">Egyetlen Moodle-bővítmény, köztes szolgáltatás nélkül. A Moodle maga lesz az MCP-szerver, a saját bejelentkezésével.</p>
+          <h2 id="control-title">You stay in <span class="ul">control</span>.</h2>
         </div>
-        <div class="admin-grid">
+        <dl class="rules">
           <div>
-            <h3>Telepítés (tervezett)</h3>
-            <ol>
-              <li>Másold a bővítményt a <code>local/nitro</code> mappába, és futtasd a Moodle frissítését.</li>
-              <li>Add meg a <code>local/nitro:use</code> jogot azoknak az oktatóknak vagy kurzusoknak, akiknek szeretnéd.</li>
-              <li>Ha kell, szűkítsd az engedélyezett AI-eszközöket a beállításoknál. Alapból Claude és Microsoft 365.</li>
-              <li>Az oktató beilleszti a <code>…/local/nitro/mcp.php</code> címet, és a Moodle-fiókjával belép.</li>
-            </ol>
-            <h3 class="spaced">Követelmények</h3>
-            <ul>
-              <li>Moodle 5.0 vagy újabb (a 4.5 a pilotban jön).</li>
-              <li>HTTPS. A Copilothoz valószínűleg egy egysoros webszerver-szabály is kell; a beállítási oldal ellenőrzi és megmutatja.</li>
-              <li>Magyar és angol nyelv minden felületen.</li>
-            </ul>
+            <dt>With your permissions</dt>
+            <dd>It can do exactly what you can do in Moodle, no more and no less.</dd>
           </div>
-          <div>
-            <p class="status">Állapot: tervezés. A követelmények és a döntések nyilvánosak; a kód a demóig készül.</p>
-            <p class="links">
-              <a class="gh" href="https://github.com/goschool-ai/moodle-nitro"><svg class="octo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Forráskód a GitHubon</a>
-              <a href="https://github.com/goschool-ai/moodle-nitro/tree/main/openspec/specs">Specifikációk</a>
-              <a href="https://github.com/goschool-ai/moodle-nitro/blob/main/LICENSE">GPL v3</a>
-            </p>
+          <div class="outcome">
+            <dt>Nothing goes out without your approval</dt>
+            <dd>Messages, announcements and grades are shown to you first. Moodle sends them only after you approve.</dd>
           </div>
+          <div class="limit">
+            <dt>Disconnect any time</dt>
+            <dd>Your Moodle profile lists the connected AI tools. Revoking one cuts off its access at once.</dd>
+          </div>
+        </dl>
+        <p class="trust-more">Every Nitro action is recorded in Moodle’s own log. How the data travels, and what Anthropic sees of it, is on the <a href="admins/#data">page for admins</a>.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Next steps">
+      <div class="wrap band-grid">
+        <div>
+          <h2>On your own university’s Moodle?</h2>
+          <p>Your Moodle admin installs the Nitro plugin. You then connect Claude to your real courses the same way as in the trial.</p>
+          <a class="go" href="admins/">For admins →</a>
+        </div>
+        <div>
+          <h2>Talk to us</h2>
+          <p>Questions, or a pilot at your institution? Write to us.</p>
+          <a class="go" href="https://goschool.ai/contact/">Contact GoSchool →</a>
         </div>
       </div>
     </section>
@@ -255,11 +194,11 @@
 
   <footer class="foot">
     <div class="wrap">
-      <img src="assets/img/goschool-logo.svg" alt="GoSchool" width="112" height="28">
-      <p>nitro · a GoSchool termékcsaládból · Árpád Tamási · <a href="en/" hreflang="en" data-lang="en">English</a></p>
+      <a href="https://goschool.ai/"><img src="assets/img/goschool-logo.svg" alt="GoSchool" width="112" height="28"></a>
+      <p>Nitro is part of the <a href="https://goschool.ai/">GoSchool</a> product family · <a href="https://github.com/goschool-ai/moodle-nitro">GitHub</a> · <a href="hu/" hreflang="hu" lang="hu">Magyarul</a></p>
     </div>
   </footer>
 
-  <script src="assets/site.js?v=f881742" defer></script>
+  <script src="assets/site.js?v=20261013" defer></script>
 </body>
 </html>
