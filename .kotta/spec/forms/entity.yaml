@@ -1,0 +1,24 @@
+id: entity
+version: 1
+directory: entities
+canonical_source: ER / DDD
+description: A domain concept with stable identity, attributes, and invariants.
+identity:
+  prefix: E
+  format: "<prefix>-<26-character lowercase Crockford ULID>"
+  filename: "<slug>-<last 8 id characters>.md"
+required_fields:
+  frontmatter: [id, form, title]
+  body_headings: [Meaning, Identity, Attributes, Invariants]
+required_edges:
+  - name: use
+    direction: outgoing
+    fields: [used_by]
+    source_forms: [entity]
+    target_forms: [user-story, use-case, business-rule, interface]
+    minimum: 1
+    question: Why does this entity exist?
+recognition_signals:
+  - Something keeps its identity while its attributes change.
+  - The team discusses records, aggregates, ownership, or invariants.
+  - Several behaviors read or change the same domain concept.

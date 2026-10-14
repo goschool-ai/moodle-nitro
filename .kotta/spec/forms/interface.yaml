@@ -1,0 +1,39 @@
+id: interface
+version: 1
+directory: interfaces
+canonical_source: Design by Task
+description: A boundary whose obligations are stated as preconditions, postconditions, and invariants.
+identity:
+  prefix: IF
+  format: "<prefix>-<26-character lowercase Crockford ULID>"
+  filename: "<slug>-<last 8 id characters>.md"
+required_fields:
+  frontmatter: [id, form, title]
+  body_headings: [Purpose, Preconditions, Postconditions, Invariants, Failures]
+normative_sections: [Postconditions, Invariants]  # one of these states the obligation with SHALL or MUST
+# A requirement that holds for the whole product carries `overall: true`.
+field_values:
+  overall: [true, false]
+required_edges:
+  - name: reference
+    direction: incoming
+    fields: [interfaces]
+    source_forms: [use-case, entity]
+    target_forms: [interface]
+    minimum: 1
+    question: Who uses this interface?
+  # Every requirement has a place (BR-01m4ee23pwf0sg22vta05bc2hz): a use case refines it, or it is
+  # overall (BR-01m4ee23baq19gd87ez4m9zxdw). A warning on an accepted node, an error on a change's.
+  - name: placement
+    direction: incoming
+    fields: [refines, interfaces]
+    source_forms: [use-case]
+    target_forms: [interface]
+    minimum: 1
+    waived_by: overall
+    on_accepted: warning
+    question: Which use case relies on this interface, or does it hold for the whole product (overall)?
+recognition_signals:
+  - Two components or organizations exchange data or calls.
+  - Inputs, outputs, errors, or caller and provider obligations need agreement.
+  - An API, event, file, command, or service boundary is being specified.

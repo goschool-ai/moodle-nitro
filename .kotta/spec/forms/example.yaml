@@ -1,0 +1,24 @@
+id: example
+version: 1
+directory: examples
+canonical_source: Specification by Example / Gherkin
+description: A concrete observable case that proves or falsifies one or more specification nodes.
+identity:
+  prefix: EX
+  format: "<prefix>-<26-character lowercase Crockford ULID>"
+  filename: "<slug>-<last 8 id characters>.md"
+required_fields:
+  frontmatter: [id, form, title]
+  body_headings: [Given, When, Then]
+required_edges:
+  - name: subjects
+    direction: outgoing
+    fields: [subjects]
+    source_forms: [example]
+    target_forms: [user-story, use-case, business-rule, quality-attribute]
+    minimum: 1
+    question: What does this example prove?
+recognition_signals:
+  - A concrete input and observable outcome are stated.
+  - A counterexample, boundary case, or acceptance check settles ambiguity.
+  - The conversation can be restated as Given, When, Then without inventing facts.

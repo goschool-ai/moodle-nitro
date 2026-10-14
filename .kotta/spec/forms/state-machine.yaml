@@ -1,0 +1,24 @@
+id: state-machine
+version: 1
+directory: state-machines
+canonical_source: UML / Harel
+description: The allowed lifecycle states and transitions of one governed entity.
+identity:
+  prefix: SM
+  format: "<prefix>-<26-character lowercase Crockford ULID>"
+  filename: "<slug>-<last 8 id characters>.md"
+required_fields:
+  frontmatter: [id, form, title]
+  body_headings: [Governed lifecycle, States, Transitions]
+required_edges:
+  - name: governed-entity
+    direction: outgoing
+    fields: [entity]
+    source_forms: [state-machine]
+    target_forms: [entity]
+    minimum: 1
+    question: Whose lifecycle is this?
+recognition_signals:
+  - Valid actions depend on the current status.
+  - Transitions, terminal states, retries, or cancellation are discussed.
+  - The same entity changes behavior over time.

@@ -1,0 +1,12 @@
+version: 6
+project:
+  name: moodle-nitro
+git:
+  base_branch: main
+  protected_branches:
+    - main
+    - master
+    - develop
+validation:
+  strict: true
+narrative: generated

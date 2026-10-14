@@ -1,0 +1,703 @@
+---
+change: baseline
+generated_at: 2026-10-13T18:03:00.448Z
+delta_hash: sha256:95663a54dd0e27b202116aab77cba143f4882b36513f8f9433f63f78629cf8f1
+ready_for_approval: true
+---
+
+# Planning: baseline
+
+Written by `kotta plan`. Every conflict below is a candidate awaiting a human's judgement, not a verdict; nothing here was decided by the machine except what section (f) lists.
+
+## Delta
+
+Added:
+- AI assistant (A-4gj4dmhq) — actor, .kotta/changes/baseline/model/actors/ai-assistant-4gj4dmhq.md
+- Moodle site administrator (A-xnjp14j4) — actor, .kotta/changes/baseline/model/actors/moodle-site-administrator-xnjp14j4.md
+- Teacher (A-kan23awt) — actor, .kotta/changes/baseline/model/actors/teacher-kan23awt.md
+- A date can be removed with none (BR-d8ccw7r3) — business-rule, .kotta/changes/baseline/model/business-rules/a-date-can-be-removed-with-none-d8ccw7r3.md
+- A grading call saves every grade or none (BR-kzvatfxf) — business-rule, .kotta/changes/baseline/model/business-rules/a-grading-call-saves-every-grade-or-none-kzvatfxf.md
+- A key used by another activity type is refused (BR-dxpp93dp) — business-rule, .kotta/changes/baseline/model/business-rules/a-key-used-by-another-activity-type-is-refused-dxpp93dp.md
+- A message confirmation covers exactly the previewed recipients (BR-9tkqk37h) — business-rule, .kotta/changes/baseline/model/business-rules/a-message-confirmation-covers-exactly-the-previewed-recipien-9tkqk37h.md
+- A new page needs its title and content (BR-f026qxkr) — business-rule, .kotta/changes/baseline/model/business-rules/a-new-page-needs-its-title-and-content-f026qxkr.md
+- A new quiz starts hidden (BR-7gc9a180) — business-rule, .kotta/changes/baseline/model/business-rules/a-new-quiz-starts-hidden-7gc9a180.md
+- A wrong forum ID names the readable forums (BR-sajtd3h1) — business-rule, .kotta/changes/baseline/model/business-rules/a-wrong-forum-id-names-the-readable-forums-sajtd3h1.md
+- Access gate capability (BR-yer3cvj5) — business-rule, .kotta/changes/baseline/model/business-rules/access-gate-capability-yer3cvj5.md
+- Add questions to a quiz (BR-9wjaecwh) — business-rule, .kotta/changes/baseline/model/business-rules/add-questions-to-a-quiz-9wjaecwh.md
+- Admin client registration (BR-798d1zpa) — business-rule, .kotta/changes/baseline/model/business-rules/admin-client-registration-798d1zpa.md
+- Admin deletes a client (BR-t42wt5a1) — business-rule, .kotta/changes/baseline/model/business-rules/admin-deletes-a-client-t42wt5a1.md
+- Allowlisted tool discovery (BR-j0ebv4mt) — business-rule, .kotta/changes/baseline/model/business-rules/allowlisted-tool-discovery-j0ebv4mt.md
+- Authorization code flow with PKCE (BR-v8jzzh1r) — business-rule, .kotta/changes/baseline/model/business-rules/authorization-code-flow-with-pkce-v8jzzh1r.md
+- Authorization errors reach the client only through a verified redirect URI (BR-8tcg6hg0) — business-rule, .kotta/changes/baseline/model/business-rules/authorization-errors-reach-the-client-only-through-a-verifie-8tcg6hg0.md
+- Bearer token authentication (BR-g2p0g170) — business-rule, .kotta/changes/baseline/model/business-rules/bearer-token-authentication-g2p0g170.md
+- Client ID Metadata Documents (BR-s7g324tf) — business-rule, .kotta/changes/baseline/model/business-rules/client-id-metadata-documents-s7g324tf.md
+- Confirmation for writes that reach students (BR-53x8cxb1) — business-rule, .kotta/changes/baseline/model/business-rules/confirmation-for-writes-that-reach-students-53x8cxb1.md
+- Confirmation token properties (BR-w7fed3kb) — business-rule, .kotta/changes/baseline/model/business-rules/confirmation-token-properties-w7fed3kb.md
+- Consent screen notice (BR-4thmn9pm) — business-rule, .kotta/changes/baseline/model/business-rules/consent-screen-notice-4thmn9pm.md
+- Consent screen states what the client can reach (BR-vnnvhe97) — business-rule, .kotta/changes/baseline/model/business-rules/consent-screen-states-what-the-client-can-reach-vnnvhe97.md
+- Course overview (BR-0m7znbmm) — business-rule, .kotta/changes/baseline/model/business-rules/course-overview-0m7znbmm.md
+- Create or update by key (BR-pt0mkzk9) — business-rule, .kotta/changes/baseline/model/business-rules/create-or-update-by-key-pt0mkzk9.md
+- Create quiz (BR-pj3jzeyy) — business-rule, .kotta/changes/baseline/model/business-rules/create-quiz-pj3jzeyy.md
+- Credential and access changes end AI connections (BR-z7xmnxc6) — business-rule, .kotta/changes/baseline/model/business-rules/credential-and-access-changes-end-ai-connections-z7xmnxc6.md
+- Data minimisation (BR-0awxzkmt) — business-rule, .kotta/changes/baseline/model/business-rules/data-minimisation-0awxzkmt.md
+- Dates are unambiguous (BR-824rg0cn) — business-rule, .kotta/changes/baseline/model/business-rules/dates-are-unambiguous-824rg0cn.md
+- Declared data handling (BR-pjagnrrx) — business-rule, .kotta/changes/baseline/model/business-rules/declared-data-handling-pjagnrrx.md
+- Discovery appended to the MCP endpoint URL (BR-2rv7x4r5) — business-rule, .kotta/changes/baseline/model/business-rules/discovery-appended-to-the-mcp-endpoint-url-2rv7x4r5.md
+- Discovery metadata (BR-7z21xadp) — business-rule, .kotta/changes/baseline/model/business-rules/discovery-metadata-7z21xadp.md
+- Discovery self-check (BR-4zm164c0) — business-rule, .kotta/changes/baseline/model/business-rules/discovery-self-check-4zm164c0.md
+- Dry run for every write tool (BR-eskr8h9g) — business-rule, .kotta/changes/baseline/model/business-rules/dry-run-for-every-write-tool-eskr8h9g.md
+- Dynamic client registration (BR-ggz1prdn) — business-rule, .kotta/changes/baseline/model/business-rules/dynamic-client-registration-ggz1prdn.md
+- Event for every tool call (BR-2s4jrnnz) — business-rule, .kotta/changes/baseline/model/business-rules/event-for-every-tool-call-2s4jrnnz.md
+- Feedback that cannot be mailed is retried (BR-pv0pes77) — business-rule, .kotta/changes/baseline/model/business-rules/feedback-that-cannot-be-mailed-is-retried-pv0pes77.md
+- Five fictitious students explain a decision (BR-mjyxb435) — business-rule, .kotta/changes/baseline/model/business-rules/five-fictitious-students-explain-a-decision-mjyxb435.md
+- GoSchool-branded sandbox (BR-5jbkcvjw) — business-rule, .kotta/changes/baseline/model/business-rules/goschool-branded-sandbox-5jbkcvjw.md
+- Grade submissions (BR-4exr0zrx) — business-rule, .kotta/changes/baseline/model/business-rules/grade-submissions-4exr0zrx.md
+- Grading follows the assignment's settings (BR-vzv0rtg9) — business-rule, .kotta/changes/baseline/model/business-rules/grading-follows-the-assignment-s-settings-vzv0rtg9.md
+- Guidance for the AI in the server (BR-n90fwynp) — business-rule, .kotta/changes/baseline/model/business-rules/guidance-for-the-ai-in-the-server-n90fwynp.md
+- Hungarian and English (BR-s18qsr0y) — business-rule, .kotta/changes/baseline/model/business-rules/hungarian-and-english-s18qsr0y.md
+- Import questions (BR-v8z4wpb4) — business-rule, .kotta/changes/baseline/model/business-rules/import-questions-v8z4wpb4.md
+- Independent of the nitro plugin (BR-gxmhsz4e) — business-rule, .kotta/changes/baseline/model/business-rules/independent-of-the-nitro-plugin-gxmhsz4e.md
+- Isolated fictitious students (BR-ss4wfhmt) — business-rule, .kotta/changes/baseline/model/business-rules/isolated-fictitious-students-ss4wfhmt.md
+- List assignment submissions (BR-7wwqq2w5) — business-rule, .kotta/changes/baseline/model/business-rules/list-assignment-submissions-7wwqq2w5.md
+- List participants (BR-vrm5t4br) — business-rule, .kotta/changes/baseline/model/business-rules/list-participants-vrm5t4br.md
+- List the teacher's courses (BR-g9n5mqep) — business-rule, .kotta/changes/baseline/model/business-rules/list-the-teacher-s-courses-g9n5mqep.md
+- Malformed requests are JSON-RPC protocol errors (BR-v9dbcb6p) — business-rule, .kotta/changes/baseline/model/business-rules/malformed-requests-are-json-rpc-protocol-errors-v9dbcb6p.md
+- Markdown input with a cleaning report (BR-ypbhb7xa) — business-rule, .kotta/changes/baseline/model/business-rules/markdown-input-with-a-cleaning-report-ypbhb7xa.md
+- Message students individually (BR-mzqc20pj) — business-rule, .kotta/changes/baseline/model/business-rules/message-students-individually-mzqc20pj.md
+- nitro is installed switched off (BR-jvg31w5p) — business-rule, .kotta/changes/baseline/model/business-rules/nitro-is-installed-switched-off-jvg31w5p.md
+- No content in the log (BR-16kcknm0) — business-rule, .kotta/changes/baseline/model/business-rules/no-content-in-the-log-16kcknm0.md
+- No role holds the AI access gate by default (BR-etgkp389) — business-rule, .kotta/changes/baseline/model/business-rules/no-role-holds-the-ai-access-gate-by-default-etgkp389.md
+- No third-party data flow (BR-zff30aq7) — business-rule, .kotta/changes/baseline/model/business-rules/no-third-party-data-flow-zff30aq7.md
+- Only new confirmed accounts get one demo course (BR-0mwp9dxj) — business-rule, .kotta/changes/baseline/model/business-rules/only-new-confirmed-accounts-get-one-demo-course-0mwp9dxj.md
+- Partial updates (BR-an6epr7s) — business-rule, .kotta/changes/baseline/model/business-rules/partial-updates-an6epr7s.md
+- Per-tool admin control (BR-r44h8jj9) — business-rule, .kotta/changes/baseline/model/business-rules/per-tool-admin-control-r44h8jj9.md
+- Personal demo course on signup (BR-0790epke) — business-rule, .kotta/changes/baseline/model/business-rules/personal-demo-course-on-signup-0790epke.md
+- Post announcement (BR-4mp6a1py) — business-rule, .kotta/changes/baseline/model/business-rules/post-announcement-4mp6a1py.md
+- Protocol version negotiation (BR-rnwvsc7w) — business-rule, .kotta/changes/baseline/model/business-rules/protocol-version-negotiation-rnwvsc7w.md
+- Read an activity (BR-m0pn8gkz) — business-rule, .kotta/changes/baseline/model/business-rules/read-an-activity-m0pn8gkz.md
+- Read forum discussions (BR-9t55tm0k) — business-rule, .kotta/changes/baseline/model/business-rules/read-forum-discussions-9t55tm0k.md
+- Redirect URI allowlist (BR-dh9fjtda) — business-rule, .kotta/changes/baseline/model/business-rules/redirect-uri-allowlist-dh9fjtda.md
+- Refresh with rotation (BR-8j7f5h4y) — business-rule, .kotta/changes/baseline/model/business-rules/refresh-with-rotation-8j7f5h4y.md
+- Registration request limits (BR-2ywz0gp4) — business-rule, .kotta/changes/baseline/model/business-rules/registration-request-limits-2ywz0gp4.md
+- Regrading without feedback keeps the existing comment (BR-dkkvxm16) — business-rule, .kotta/changes/baseline/model/business-rules/regrading-without-feedback-keeps-the-existing-comment-dkkvxm16.md
+- Respect messaging preferences (BR-94d7wjwn) — business-rule, .kotta/changes/baseline/model/business-rules/respect-messaging-preferences-94d7wjwn.md
+- Same capabilities as the web UI (BR-gvkrcn29) — business-rule, .kotta/changes/baseline/model/business-rules/same-capabilities-as-the-web-ui-gvkrcn29.md
+- Save assignment without silent defaults (BR-wg17zawg) — business-rule, .kotta/changes/baseline/model/business-rules/save-assignment-without-silent-defaults-wg17zawg.md
+- Save page (BR-3a1jgyv3) — business-rule, .kotta/changes/baseline/model/business-rules/save-page-3a1jgyv3.md
+- Self-registered clients are marked unverified on the consent screen (BR-333p2bdv) — business-rule, .kotta/changes/baseline/model/business-rules/self-registered-clients-are-marked-unverified-on-the-consent-333p2bdv.md
+- Send feedback about nitro (BR-3ex3br5x) — business-rule, .kotta/changes/baseline/model/business-rules/send-feedback-about-nitro-3ex3br5x.md
+- Separate groups limit whom the teacher can message or grade (BR-pgv0qvwc) — business-rule, .kotta/changes/baseline/model/business-rules/separate-groups-limit-whom-the-teacher-can-message-or-grade-pgv0qvwc.md
+- Site kill switch (BR-fyp9a02d) — business-rule, .kotta/changes/baseline/model/business-rules/site-kill-switch-fyp9a02d.md
+- Streamable HTTP JSON-RPC endpoint (BR-8rdw60gx) — business-rule, .kotta/changes/baseline/model/business-rules/streamable-http-json-rpc-endpoint-8rdw60gx.md
+- Supported Moodle versions (BR-2p15v1y5) — business-rule, .kotta/changes/baseline/model/business-rules/supported-moodle-versions-2p15v1y5.md
+- The sandbox login page explains the signup steps (BR-grb5tc8w) — business-rule, .kotta/changes/baseline/model/business-rules/the-sandbox-login-page-explains-the-signup-steps-grb5tc8w.md
+- The teacher sees the feedback before it is sent (BR-a6ypf3hc) — business-rule, .kotta/changes/baseline/model/business-rules/the-teacher-sees-the-feedback-before-it-is-sent-a6ypf3hc.md
+- The token endpoint never fetches client metadata (BR-dvk3h1g2) — business-rule, .kotta/changes/baseline/model/business-rules/the-token-endpoint-never-fetches-client-metadata-dvk3h1g2.md
+- Token issuance (BR-rk5wpj5r) — business-rule, .kotta/changes/baseline/model/business-rules/token-issuance-rk5wpj5r.md
+- Token secrecy and validity (BR-w8azb6hg) — business-rule, .kotta/changes/baseline/model/business-rules/token-secrecy-and-validity-w8azb6hg.md
+- Tool annotations (BR-0btt3wym) — business-rule, .kotta/changes/baseline/model/business-rules/tool-annotations-0btt3wym.md
+- Tool invocation (BR-pbthvp6m) — business-rule, .kotta/changes/baseline/model/business-rules/tool-invocation-pbthvp6m.md
+- Unreadable dates are refused (BR-303nmket) — business-rule, .kotta/changes/baseline/model/business-rules/unreadable-dates-are-refused-303nmket.md
+- Updates report the changed fields (BR-jaaxbjjp) — business-rule, .kotta/changes/baseline/model/business-rules/updates-report-the-changed-fields-jaaxbjjp.md
+- Users see and revoke their connections (BR-exq090x9) — business-rule, .kotta/changes/baseline/model/business-rules/users-see-and-revoke-their-connections-exq090x9.md
+- Authorization code (E-rr2hr059) — entity, .kotta/changes/baseline/model/entities/authorization-code-rr2hr059.md
+- Confirmation (E-pn786gat) — entity, .kotta/changes/baseline/model/entities/confirmation-pn786gat.md
+- Connection (E-qscpp4dc) — entity, .kotta/changes/baseline/model/entities/connection-qscpp4dc.md
+- Demo course (E-02hhpgak) — entity, .kotta/changes/baseline/model/entities/demo-course-02hhpgak.md
+- Feedback message (E-qnrnbe6m) — entity, .kotta/changes/baseline/model/entities/feedback-message-qnrnbe6m.md
+- Fictitious student (E-5hsx8wrt) — entity, .kotta/changes/baseline/model/entities/fictitious-student-5hsx8wrt.md
+- Keyed activity (E-w8qv1jcz) — entity, .kotta/changes/baseline/model/entities/keyed-activity-w8qv1jcz.md
+- OAuth client (E-5wz1wxcs) — entity, .kotta/changes/baseline/model/entities/oauth-client-5wz1wxcs.md
+- Token (E-27sbym24) — entity, .kotta/changes/baseline/model/entities/token-27sbym24.md
+- Tool (E-01esqa0n) — entity, .kotta/changes/baseline/model/entities/tool-01esqa0n.md
+- Tool call record (E-n12p4s37) — entity, .kotta/changes/baseline/model/entities/tool-call-record-n12p4s37.md
+- A missing tool (EX-pj4q0m1h) — example, .kotta/changes/baseline/model/examples/a-missing-tool-pj4q0m1h.md
+- A new student joins after the preview (EX-3dcp0j66) — example, .kotta/changes/baseline/model/examples/a-new-student-joins-after-the-preview-3dcp0j66.md
+- A new version brings a new tool (EX-shzdphtt) — example, .kotta/changes/baseline/model/examples/a-new-version-brings-a-new-tool-shzdphtt.md
+- A preview invents no identifiers (EX-x63xyxa2) — example, .kotta/changes/baseline/model/examples/a-preview-invents-no-identifiers-x63xyxa2.md
+- Abandoned client (EX-c0n19jde) — example, .kotta/changes/baseline/model/examples/abandoned-client-c0n19jde.md
+- Accept several submissions (EX-ee0ayt3n) — example, .kotta/changes/baseline/model/examples/accept-several-submissions-ee0ayt3n.md
+- Account older than onboarding (EX-fgdyz96j) — example, .kotta/changes/baseline/model/examples/account-older-than-onboarding-fgdyz96j.md
+- Acting as the token owner (EX-yadftwr0) — example, .kotta/changes/baseline/model/examples/acting-as-the-token-owner-yadftwr0.md
+- Activity the user cannot see (EX-e06hmsst) — example, .kotta/changes/baseline/model/examples/activity-the-user-cannot-see-e06hmsst.md
+- Activity with no text (EX-cavmxqpk) — example, .kotta/changes/baseline/model/examples/activity-with-no-text-cavmxqpk.md
+- Admin deletes a registered client (EX-f40nh2gn) — example, .kotta/changes/baseline/model/examples/admin-deletes-a-registered-client-f40nh2gn.md
+- Admin disables the plugin (EX-8wsvn5wg) — example, .kotta/changes/baseline/model/examples/admin-disables-the-plugin-8wsvn5wg.md
+- Admin removes a tool (EX-ptkxgf96) — example, .kotta/changes/baseline/model/examples/admin-removes-a-tool-ptkxgf96.md
+- Annotations mark reading and student-reaching tools (EX-7bca7bf6) — example, .kotta/changes/baseline/model/examples/annotations-mark-reading-and-student-reaching-tools-7bca7bf6.md
+- Announcement (EX-78bstbb4) — example, .kotta/changes/baseline/model/examples/announcement-78bstbb4.md
+- Announcement preview (EX-6cbkfeck) — example, .kotta/changes/baseline/model/examples/announcement-preview-6cbkfeck.md
+- Arguments changed after preview (EX-3d1cgrnr) — example, .kotta/changes/baseline/model/examples/arguments-changed-after-preview-3d1cgrnr.md
+- Assignment instructions (EX-jtdj5h7d) — example, .kotta/changes/baseline/model/examples/assignment-instructions-jtdj5h7d.md
+- Attendee opens the sandbox (EX-qm6gjg5p) — example, .kotta/changes/baseline/model/examples/attendee-opens-the-sandbox-qm6gjg5p.md
+- Batch request (EX-87v04fk1) — example, .kotta/changes/baseline/model/examples/batch-request-87v04fk1.md
+- Body that is not JSON (EX-he59g9km) — example, .kotta/changes/baseline/model/examples/body-that-is-not-json-he59g9km.md
+- Cap reached (EX-b8ashkrf) — example, .kotta/changes/baseline/model/examples/cap-reached-b8ashkrf.md
+- Claude Code on an ephemeral port (EX-qd03nxma) — example, .kotta/changes/baseline/model/examples/claude-code-on-an-ephemeral-port-qd03nxma.md
+- Claude connects without registering (EX-n412qy9v) — example, .kotta/changes/baseline/model/examples/claude-connects-without-registering-n412qy9v.md
+- Claude web (EX-h62kpp5t) — example, .kotta/changes/baseline/model/examples/claude-web-h62kpp5t.md
+- Client discovers through the 401 (EX-7qmygb41) — example, .kotta/changes/baseline/model/examples/client-discovers-through-the-401-7qmygb41.md
+- Client ID URL on another host (EX-kktpwgfm) — example, .kotta/changes/baseline/model/examples/client-id-url-on-another-host-kktpwgfm.md
+- Client metadata fetch (EX-ed7p1t8h) — example, .kotta/changes/baseline/model/examples/client-metadata-fetch-ed7p1t8h.md
+- Code reuse (EX-c40ck242) — example, .kotta/changes/baseline/model/examples/code-reuse-c40ck242.md
+- Confidential client without secret (EX-7jg32w8s) — example, .kotta/changes/baseline/model/examples/confidential-client-without-secret-7jg32w8s.md
+- Confirmed call executes (EX-d1q1twzy) — example, .kotta/changes/baseline/model/examples/confirmed-call-executes-d1q1twzy.md
+- Confirmed user logs in twice (EX-dhv0tysm) — example, .kotta/changes/baseline/model/examples/confirmed-user-logs-in-twice-dhv0tysm.md
+- Consent for a self-registered client (EX-1gasmf3q) — example, .kotta/changes/baseline/model/examples/consent-for-a-self-registered-client-1gasmf3q.md
+- Copilot registers with a secret (EX-1fcwdxwm) — example, .kotta/changes/baseline/model/examples/copilot-registers-with-a-secret-1fcwdxwm.md
+- Course not yet visible (EX-7c87f5cc) — example, .kotta/changes/baseline/model/examples/course-not-yet-visible-7c87f5cc.md
+- Cut-off before due date (EX-4mtr0p49) — example, .kotta/changes/baseline/model/examples/cut-off-before-due-date-4mtr0p49.md
+- Date without a time (EX-2znq2amq) — example, .kotta/changes/baseline/model/examples/date-without-a-time-2znq2amq.md
+- Date without offset (EX-m18kkqjh) — example, .kotta/changes/baseline/model/examples/date-without-offset-m18kkqjh.md
+- Default participant list (EX-nykxzd6x) — example, .kotta/changes/baseline/model/examples/default-participant-list-nykxzd6x.md
+- Denied call (EX-hpff0hnx) — example, .kotta/changes/baseline/model/examples/denied-call-hpff0hnx.md
+- Description-only update (EX-9fmw4zer) — example, .kotta/changes/baseline/model/examples/description-only-update-9fmw4zer.md
+- Discovery appended to the MCP URL (EX-xqshq479) — example, .kotta/changes/baseline/model/examples/discovery-appended-to-the-mcp-url-xqshq479.md
+- Dry run of a page update (EX-1rvbyf9r) — example, .kotta/changes/baseline/model/examples/dry-run-of-a-page-update-1rvbyf9r.md
+- Dynamic registration switched off (EX-9j0mdhmx) — example, .kotta/changes/baseline/model/examples/dynamic-registration-switched-off-9j0mdhmx.md
+- Expired or revoked token (EX-ta0dz05e) — example, .kotta/changes/baseline/model/examples/expired-or-revoked-token-ta0dz05e.md
+- Explicit identity request (EX-j0jdcmya) — example, .kotta/changes/baseline/model/examples/explicit-identity-request-j0jdcmya.md
+- Faculty install (EX-5wqy83gd) — example, .kotta/changes/baseline/model/examples/faculty-install-5wqy83gd.md
+- Faculty install (EX-6fw85ht2) — example, .kotta/changes/baseline/model/examples/faculty-install-6fw85ht2.md
+- Feedback carries no course data (EX-zyjznw85) — example, .kotta/changes/baseline/model/examples/feedback-carries-no-course-data-zyjznw85.md
+- Fictitious student login (EX-t02b3fxd) — example, .kotta/changes/baseline/model/examples/fictitious-student-login-t02b3fxd.md
+- Filter by role (EX-3mv1b54d) — example, .kotta/changes/baseline/model/examples/filter-by-role-3mv1b54d.md
+- Final deadline in the overview (EX-a18tbhy3) — example, .kotta/changes/baseline/model/examples/final-deadline-in-the-overview-a18tbhy3.md
+- First call returns preview (EX-f83jmky6) — example, .kotta/changes/baseline/model/examples/first-call-returns-preview-f83jmky6.md
+- First publish (EX-awsmjxg8) — example, .kotta/changes/baseline/model/examples/first-publish-awsmjxg8.md
+- Foreign resource (EX-98fze9jb) — example, .kotta/changes/baseline/model/examples/foreign-resource-98fze9jb.md
+- Forum the user cannot see (EX-pjz37d7f) — example, .kotta/changes/baseline/model/examples/forum-the-user-cannot-see-pjz37d7f.md
+- Fresh install answers nothing (EX-833rgja4) — example, .kotta/changes/baseline/model/examples/fresh-install-answers-nothing-833rgja4.md
+- Fresh install grants AI access to nobody (EX-qc85n74p) — example, .kotta/changes/baseline/model/examples/fresh-install-grants-ai-access-to-nobody-qc85n74p.md
+- Gate does not add power (EX-hh89ypbz) — example, .kotta/changes/baseline/model/examples/gate-does-not-add-power-hh89ypbz.md
+- Gate granted in one course only (EX-8y0q4fnf) — example, .kotta/changes/baseline/model/examples/gate-granted-in-one-course-only-8y0q4fnf.md
+- GET not supported (EX-j5j6c1nv) — example, .kotta/changes/baseline/model/examples/get-not-supported-j5j6c1nv.md
+- GIFT into the shared bank (EX-2w0ejwm0) — example, .kotta/changes/baseline/model/examples/gift-into-the-shared-bank-2w0ejwm0.md
+- Grade outside the scale (EX-cd9kajhb) — example, .kotta/changes/baseline/model/examples/grade-outside-the-scale-cd9kajhb.md
+- Graded students stay in the list (EX-qjn16pvp) — example, .kotta/changes/baseline/model/examples/graded-students-stay-in-the-list-qjn16pvp.md
+- Grades preview (EX-2pp8ygjz) — example, .kotta/changes/baseline/model/examples/grades-preview-2pp8ygjz.md
+- Grading turned off site-wide (EX-ah9170vw) — example, .kotta/changes/baseline/model/examples/grading-turned-off-site-wide-ah9170vw.md
+- Half points for late work (EX-255rr6g0) — example, .kotta/changes/baseline/model/examples/half-points-for-late-work-255rr6g0.md
+- Headings and lists (EX-x3f8s45z) — example, .kotta/changes/baseline/model/examples/headings-and-lists-x3f8s45z.md
+- Hidden activities (EX-sva1ctck) — example, .kotta/changes/baseline/model/examples/hidden-activities-sva1ctck.md
+- Hidden course (EX-0jveqzbv) — example, .kotta/changes/baseline/model/examples/hidden-course-0jveqzbv.md
+- Hungarian teacher (EX-9y1g0dmm) — example, .kotta/changes/baseline/model/examples/hungarian-teacher-9y1g0dmm.md
+- Initialize handshake (EX-f9bk4jxr) — example, .kotta/changes/baseline/model/examples/initialize-handshake-f9bk4jxr.md
+- Invalid arguments (EX-a3n6gewd) — example, .kotta/changes/baseline/model/examples/invalid-arguments-a3n6gewd.md
+- Key of an assignment reused for a page (EX-kq6g6nag) — example, .kotta/changes/baseline/model/examples/key-of-an-assignment-reused-for-a-page-kq6g6nag.md
+- Late submission (EX-kanvkahw) — example, .kotta/changes/baseline/model/examples/late-submission-kanvkahw.md
+- Listing tools (EX-r2gbnm6q) — example, .kotta/changes/baseline/model/examples/listing-tools-r2gbnm6q.md
+- Loopback client warning (EX-y3wg8jte) — example, .kotta/changes/baseline/model/examples/loopback-client-warning-y3wg8jte.md
+- Marking workflow in use (EX-cbj92rd0) — example, .kotta/changes/baseline/model/examples/marking-workflow-in-use-cbj92rd0.md
+- Maximum grade follows the questions (EX-k1bhjn7a) — example, .kotta/changes/baseline/model/examples/maximum-grade-follows-the-questions-k1bhjn7a.md
+- Message sent (EX-7q2y9hr2) — example, .kotta/changes/baseline/model/examples/message-sent-7q2y9hr2.md
+- Messaging a fictitious student (EX-am8wdmy2) — example, .kotta/changes/baseline/model/examples/messaging-a-fictitious-student-am8wdmy2.md
+- Missing or plain PKCE (EX-y9emfh9f) — example, .kotta/changes/baseline/model/examples/missing-or-plain-pkce-y9emfh9f.md
+- Missing permission (EX-wjatkdda) — example, .kotta/changes/baseline/model/examples/missing-permission-wjatkdda.md
+- Missing submission type (EX-trp2jhza) — example, .kotta/changes/baseline/model/examples/missing-submission-type-trp2jhza.md
+- Missing submissions (EX-zk6y6k1c) — example, .kotta/changes/baseline/model/examples/missing-submissions-zk6y6k1c.md
+- Missing token (EX-5rzf7tc2) — example, .kotta/changes/baseline/model/examples/missing-token-5rzf7tc2.md
+- Moodle 4.5 site (EX-5252a44f) — example, .kotta/changes/baseline/model/examples/moodle-4-5-site-5252a44f.md
+- New quiz is hidden (EX-0g590ag8) — example, .kotta/changes/baseline/model/examples/new-quiz-is-hidden-0g590ag8.md
+- Newcomer opens the login page (EX-6bwjak6q) — example, .kotta/changes/baseline/model/examples/newcomer-opens-the-login-page-6bwjak6q.md
+- No address configured (EX-6xj4ptmr) — example, .kotta/changes/baseline/model/examples/no-address-configured-6xj4ptmr.md
+- No shared bank yet (EX-s9cjm446) — example, .kotta/changes/baseline/model/examples/no-shared-bank-yet-s9cjm446.md
+- Nonexistent section (EX-5a5t0wrj) — example, .kotta/changes/baseline/model/examples/nonexistent-section-5a5t0wrj.md
+- Not enough questions (EX-afmx7xzp) — example, .kotta/changes/baseline/model/examples/not-enough-questions-afmx7xzp.md
+- Not logged in (EX-bc8tkdgc) — example, .kotta/changes/baseline/model/examples/not-logged-in-bc8tkdgc.md
+- Notification without response (EX-byedprp8) — example, .kotta/changes/baseline/model/examples/notification-without-response-byedprp8.md
+- One invalid grade in a batch (EX-6xgcv6dp) — example, .kotta/changes/baseline/model/examples/one-invalid-grade-in-a-batch-6xgcv6dp.md
+- Overdue submission (EX-h0ac7g89) — example, .kotta/changes/baseline/model/examples/overdue-submission-h0ac7g89.md
+- Overview of a course (EX-hx2nc7vc) — example, .kotta/changes/baseline/model/examples/overview-of-a-course-hx2nc7vc.md
+- Page without content (EX-2cdvscjf) — example, .kotta/changes/baseline/model/examples/page-without-content-2cdvscjf.md
+- Parse error (EX-nz86hpas) — example, .kotta/changes/baseline/model/examples/parse-error-nz86hpas.md
+- Password change disconnects AI tools (EX-2r70rr30) — example, .kotta/changes/baseline/model/examples/password-change-disconnects-ai-tools-2r70rr30.md
+- Permission failure (EX-f4v559pg) — example, .kotta/changes/baseline/model/examples/permission-failure-f4v559pg.md
+- Plain text reads as written (EX-nvsrrm28) — example, .kotta/changes/baseline/model/examples/plain-text-reads-as-written-nvsrrm28.md
+- Plugin privacy registry (EX-zp4svaw8) — example, .kotta/changes/baseline/model/examples/plugin-privacy-registry-zp4svaw8.md
+- Practice quiz until Friday (EX-8nq54m2z) — example, .kotta/changes/baseline/model/examples/practice-quiz-until-friday-8nq54m2z.md
+- Preview first (EX-s9t75fpx) — example, .kotta/changes/baseline/model/examples/preview-first-s9t75fpx.md
+- Public registration (EX-25vjghna) — example, .kotta/changes/baseline/model/examples/public-registration-25vjghna.md
+- Queued feedback goes out on a later run (EX-mwjwrn1t) — example, .kotta/changes/baseline/model/examples/queued-feedback-goes-out-on-a-later-run-mwjwrn1t.md
+- Quiz already attempted (EX-p073nzkk) — example, .kotta/changes/baseline/model/examples/quiz-already-attempted-p073nzkk.md
+- Random questions from a category (EX-np3kt90m) — example, .kotta/changes/baseline/model/examples/random-questions-from-a-category-np3kt90m.md
+- Read-only site (EX-4rz7emq7) — example, .kotta/changes/baseline/model/examples/read-only-site-4rz7emq7.md
+- Reading a page (EX-fjhpshea) — example, .kotta/changes/baseline/model/examples/reading-a-page-fjhpshea.md
+- Reading the announcements (EX-3njav9wt) — example, .kotta/changes/baseline/model/examples/reading-the-announcements-3njav9wt.md
+- Recipient not in the course (EX-2jf4ksrj) — example, .kotta/changes/baseline/model/examples/recipient-not-in-the-course-2jf4ksrj.md
+- Redirect URI mismatch (EX-ajbcm96g) — example, .kotta/changes/baseline/model/examples/redirect-uri-mismatch-ajbcm96g.md
+- Refresh after the site's caches are purged (EX-1732z0nf) — example, .kotta/changes/baseline/model/examples/refresh-after-the-site-s-caches-are-purged-1732z0nf.md
+- Refresh (EX-bm4g8gf5) — example, .kotta/changes/baseline/model/examples/refresh-bm4g8gf5.md
+- Refresh from a metadata URL never seen before (EX-es5d5h76) — example, .kotta/changes/baseline/model/examples/refresh-from-a-metadata-url-never-seen-before-es5d5h76.md
+- Refresh token reuse (EX-bvcme1yj) — example, .kotta/changes/baseline/model/examples/refresh-token-reuse-bvcme1yj.md
+- Regrade without a new comment (EX-yyckwz12) — example, .kotta/changes/baseline/model/examples/regrade-without-a-new-comment-yyckwz12.md
+- Reminder to students missing a submission (EX-nxw3s98y) — example, .kotta/changes/baseline/model/examples/reminder-to-students-missing-a-submission-nxw3s98y.md
+- Removed content is reported (EX-cv2f3jbz) — example, .kotta/changes/baseline/model/examples/removed-content-is-reported-cv2f3jbz.md
+- Removing a due date (EX-fex453gx) — example, .kotta/changes/baseline/model/examples/removing-a-due-date-fex453gx.md
+- Replies (EX-bbfnrn3a) — example, .kotta/changes/baseline/model/examples/replies-bbfnrn3a.md
+- Republish after editing the source (EX-afynnz6x) — example, .kotta/changes/baseline/model/examples/republish-after-editing-the-source-afynnz6x.md
+- Responses within client time limits (EX-phc1smpa) — example, .kotta/changes/baseline/model/examples/responses-within-client-time-limits-phc1smpa.md
+- Rewriting existing content (EX-nkd9rmpc) — example, .kotta/changes/baseline/model/examples/rewriting-existing-content-nkd9rmpc.md
+- Sandbox notice (EX-9msat0s0) — example, .kotta/changes/baseline/model/examples/sandbox-notice-9msat0s0.md
+- Site with the root rewrite (EX-0jj8x464) — example, .kotta/changes/baseline/model/examples/site-with-the-root-rewrite-0jj8x464.md
+- Site without rewrite (EX-4e6g5c3g) — example, .kotta/changes/baseline/model/examples/site-without-rewrite-4e6g5c3g.md
+- Soft and hard deadline (EX-r9xy9vhs) — example, .kotta/changes/baseline/model/examples/soft-and-hard-deadline-r9xy9vhs.md
+- Statement is not the admin's to remove (EX-wdwmnqe1) — example, .kotta/changes/baseline/model/examples/statement-is-not-the-admin-s-to-remove-wdwmnqe1.md
+- Student blocks messages (EX-wvecz15c) — example, .kotta/changes/baseline/model/examples/student-blocks-messages-wvecz15c.md
+- Student of another group (EX-5yjttja7) — example, .kotta/changes/baseline/model/examples/student-of-another-group-5yjttja7.md
+- Student token (EX-q3yf1fj6) — example, .kotta/changes/baseline/model/examples/student-token-q3yf1fj6.md
+- Students do not overlap (EX-em976q93) — example, .kotta/changes/baseline/model/examples/students-do-not-overlap-em976q93.md
+- Students never see an empty quiz (EX-w06tvz69) — example, .kotta/changes/baseline/model/examples/students-never-see-an-empty-quiz-w06tvz69.md
+- Students who cannot be emailed (EX-082ksp0y) — example, .kotta/changes/baseline/model/examples/students-who-cannot-be-emailed-082ksp0y.md
+- Students who never showed up (EX-tt8nsdrt) — example, .kotta/changes/baseline/model/examples/students-who-never-showed-up-tt8nsdrt.md
+- Submission content only when asked (EX-e1t16smd) — example, .kotta/changes/baseline/model/examples/submission-content-only-when-asked-e1t16smd.md
+- Submissions to work with (EX-kpr3pkta) — example, .kotta/changes/baseline/model/examples/submissions-to-work-with-kpr3pkta.md
+- Submitted repository links (EX-nk7d90ff) — example, .kotta/changes/baseline/model/examples/submitted-repository-links-nk7d90ff.md
+- Successful call (EX-kzk28f7s) — example, .kotta/changes/baseline/model/examples/successful-call-kzk28f7s.md
+- Successful write (EX-5v6r7193) — example, .kotta/changes/baseline/model/examples/successful-write-5v6r7193.md
+- Suspended user (EX-1q2e7mxa) — example, .kotta/changes/baseline/model/examples/suspended-user-1q2e7mxa.md
+- Switched off (EX-dk4f44js) — example, .kotta/changes/baseline/model/examples/switched-off-dk4f44js.md
+- Teacher connects a client (EX-6z1sg28y) — example, .kotta/changes/baseline/model/examples/teacher-connects-a-client-6z1sg28y.md
+- Teacher denies the request (EX-jp4fkd5k) — example, .kotta/changes/baseline/model/examples/teacher-denies-the-request-jp4fkd5k.md
+- Teacher disconnects Claude (EX-2s8d91xz) — example, .kotta/changes/baseline/model/examples/teacher-disconnects-claude-2s8d91xz.md
+- Teacher looks for thought-through submissions (EX-ytya079z) — example, .kotta/changes/baseline/model/examples/teacher-looks-for-thought-through-submissions-ytya079z.md
+- Teacher loses AI access (EX-7wjzjfre) — example, .kotta/changes/baseline/model/examples/teacher-loses-ai-access-7wjzjfre.md
+- Teacher rewrites it (EX-0kf5tv29) — example, .kotta/changes/baseline/model/examples/teacher-rewrites-it-0kf5tv29.md
+- Teacher signs up (EX-h4w4c68e) — example, .kotta/changes/baseline/model/examples/teacher-signs-up-h4w4c68e.md
+- Teacher with several courses (EX-hsf3wymy) — example, .kotta/changes/baseline/model/examples/teacher-with-several-courses-hsf3wymy.md
+- The mail server is not reachable (EX-cmmxt4d5) — example, .kotta/changes/baseline/model/examples/the-mail-server-is-not-reachable-cmmxt4d5.md
+- The teacher sees whose grade it is (EX-7w3yexht) — example, .kotta/changes/baseline/model/examples/the-teacher-sees-whose-grade-it-is-7w3yexht.md
+- Token of another user (EX-er57ayse) — example, .kotta/changes/baseline/model/examples/token-of-another-user-er57ayse.md
+- Token reuse (EX-3qrrarbw) — example, .kotta/changes/baseline/model/examples/token-reuse-3qrrarbw.md
+- Too many redirect URIs (EX-pkshpjj3) — example, .kotta/changes/baseline/model/examples/too-many-redirect-uris-pkshpjj3.md
+- Tool call makes no outbound request (EX-edf8sgs1) — example, .kotta/changes/baseline/model/examples/tool-call-makes-no-outbound-request-edf8sgs1.md
+- Two attendees (EX-kkd4b8rj) — example, .kotta/changes/baseline/model/examples/two-attendees-kkd4b8rj.md
+- Unknown client (EX-59qw3gfm) — example, .kotta/changes/baseline/model/examples/unknown-client-59qw3gfm.md
+- Unknown host (EX-g9cerqtf) — example, .kotta/changes/baseline/model/examples/unknown-host-g9cerqtf.md
+- Unknown protocol version in initialize (EX-5dewf9nb) — example, .kotta/changes/baseline/model/examples/unknown-protocol-version-in-initialize-5dewf9nb.md
+- Unknown tool (EX-erswmefh) — example, .kotta/changes/baseline/model/examples/unknown-tool-erswmefh.md
+- Unsupported method (EX-qq17sejx) — example, .kotta/changes/baseline/model/examples/unsupported-method-qq17sejx.md
+- Unsupported protocol version header (EX-g9f9fj8s) — example, .kotta/changes/baseline/model/examples/unsupported-protocol-version-header-g9f9fj8s.md
+- Update lists what changed (EX-r7x9s9sb) — example, .kotta/changes/baseline/model/examples/update-lists-what-changed-r7x9s9sb.md
+- User approves (EX-5x97yhke) — example, .kotta/changes/baseline/model/examples/user-approves-5x97yhke.md
+- User data deleted (EX-rte4gwzn) — example, .kotta/changes/baseline/model/examples/user-data-deleted-rte4gwzn.md
+- User without the access capability (EX-86xg56ac) — example, .kotta/changes/baseline/model/examples/user-without-the-access-capability-86xg56ac.md
+- Valid exchange (EX-4g2zr0fq) — example, .kotta/changes/baseline/model/examples/valid-exchange-4g2zr0fq.md
+- Which Moodle this is (EX-p0eqmsjb) — example, .kotta/changes/baseline/model/examples/which-moodle-this-is-p0eqmsjb.md
+- Write tool description (EX-4631fj09) — example, .kotta/changes/baseline/model/examples/write-tool-description-4631fj09.md
+- Wrong forum ID (EX-yppmszhg) — example, .kotta/changes/baseline/model/examples/wrong-forum-id-yppmszhg.md
+- Wrong verifier (EX-6xgwgmtt) — example, .kotta/changes/baseline/model/examples/wrong-verifier-6xgwgmtt.md
+- A teacher runs their Moodle week from their own AI assistant (G-g1y62efr) — goal, .kotta/changes/baseline/model/goals/a-teacher-runs-their-moodle-week-from-their-own-ai-assistant-g1y62efr.md
+- Purpose of access-control (G-1dkc0da5) — goal, .kotta/changes/baseline/model/goals/purpose-of-access-control-1dkc0da5.md
+- Purpose of audit-log (G-epbgv3wv) — goal, .kotta/changes/baseline/model/goals/purpose-of-audit-log-epbgv3wv.md
+- Purpose of content-authoring (G-j44k40tx) — goal, .kotta/changes/baseline/model/goals/purpose-of-content-authoring-j44k40tx.md
+- Purpose of course-read (G-dzt6pwqc) — goal, .kotta/changes/baseline/model/goals/purpose-of-course-read-dzt6pwqc.md
+- Purpose of feedback (G-1nmcc10t) — goal, .kotta/changes/baseline/model/goals/purpose-of-feedback-1nmcc10t.md
+- Purpose of grading (G-2nngzv47) — goal, .kotta/changes/baseline/model/goals/purpose-of-grading-2nngzv47.md
+- Purpose of mcp-endpoint (G-31g4x4n1) — goal, .kotta/changes/baseline/model/goals/purpose-of-mcp-endpoint-31g4x4n1.md
+- Purpose of messaging (G-pb0wkxwx) — goal, .kotta/changes/baseline/model/goals/purpose-of-messaging-pb0wkxwx.md
+- Purpose of oauth-server (G-njg4hmw3) — goal, .kotta/changes/baseline/model/goals/purpose-of-oauth-server-njg4hmw3.md
+- Purpose of quiz-authoring (G-pm7jc53c) — goal, .kotta/changes/baseline/model/goals/purpose-of-quiz-authoring-pm7jc53c.md
+- Purpose of sandbox-onboarding (G-ebk4wy3q) — goal, .kotta/changes/baseline/model/goals/purpose-of-sandbox-onboarding-ebk4wy3q.md
+- Purpose of write-confirmation (G-qh7yqv9f) — goal, .kotta/changes/baseline/model/goals/purpose-of-write-confirmation-qh7yqv9f.md
+- Authorization code lifecycle (SM-2cbadn4j) — state-machine, .kotta/changes/baseline/model/state-machines/authorization-code-lifecycle-2cbadn4j.md
+- Confirmation lifecycle (SM-60dq46y6) — state-machine, .kotta/changes/baseline/model/state-machines/confirmation-lifecycle-60dq46y6.md
+- Demo course provisioning (SM-y1w54wy7) — state-machine, .kotta/changes/baseline/model/state-machines/demo-course-provisioning-y1w54wy7.md
+- Feedback delivery (SM-c35b2jxb) — state-machine, .kotta/changes/baseline/model/state-machines/feedback-delivery-c35b2jxb.md
+- Self-registered client lifecycle (SM-tw1ejhz5) — state-machine, .kotta/changes/baseline/model/state-machines/self-registered-client-lifecycle-tw1ejhz5.md
+- Token lifecycle (SM-ptdrfj4f) — state-machine, .kotta/changes/baseline/model/state-machines/token-lifecycle-ptdrfj4f.md
+- Bring Nitro to an institution's Moodle (UC-9ez2hth6) — use-case, .kotta/changes/baseline/model/use-cases/bring-nitro-to-an-institution-s-moodle-9ez2hth6.md
+- Build a quiz (UC-xmqtfd5k) — use-case, .kotta/changes/baseline/model/use-cases/build-a-quiz-xmqtfd5k.md
+- Call a Moodle tool (UC-ggfwqy05) — use-case, .kotta/changes/baseline/model/use-cases/call-a-moodle-tool-ggfwqy05.md
+- Check where the course stands (UC-fkdsmx6a) — use-case, .kotta/changes/baseline/model/use-cases/check-where-the-course-stands-fkdsmx6a.md
+- Connect an AI assistant to Moodle (UC-zkjbkcv9) — use-case, .kotta/changes/baseline/model/use-cases/connect-an-ai-assistant-to-moodle-zkjbkcv9.md
+- Decide who and what may use Nitro (UC-66c8mz69) — use-case, .kotta/changes/baseline/model/use-cases/decide-who-and-what-may-use-nitro-66c8mz69.md
+- Follow up with students who are behind (UC-k5n11dd7) — use-case, .kotta/changes/baseline/model/use-cases/follow-up-with-students-who-are-behind-k5n11dd7.md
+- Get a trial course (UC-nqksd170) — use-case, .kotta/changes/baseline/model/use-cases/get-a-trial-course-nqksd170.md
+- Grade submissions with feedback (UC-31a5ksp5) — use-case, .kotta/changes/baseline/model/use-cases/grade-submissions-with-feedback-31a5ksp5.md
+- Install and switch on Nitro (UC-ba92b51n) — use-case, .kotta/changes/baseline/model/use-cases/install-and-switch-on-nitro-ba92b51n.md
+- Post an announcement (UC-2gwwwwq1) — use-case, .kotta/changes/baseline/model/use-cases/post-an-announcement-2gwwwwq1.md
+- Publish pages and assignments (UC-1n3xk85j) — use-case, .kotta/changes/baseline/model/use-cases/publish-pages-and-assignments-1n3xk85j.md
+- Register an AI client by hand (UC-jh0e8rvq) — use-case, .kotta/changes/baseline/model/use-cases/register-an-ai-client-by-hand-jh0e8rvq.md
+- Report a missing tool or a fault (UC-qvjk6t29) — use-case, .kotta/changes/baseline/model/use-cases/report-a-missing-tool-or-a-fault-qvjk6t29.md
+- Review what the AI did (UC-3gkbmrr8) — use-case, .kotta/changes/baseline/model/use-cases/review-what-the-ai-did-3gkbmrr8.md
+- Revoke a connection (UC-egw7rdx5) — use-case, .kotta/changes/baseline/model/use-cases/revoke-a-connection-egw7rdx5.md
+- Run a teaching week from the AI assistant (UC-czb36t32) — use-case, .kotta/changes/baseline/model/use-cases/run-a-teaching-week-from-the-ai-assistant-czb36t32.md
+- Try Nitro on the trial Moodle (UC-n056jh08) — use-case, .kotta/changes/baseline/model/use-cases/try-nitro-on-the-trial-moodle-n056jh08.md
+
+Changed: none
+
+Removed: none
+
+## (a) Structure of the delta
+
+Every delta node satisfies its form: sections, required edges, id and provenance.
+
+## (b) The merged view
+
+The accepted model with this delta applied validates as a whole.
+
+## (c) Conflict candidates
+
+No accepted node shares an edge with, is named by, or contrasts with the delta.
+
+The proposal's What changes names no node in these items. Is each a promise — a quality attribute, a rule — that needs a node, or work that keeps no promise? Awaits judgement:
+
+- proposal.md:9 — Source: 12 capabilities, 58 requirements, 145 scenarios in `openspec/specs/`.
+- proposal.md:10 — Drafted by `kotta import openspec` into `model/`: 58 business rules (one per requirement), 145 examples (one per scenario, each proving its requirement's rule), 12 goals (one per capability Purpose). Every draft is `level: stated`, `decided_by: agent-decided`, its source naming the requirement it came from.
+- proposal.md:11 — No accepted node was matched; every draft is new. 215 drafts are new nodes.
+- proposal.md:12 — Copied, not written: the requirement text is the rule, the scenario steps are the example, the Purpose is the goal's outcome. Every section the narrative has no text for — a rule's rationale and scope, a goal's context, baseline and measure, an example's precondition where the scenario states none — is left empty with a note, for the planning phase to ask about.
+- proposal.md:13 — Not drafted: actors, use cases, entities and state machines. The narrative describes them only in passing; the planning phase derives them, and asks where it cannot.
+
+The machine's candidates are mechanical and narrow. Contradictions the agent found by comparing every claim of the delta with the accepted nodes it touches, each marked `judged`:
+
+<!-- kotta:judged — the agent's own findings; `kotta plan` keeps this block as written -->
+- judged: *List the teacher's courses* lists every course where the user holds the gate and can manage or grade; the code lists only courses the user is enrolled in (local/nitro/classes/external/list_courses.php:54), so a category-level manager sees none.
+- judged: *Read an activity* promises a book's chapter list; the code reads a field the book table does not have and returns only the description (read_activity.php:73). Assignment instructions are read from the description, not the separate activity-instructions field (read_activity.php:84).
+- judged: *Event for every tool call* — a disallowed or unknown tool, or arguments that are not an object, get a JSON-RPC error and no event (classes/mcp/server.php:173-180); tools reached through a course module id are logged in the system context with no course (dispatcher.php:54, 118-119).
+- judged: *Hungarian and English* — most tool error messages, the confirmation instruction and the dry-run note are hard-coded English (classes/external/*, confirmation.php:160, dry_run.php:81).
+- judged: *Declared data handling* — the privacy export covers connections only, not pending codes or confirmations, and the token and client tables declare only some fields (classes/privacy/provider.php:109-131).
+- judged: *Site kill switch* says it holds inside the tools too; `list_courses` skips the check every other tool gets (list_courses.php:51).
+- judged: *Allowlisted tool discovery* / example *A new version brings a new tool* — new tools reach the allowlist only through upgrade steps written by hand (db/upgrade.php:32-41); nothing tests it.
+- judged: *Guidance for the AI in the server* / example *Write tool description* — content tools do not say whether they need confirmation, and message_students / grade_submission do not say they change the course (tests/fixtures/tools_list.json).
+- judged: *GoSchool-branded sandbox* includes typography; deploy/branding.php sets name, logos, favicon, colour and the login notice, but no font and no sandbox-only theme.
+- judged: *Isolated fictitious students* fixes 20 students; the code reads the setting `students` (default 20, 1–20) (local/nitrosandbox/classes/provisioner.php:172).
+- judged: *Personal demo course on signup* says "completes signup … within one minute"; the code queues it at the first login of a confirmed account created after onboarding was switched on (observer.php:50-79), and the minute depends on cron (about 2 minutes for the last of 30 simultaneous signups).
+- judged: *Dry run for every write tool* — message_students, post_announcement and grade_submission take no dry_run; they preview only through the confirmation step.
+- judged: *Dynamic client registration* refuses when the count "exceeds" the cap; the code refuses at the cap (oauth/clients.php:137), as the example *Cap reached* expects.
+- judged: example *Loopback client warning* warns when the client's only redirect URIs are loopback; since the security review the code warns on the redirect URI actually presented (oauth/authorize.php:112).
+- judged: *Discovery metadata* always lists the registration endpoint; the code omits it while dynamic registration is off (oauth/metadata.php:102), as the example *Dynamic registration switched off* expects.
+- judged: *Read forum discussions* says newest discussion first; the code sorts by last post (list_forum_posts.php:121).
+- judged: *Partial updates* leaves other settings untouched; save_assignment moves the grading due date to a week after a new due date that passes it (save_assignment.php:207-208).
+- judged: *Send feedback about nitro* says the mail MUST NOT carry student names or course content; the code adds none itself but does not filter the AI's text (send_feedback.php:47-50, 77-87) — the tool description and the teacher's approval are the guard.
+- judged: *No third-party data flow* lists two kinds of outbound request; the discovery self-check makes a third, to the site's own URLs with the blocked-hosts list off (classes/local/selfcheck.php:60).
+- judged: *Token issuance* binds the token to the MCP endpoint; the code binds it to the user's connection and checks `resource` only at code exchange (oauth/tokens.php exchange_code).
+- judged: *Redirect URI allowlist* rejects a client with a URI outside the list; for a metadata-document client the code drops such URIs and refuses the request later (oauth/cimd.php:172) — same outcome.
+- judged: proposal.md What items 9–13 describe how the import was done; they keep no promise and need no node.
+<!-- /kotta:judged -->
+
+## (d) Silences
+
+No open decision, and no question a form asks is left unanswered.
+
+## (e) Narrative drift
+
+No narrative requirement bound to a node says something else than the node.
+
+## (f) Provenance
+
+312 delta nodes: 96 stated, 204 partly-inferred, 12 inferred.
+Decided by: 0 human, 4 agent-proposed-human-approved, 308 agent-decided.
+
+What the machine decided alone:
+
+- AI assistant (A-4gj4dmhq) — Modelled as an actor of its own: it is the external system that registers, obtains tokens and calls tools on the teacher's behalf.
+- Moodle site administrator (A-xnjp14j4) — from “Faculty Moodle administrators install the plugin, grant local/nitro:use, set the allowlists and the kill switch, and check discovery.” (PRODUCT.md · Users)
+- Teacher (A-kan23awt) — from “Teachers at Hungarian universities, where a faculty or an institution often runs its own Moodle” (PRODUCT.md · Users)
+- A date can be removed with none (BR-d8ccw7r3) — The obligation is read from the parameter descriptions and save_assignment::date; the rationale is my reading of how it fits Partial updates.
+- A grading call saves every grade or none (BR-kzvatfxf) — Generalised from the code comment "nothing is saved unless every entry is valid" and the tests.
+- A key used by another activity type is refused (BR-dxpp93dp) — The obligation is read from the code and its test; no spec or design text states it.
+- A message confirmation covers exactly the previewed recipients (BR-9tkqk37h) — The rule text is phrased from the design's security review line and the code; its wording is mine.
+- A new page needs its title and content (BR-f026qxkr) — The obligation and its reason are read from the error messages in save_page::execute and save_assignment::execute and from the test; no spec states them.
+- A new quiz starts hidden (BR-7gc9a180) — The default is read from create_quiz::execute_parameters; the reason is stated in that parameter's description, the scenario and tasks 11.10.
+- A wrong forum ID names the readable forums (BR-sajtd3h1) — The behaviour and reason are stated in design.md's Attendee path; the treatment of hidden forums is read from list_forum_posts::execute.
+- Access gate capability (BR-yer3cvj5) — Scope: that the gate is checked per course on every tool call and, in any context, before an authorization code or token is issued, read from access::require_course and authorization::user_may_connect.
+- Add questions to a quiz (BR-9wjaecwh) — Scope details (which banks random questions come from, teacher previews not counting as attempts) read from add_questions_to_quiz::execute and quiz_tools_test.
+- Admin client registration (BR-798d1zpa) — That admin clients are exempt from the clean-up and the cap, read from clients.php::delete_unused / count_never_used and cleanup_test.
+- Admin deletes a client (BR-t42wt5a1) — That deleting a client deletes its connections, tokens and codes, read from clients.php::delete.
+- Allowlisted tool discovery (BR-j0ebv4mt) — from “`tools/list` SHALL return exactly the tools on the site's allowlist, each with a name, a description and a JSON Schema for its input generated from the tool's parameter definition.” (openspec/specs/mcp-endpoint/spec.md · Requirement: Allowlisted tool discovery)
+- Authorization code flow with PKCE (BR-v8jzzh1r) — Guest handling and the no-framing headers, read from authorize.php. No source says why a resource parameter must equal the MCP endpoint URL; that is left unexplained here.
+- Authorization errors reach the client only through a verified redirect URI (BR-8tcg6hg0) — The list of errors that stay on the page and the ones that go back to the client, read from authorization.php.
+- Bearer token authentication (BR-g2p0g170) — The 503 answer during maintenance mode before the token check, read from server.php.
+- Client ID Metadata Documents (BR-s7g324tf) — The 1.5 s timeout and the 60 s cache of failed lookups, read from cimd.php.
+- Confirmation for writes that reach students (BR-53x8cxb1) — from “Tools that notify students or change what students see of their results (in this change: `message_students`, `post_announcement`, `grade_submission`) MUST NOT act on the first call.” (openspec/specs/write-confirmation/spec.md · Requirement: Confirmation for writes that reach students)
+- Confirmation token properties (BR-w7fed3kb) — from “A confirmation token MUST be single-use, bound to the user, the tool and a hash of the arguments, and MUST expire within 10 minutes.” (openspec/specs/write-confirmation/spec.md · Requirement: Confirmation token properties)
+- Consent screen notice (BR-4thmn9pm) — Scope: that the notice is plain text shown as entered, not translated, read from settings.php and authorize.php.
+- Consent screen states what the client can reach (BR-vnnvhe97) — from “Before a grant is given, the consent screen SHALL state, without any admin configuration and in the user's language: which data the client can read with the user's own permissions” (openspec/specs/access-control/spec.md · Requirement: Consent screen states what the client can reach)
+- Course overview (BR-0m7znbmm) — Who counts as a student (active enrolment with mod/assign:submit) and when hidden items are shown read from course_overview::execute.
+- Create or update by key (BR-pt0mkzk9) — The key length limit and create_quiz's handling of keys read from modules::check_key and create_quiz::execute.
+- Create quiz (BR-pj3jzeyy) — Linking the two presets to the design's 'coarse, forgiving tools' answer is my reading of design.md; site defaults for unset settings read from create_quiz::defaults.
+- Credential and access changes end AI connections (BR-z7xmnxc6) — The no-login case, where each check sits, and that an access token already issued survives a withdrawn capability until it expires, read from tokens.php, observer.php and server.php.
+- Data minimisation (BR-0awxzkmt) — Scope: that 'allowed to see' means the site's user identity fields for this user (core_user\fields::get_identity_fields), read from list_participants.php.
+- Dates are unambiguous (BR-824rg0cn) — That the weekday serves a read-back check is taken from the field description in dates::describe_returns and the server instructions; which tools take dates read from the code.
+- Declared data handling (BR-pjagnrrx) — Scope: which tables and external locations are declared, and that admin-registered clients survive a user's deletion with createdby cleared, read from provider.php.
+- Discovery appended to the MCP endpoint URL (BR-2rv7x4r5) — That no token is needed and which paths map to which document, read from server.php and metadata.php.
+- Discovery metadata (BR-7z21xadp) — from “The plugin SHALL publish OAuth 2.0 Protected Resource Metadata (RFC 9728) for the MCP endpoint and Authorization Server Metadata (RFC 8414).” (openspec/specs/oauth-server/spec.md · Requirement: Discovery metadata)
+- Dry run for every write tool (BR-eskr8h9g) — Scope: the list of tools that accept dry_run and the rollback mechanism, read from dry_run.php and the external functions.
+- Dynamic client registration (BR-ggz1prdn) — The 403 status, the default auth method, the grant/response type limits and that a cap of 0 disables it, read from registration.php and clients.php.
+- Event for every tool call (BR-2s4jrnnz) — Scope: that the event lands in the course context only when the call carries a courseid argument, otherwise in the system context, read from dispatcher::log.
+- Feedback that cannot be mailed is retried (BR-pv0pes77) — The rule is read from the code and test; the feedback spec states it only as a scenario.
+- Five fictitious students explain a decision (BR-mjyxb435) — The rule is read from the provisioner; the reason (process as evidence) is taken from the Oktatói Klub concept and the code comment about the contrast.
+- GoSchool-branded sandbox (BR-5jbkcvjw) — from “The sandbox SHALL look like part of the GoSchool brand world, following the parent GoSchool design system (palette, typography, logo): the site name, logo, compact logo, favicon, brand colour and” (openspec/specs/sandbox-onboarding/spec.md · Requirement: GoSchool-branded sandbox)
+- Grade submissions (BR-4exr0zrx) — from “`grade_submission` SHALL save grades for one or more students on one assignment.” (openspec/specs/grading/spec.md · Requirement: Grade submissions)
+- Grading follows the assignment's settings (BR-vzv0rtg9) — from “Saved grades SHALL follow the assignment's existing settings as a grade saved in the web UI would: marking workflow, grade release and student notification.” (openspec/specs/grading/spec.md · Requirement: Grading follows the assignment's settings)
+- Guidance for the AI in the server (BR-n90fwynp) — from “Because no client-side skill is shipped, the server SHALL carry the usage guidance itself: the `instructions` field SHALL describe the typical workflows (find the course, preview before writing, import questions” (openspec/specs/mcp-endpoint/spec.md · Requirement: Guidance for the AI in the server)
+- Hungarian and English (BR-s18qsr0y) — Scope: that the server instructions and tool descriptions, written for the AI, are English only, read from server.php and the external function descriptions.
+- Import questions (BR-v8z4wpb4) — The moodle/question:add check and the single transaction read from import_questions::execute.
+- Independent of the nitro plugin (BR-gxmhsz4e) — from “Sandbox onboarding SHALL be installable and removable on its own.” (openspec/specs/sandbox-onboarding/spec.md · Requirement: Independent of the nitro plugin)
+- Isolated fictitious students (BR-ss4wfhmt) — from “Each personal course SHALL have its own 20 fictitious students, created for that course only, with submissions that include on-time, late and missing cases, and on-time submissions without the required” (openspec/specs/sandbox-onboarding/spec.md · Requirement: Isolated fictitious students)
+- List assignment submissions (BR-7wwqq2w5) — Counts, the overdue flag and the group filter read from list_submissions::execute.
+- List participants (BR-vrm5t4br) — The identity-field condition (site identity settings) read from list_participants::execute.
+- List the teacher's courses (BR-g9n5mqep) — No source says why hidden courses are included; the rationale only restates that they are.
+- Malformed requests are JSON-RPC protocol errors (BR-v9dbcb6p) — The HTTP 400 status and that batches are refused, read from server.php; no source says why batches are not supported.
+- Markdown input with a cleaning report (BR-ypbhb7xa) — Which fields the rule covers read from save_page, save_assignment and create_quiz.
+- Message students individually (BR-mzqc20pj) — from “`message_students` SHALL send a message written in markdown to a set of students of one course, selected by user IDs, by group, or as all students.” (openspec/specs/messaging/spec.md · Requirement: Message students individually)
+- nitro is installed switched off (BR-jvg31w5p) — The obligation is read from the setting's default in settings.php. The reason comes from the admin guide's 'Switch on when you are ready'.
+- No role holds the AI access gate by default (BR-etgkp389) — The obligation is read from db/access.php (no archetype holds the capability) and the Behat scenario. The admin guide states the fact but not as a requirement.
+- No third-party data flow (BR-zff30aq7) — from “The plugin MUST NOT send course or user data anywhere other than back to the requesting client in the response, and MUST NOT store student data outside Moodle.” (openspec/specs/access-control/spec.md · Requirement: No third-party data flow)
+- Only new confirmed accounts get one demo course (BR-0mwp9dxj) — The exclusions (unconfirmed, suspended, nologin, guest, admin) and the onboarding-start cut-off are read from the observer code.
+- Partial updates (BR-an6epr7s) — The example of a setting a plain update would reset read from the modules::current_data docblock.
+- Per-tool admin control (BR-r44h8jj9) — Scope: that the allowlist is read on every request and that send_feedback also needs its own feedback switch, read from tools::allowed.
+- Personal demo course on signup (BR-0790epke) — from “When a new user completes signup on the sandbox, a personal copy of the demo course SHALL be created within one minute, named after a neutral sequence number, with the” (openspec/specs/sandbox-onboarding/spec.md · Requirement: Personal demo course on signup)
+- Post announcement (BR-4mp6a1py) — from “`post_announcement` SHALL post a discussion with a subject and a markdown message to the course's announcements forum, creating that forum if the course has none, so that Moodle's usual forum” (openspec/specs/messaging/spec.md · Requirement: Post announcement)
+- Protocol version negotiation (BR-rnwvsc7w) — That requests without the header are treated as 2025-03-26, read from server.php.
+- Read an activity (BR-m0pn8gkz) — The length limit, the visibility condition and the wording of the note read from read_activity::execute.
+- Redirect URI allowlist (BR-dh9fjtda) — The [::1] loopback host and that a URI removed from the list later fails at authorization, read from redirect_uris.php and authorization_test::test_redirect_uri_removed_from_allowlist_later.
+- Refresh with rotation (BR-8j7f5h4y) — from “The token endpoint SHALL accept a refresh token to issue a new access token and a new refresh token in the same response, and MUST invalidate the used refresh token.” (openspec/specs/oauth-server/spec.md · Requirement: Refresh with rotation)
+- Registration request limits (BR-2ywz0gp4) — The error code returned for too many redirect URIs, read from registration.php.
+- Regrading without feedback keeps the existing comment (BR-dkkvxm16) — Read from the code and the test.
+- Respect messaging preferences (BR-94d7wjwn) — Why the undelivered recipients are reported (so the teacher can reach them another way) is read from the tool's result fields; no source states it.
+- Same capabilities as the web UI (BR-gvkrcn29) — Scope: the capability each kind of tool checks, read from the external functions under classes/external.
+- Save assignment without silent defaults (BR-wg17zawg) — Value ranges, the scale lookup and the feedback-comments default read from save_assignment::execute and save_assignment::defaults.
+- Save page (BR-3a1jgyv3) — That mod/page:addinstance is checked inside Moodle's create_module() (can_add_moduleinfo) and not by nitro's own code; creation defaults read from save_page::execute.
+- Self-registered clients are marked unverified on the consent screen (BR-333p2bdv) — The warning wording and that only self-registered clients get it, read from authorize.php, consent.mustache and the language file.
+- Send feedback about nitro (BR-3ex3br5x) — from “`send_feedback` SHALL send a message written by the AI or the teacher to the address the admin configured (by default the nitro team's address), through Moodle's own mail.” (openspec/specs/feedback/spec.md · Requirement: Send feedback about nitro)
+- Separate groups limit whom the teacher can message or grade (BR-pgv0qvwc) — The rule is phrased from the design's security review and the code; no test covers the messaging half.
+- Site kill switch (BR-fyp9a02d) — from “A site-level setting SHALL enable or disable the plugin.” (openspec/specs/access-control/spec.md · Requirement: Site kill switch)
+- Streamable HTTP JSON-RPC endpoint (BR-8rdw60gx) — from “The plugin SHALL provide a single MCP endpoint at `/local/nitro/mcp.php` that accepts JSON-RPC 2.0 messages via HTTP POST according to the MCP Streamable HTTP transport, and SHALL answer each request” (openspec/specs/mcp-endpoint/spec.md · Requirement: Streamable HTTP JSON-RPC endpoint)
+- Supported Moodle versions (BR-2p15v1y5) — Which tools carry the guard read from the callers of qbank::require_moodle_5.
+- The sandbox login page explains the signup steps (BR-grb5tc8w) — The rule text is phrased from the notice set in deploy/branding.php.
+- The teacher sees the feedback before it is sent (BR-a6ypf3hc) — from “`send_feedback` is subject to the confirmation protocol of `write-confirmation`: the first call SHALL return the exact message and a confirmation token, and it SHALL be sent only when the call” (openspec/specs/feedback/spec.md · Requirement: The teacher sees the feedback before it is sent)
+- The token endpoint never fetches client metadata (BR-dvk3h1g2) — The invalid_client answer for a URL client never seen before, read from tokens.php and security_review_test.
+- Token issuance (BR-rk5wpj5r) — The actual lifetimes (5-minute code, 1-hour access token) and the body-only parameter rule, read from authorization.php, tokens.php and token.php. No source says why RFC 6749 error codes are required beyond following the standard.
+- Token secrecy and validity (BR-w8azb6hg) — from “Tokens and client secrets MUST be stored only as hashes.” (openspec/specs/oauth-server/spec.md · Requirement: Token secrecy and validity)
+- Tool annotations (BR-0btt3wym) — That send_feedback is also marked destructive, and the protocol-version condition, read from tools.php and registry.php.
+- Tool invocation (BR-pbthvp6m) — from “`tools/call` SHALL validate the arguments against the tool's parameter definition, run the tool, and return its result as MCP tool content.” (openspec/specs/mcp-endpoint/spec.md · Requirement: Tool invocation)
+- Unreadable dates are refused (BR-303nmket) — The obligation is read from dates::parse and its test; the roll-over reason is a code comment, the rest of the rationale is mine.
+- Updates report the changed fields (BR-jaaxbjjp) — The promise is stated in design.md's risk list; the field lists read from save_page::execute and save_assignment::execute.
+- Users see and revoke their connections (BR-exq090x9) — The confirmation step and the profile section the link appears in, read from connections.php and lib.php.
+- Authorization code (E-rr2hr059) — from “Single-use authorization codes” (local/nitro/db/install.xml · local_nitro_code)
+- Confirmation (E-pn786gat) — from “Confirmations are stored in local_nitro_confirm (user, tool, SHA-256 of canonicalised arguments, expiry, used flag).” (local/nitro/db/install.xml · local_nitro_confirm)
+- Connection (E-qscpp4dc) — from “A user's approval of one client; what the connections page lists and revokes” (local/nitro/db/install.xml · local_nitro_grant)
+- Demo course (E-02hhpgak) — from “a personal copy of the demo course SHALL be created within one minute, named after a neutral sequence number” (openspec/specs/sandbox-onboarding/spec.md · Personal demo course on signup)
+- Feedback message (E-qnrnbe6m) — from “The mail carries only the teacher's text, the site name and URL and version numbers, never course or student data” (local/nitro/README.md · 4. Settings)
+- Fictitious student (E-5hsx8wrt) — from “creates 20 fictitious students for this course only (auth=nologin, email on an unroutable domain such as @example.invalid)” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D9)
+- Keyed activity (E-w8qv1jcz) — from “save_page and save_assignment look up the activity by key in the course module's idnumber field” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D10. Stable keys for create-or-update)
+- OAuth client (E-5wz1wxcs) — from “OAuth clients registered dynamically or by an admin. CIMD clients are not stored here.” (local/nitro/db/install.xml · local_nitro_client)
+- Token (E-27sbym24) — from “Access and refresh tokens of a grant” (local/nitro/db/install.xml · local_nitro_token)
+- Tool (E-01esqa0n) — from “The MCP layer is a thin adapter: it maps tools/list to the allowlisted functions” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D1. Architecture)
+- Tool call record (E-n12p4s37) — from “other stores only tool name, client ID, outcome and affected object IDs.” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D8. Audit event)
+- A missing tool (EX-pj4q0m1h) — Given supplied from the test setup (feedback on, address set, teacher with the gate).
+- A new student joins after the preview (EX-3dcp0j66) — Read from the test.
+- A new version brings a new tool (EX-shzdphtt) — The Given, read from db/upgrade.php.
+- A preview invents no identifiers (EX-x63xyxa2) — Given: read from the dry-run tests.
+- Abandoned client (EX-c0n19jde) — The Given, read from cleanup_test.
+- Accept several submissions (EX-ee0ayt3n) — Given supplied from the test setup (two-item scale, five students).
+- Account older than onboarding (EX-fgdyz96j) — Read from the test.
+- Acting as the token owner (EX-yadftwr0) — from “a request carries a valid token of user U” (openspec/specs/mcp-endpoint/spec.md · Requirement: Bearer token authentication / Scenario: Acting as the token owner)
+- Activity the user cannot see (EX-e06hmsst) — Given taken from the setup of read_activity_test.php::test_requires_the_gate.
+- Activity with no text (EX-cavmxqpk) — Given taken from the setup of read_activity_test.php::test_activity_without_readable_text.
+- Admin deletes a registered client (EX-f40nh2gn) — Given, When and Then read from the cited test or code.
+- Admin disables the plugin (EX-8wsvn5wg) — Given: read from the server and token tests.
+- Admin removes a tool (EX-ptkxgf96) — from “a site admin removes a tool from the allowlist” (openspec/specs/mcp-endpoint/spec.md · Requirement: Allowlisted tool discovery / Scenario: Admin removes a tool)
+- Annotations mark reading and student-reaching tools (EX-7bca7bf6) — Given, When and Then read from the cited test or code.
+- Announcement (EX-78bstbb4) — Given supplied from the test setup (visible course with three students).
+- Announcement preview (EX-6cbkfeck) — Given: read from the messaging test.
+- Arguments changed after preview (EX-3d1cgrnr) — from “the confirming call's arguments differ from the previewed ones” (openspec/specs/write-confirmation/spec.md · Requirement: Confirmation for writes that reach students / Scenario: Arguments changed after preview)
+- Assignment instructions (EX-jtdj5h7d) — Given taken from the setup of read_activity_test.php::test_assignment_description_and_dates.
+- Attendee opens the sandbox (EX-qm6gjg5p) — Given supplied from the sandbox deployment script that applies the branding.
+- Batch request (EX-87v04fk1) — Given, When and Then read from the cited test or code.
+- Body that is not JSON (EX-he59g9km) — Given, When and Then read from the cited test or code.
+- Cap reached (EX-b8ashkrf) — from “the number of never-used clients is at the cap” (openspec/specs/oauth-server/spec.md · Requirement: Dynamic client registration / Scenario: Cap reached)
+- Claude Code on an ephemeral port (EX-qd03nxma) — from “a client uses `http://localhost:53117/callback` with the default list” (openspec/specs/oauth-server/spec.md · Requirement: Redirect URI allowlist / Scenario: Claude Code on an ephemeral port)
+- Claude connects without registering (EX-n412qy9v) — The document contents and the logged-in teacher, read from cimd_test.
+- Claude web (EX-h62kpp5t) — from “a client uses `https://claude.ai/api/mcp/auth_callback` with the default list” (openspec/specs/oauth-server/spec.md · Requirement: Redirect URI allowlist / Scenario: Claude web)
+- Client discovers through the 401 (EX-7qmygb41) — from “a client follows the `resource_metadata` URL from a 401 response of the MCP endpoint, then fetches `<issuer>/.well-known/openid-configuration`” (openspec/specs/oauth-server/spec.md · Requirement: Discovery metadata / Scenario: Client discovers through the 401)
+- Client ID URL on another host (EX-kktpwgfm) — from “an authorization request uses a URL `client_id` on a host not in the CIMD host list” (openspec/specs/oauth-server/spec.md · Requirement: Client ID Metadata Documents / Scenario: Client ID URL on another host)
+- Client metadata fetch (EX-ed7p1t8h) — Given: read from the CIMD tests.
+- Code reuse (EX-c40ck242) — from “an authorization code is presented a second time” (openspec/specs/oauth-server/spec.md · Requirement: Token issuance / Scenario: Code reuse)
+- Confidential client without secret (EX-7jg32w8s) — from “a client registered with a secret calls the token endpoint without it” (openspec/specs/oauth-server/spec.md · Requirement: Token issuance / Scenario: Confidential client without secret)
+- Confirmed call executes (EX-d1q1twzy) — from “the same user calls the tool again with identical arguments and the returned token within its validity” (openspec/specs/write-confirmation/spec.md · Requirement: Confirmation for writes that reach students / Scenario: Confirmed call executes)
+- Confirmed user logs in twice (EX-dhv0tysm) — Read from the test.
+- Consent for a self-registered client (EX-1gasmf3q) — Given, When and Then read from the cited test or code.
+- Copilot registers with a secret (EX-1fcwdxwm) — from “a client registers with `token_endpoint_auth_method: client_secret_post` and the Teams redirect URI” (openspec/specs/oauth-server/spec.md · Requirement: Dynamic client registration / Scenario: Copilot registers with a secret)
+- Course not yet visible (EX-7c87f5cc) — Given taken from the setup of list_courses_test.php::test_teacher_courses_not_student_courses.
+- Cut-off before due date (EX-4mtr0p49) — Given taken from the setup of save_assignment_test.php::test_cutoff_before_due.
+- Date without a time (EX-2znq2amq) — The case is read from the test named in sources; no spec scenario states it.
+- Date without offset (EX-m18kkqjh) — Given taken from the setup of save_assignment_test.php::test_soft_and_hard_deadline.
+- Default participant list (EX-nykxzd6x) — Given: read from the participants test.
+- Denied call (EX-hpff0hnx) — Given: read from the dispatcher test.
+- Description-only update (EX-9fmw4zer) — Given taken from the setup of save_assignment_test.php::test_description_only_update.
+- Discovery appended to the MCP URL (EX-xqshq479) — Given, When and Then read from the cited test or code.
+- Dry run of a page update (EX-1rvbyf9r) — Given: read from the save_page test.
+- Dynamic registration switched off (EX-9j0mdhmx) — from “the admin switches dynamic registration off” (openspec/specs/oauth-server/spec.md · Requirement: Dynamic client registration / Scenario: Dynamic registration switched off)
+- Expired or revoked token (EX-ta0dz05e) — from “a request carries an expired, revoked or unknown token” (openspec/specs/mcp-endpoint/spec.md · Requirement: Bearer token authentication / Scenario: Expired or revoked token)
+- Explicit identity request (EX-j0jdcmya) — Given: that the permission is the site's identity-field setting, read from the test and list_participants.php.
+- Faculty install (EX-5wqy83gd) — Given supplied from PRODUCT.md (the faculty theme leads).
+- Faculty install (EX-6fw85ht2) — Given supplied from the admin guide; no test exercises it.
+- Feedback carries no course data (EX-zyjznw85) — Given: read from the feedback spec and test.
+- Fictitious student login (EX-t02b3fxd) — Given supplied from the provisioner and its test (nologin accounts without a usable password).
+- Filter by role (EX-3mv1b54d) — Given taken from the setup of list_participants_test.php::test_filter_by_role.
+- Final deadline in the overview (EX-a18tbhy3) — Given taken from the setup of course_overview_test.php::test_overview_of_a_course.
+- First call returns preview (EX-f83jmky6) — Given: read from the messaging test.
+- First publish (EX-awsmjxg8) — Given taken from the setup of save_page_test.php::test_first_publish.
+- Foreign resource (EX-98fze9jb) — That the error is redirected to the client because the client and redirect URI are valid, read from authorization.php.
+- Forum the user cannot see (EX-pjz37d7f) — Given taken from the setup of list_forum_posts_test.php::test_hidden_forum_is_not_returned.
+- Fresh install answers nothing (EX-833rgja4) — Read from the setting's default and from what the endpoints and the settings page do while nitro is off.
+- Fresh install grants AI access to nobody (EX-qc85n74p) — Read from the two Behat scenarios together.
+- Gate does not add power (EX-hh89ypbz) — Given: read from the save_page and quiz tests.
+- Gate granted in one course only (EX-8y0q4fnf) — Given: read from the dispatcher test.
+- GET not supported (EX-j5j6c1nv) — The exception for appended discovery paths, read from server.php.
+- GIFT into the shared bank (EX-2w0ejwm0) — Given taken from the setup of quiz_tools_test.php::test_gift_into_new_shared_bank.
+- Grade outside the scale (EX-cd9kajhb) — Given supplied from the two tests (10-point assignment; scale "Incomplete, Complete").
+- Graded students stay in the list (EX-qjn16pvp) — Given taken from the setup of list_submissions_test.php::test_all_students_with_state.
+- Grades preview (EX-2pp8ygjz) — Given: read from the grading test.
+- Grading turned off site-wide (EX-ah9170vw) — from “an admin unticks `grade_submission` and a teacher's client lists tools” (openspec/specs/access-control/spec.md · Requirement: Per-tool admin control / Scenario: Grading turned off site-wide)
+- Half points for late work (EX-255rr6g0) — Given supplied from the test setup.
+- Headings and lists (EX-x3f8s45z) — Given taken from the setup of content_test.php::test_headings_table_and_list.
+- Hidden activities (EX-sva1ctck) — Given taken from the setup of course_overview_test.php::test_overview_of_a_course.
+- Hidden course (EX-0jveqzbv) — Given supplied from the test setup (course with visible = 0).
+- Hungarian teacher (EX-9y1g0dmm) — Given: that the Hungarian language pack must be installed, a Moodle precondition.
+- Initialize handshake (EX-f9bk4jxr) — from “an authenticated client POSTs an `initialize` request” (openspec/specs/mcp-endpoint/spec.md · Requirement: Streamable HTTP JSON-RPC endpoint / Scenario: Initialize handshake)
+- Invalid arguments (EX-a3n6gewd) — The concrete case, read from dispatcher_test.
+- Key of an assignment reused for a page (EX-kq6g6nag) — The case is read from the test named in sources; no spec scenario states it.
+- Late submission (EX-kanvkahw) — Given taken from the setup of list_submissions_test.php::test_all_students_with_state.
+- Listing tools (EX-r2gbnm6q) — from “an authenticated client calls `tools/list`” (openspec/specs/mcp-endpoint/spec.md · Requirement: Allowlisted tool discovery / Scenario: Listing tools)
+- Loopback client warning (EX-y3wg8jte) — The loopback-only client, read from authorization_test and the behat feature.
+- Marking workflow in use (EX-cbj92rd0) — Given supplied from the test setup (marking workflow on, no state given, so the default applies).
+- Maximum grade follows the questions (EX-k1bhjn7a) — Given taken from the setup of quiz_tools_test.php::test_fixed_questions, test_max_grade_the_teacher_asked_for.
+- Message sent (EX-7q2y9hr2) — from “`message_students` sends a message” (openspec/specs/audit-log/spec.md · Requirement: No content in the log / Scenario: Message sent)
+- Messaging a fictitious student (EX-am8wdmy2) — Given supplied from the provisioner test.
+- Missing or plain PKCE (EX-y9emfh9f) — That client and redirect URI are valid, so the error goes back to the client, read from authorization.php.
+- Missing permission (EX-wjatkdda) — Given taken from the setup of quiz_tools_test.php::test_missing_permission.
+- Missing submission type (EX-trp2jhza) — Given taken from the setup of save_assignment_test.php::test_missing_submission_type.
+- Missing submissions (EX-zk6y6k1c) — Given taken from the setup of list_submissions_test.php::test_filters.
+- Missing token (EX-5rzf7tc2) — from “a request arrives without an `Authorization: Bearer` header” (openspec/specs/mcp-endpoint/spec.md · Requirement: Bearer token authentication / Scenario: Missing token)
+- Moodle 4.5 site (EX-5252a44f) — Given taken from the setup of quiz_tools_test.php::test_moodle_before_5.
+- New quiz is hidden (EX-0g590ag8) — The case is read from the test named in sources; no spec scenario states it.
+- Newcomer opens the login page (EX-6bwjak6q) — Read from the deployment script; no test covers it.
+- No address configured (EX-6xj4ptmr) — Given supplied from the test setup (empty address).
+- No shared bank yet (EX-s9cjm446) — Given taken from the setup of quiz_tools_test.php::test_gift_into_new_shared_bank.
+- Nonexistent section (EX-5a5t0wrj) — Given taken from the setup of save_page_test.php::test_nonexistent_section.
+- Not enough questions (EX-afmx7xzp) — Given taken from the setup of quiz_tools_test.php::test_not_enough_questions.
+- Not logged in (EX-bc8tkdgc) — from “a user who is not logged in to Moodle opens a valid authorization request” (openspec/specs/oauth-server/spec.md · Requirement: Authorization code flow with PKCE / Scenario: Not logged in)
+- Notification without response (EX-byedprp8) — That notifications are only acknowledged after the token check, read from server.php.
+- One invalid grade in a batch (EX-6xgcv6dp) — Read from the test.
+- Overdue submission (EX-h0ac7g89) — Given taken from the setup of list_submissions_test.php::test_all_students_with_state.
+- Overview of a course (EX-hx2nc7vc) — Given taken from the setup of course_overview_test.php::test_overview_of_a_course.
+- Page without content (EX-2cdvscjf) — The case is read from the test named in sources; no spec scenario states it.
+- Parse error (EX-nz86hpas) — Given taken from the setup of quiz_tools_test.php::test_parse_error_imports_nothing.
+- Password change disconnects AI tools (EX-2r70rr30) — Given, When and Then read from the cited test or code.
+- Permission failure (EX-f4v559pg) — The concrete case, read from dispatcher_test.
+- Plain text reads as written (EX-nvsrrm28) — Given supplied from the test, which checks the plain-text preview of message_students; post_announcement uses the same conversion.
+- Plugin privacy registry (EX-zp4svaw8) — from “an admin opens the site's plugin privacy compliance page” (openspec/specs/access-control/spec.md · Requirement: Declared data handling / Scenario: Plugin privacy registry)
+- Practice quiz until Friday (EX-8nq54m2z) — Given taken from the setup of quiz_tools_test.php::test_practice_quiz_until_friday.
+- Preview first (EX-s9t75fpx) — Given supplied from the test setup.
+- Public registration (EX-25vjghna) — from “a client registers with `token_endpoint_auth_method: none` and an allowed redirect URI” (openspec/specs/oauth-server/spec.md · Requirement: Dynamic client registration / Scenario: Public registration)
+- Queued feedback goes out on a later run (EX-mwjwrn1t) — Read from the test.
+- Quiz already attempted (EX-p073nzkk) — Given taken from the setup of quiz_tools_test.php::test_quiz_already_attempted.
+- Random questions from a category (EX-np3kt90m) — Given taken from the setup of quiz_tools_test.php::test_random_questions_from_a_category.
+- Read-only site (EX-4rz7emq7) — Given: read from the server test.
+- Reading a page (EX-fjhpshea) — Given taken from the setup of read_activity_test.php::test_page_content.
+- Reading the announcements (EX-3njav9wt) — Given taken from the setup of list_forum_posts_test.php::test_announcements_with_replies.
+- Recipient not in the course (EX-2jf4ksrj) — Given supplied from the test setup.
+- Redirect URI mismatch (EX-ajbcm96g) — from “an authorization request uses a redirect URI that is not registered for the client” (openspec/specs/oauth-server/spec.md · Requirement: Admin client registration / Scenario: Redirect URI mismatch)
+- Refresh after the site's caches are purged (EX-1732z0nf) — from “a client identified by a Client ID Metadata Document refreshes its token after the site's caches were purged, for example by a plugin upgrade” (openspec/specs/oauth-server/spec.md · Requirement: Refresh with rotation / Scenario: Refresh after the site's caches are purged)
+- Refresh (EX-bm4g8gf5) — from “the client presents a valid refresh token” (openspec/specs/oauth-server/spec.md · Requirement: Refresh with rotation / Scenario: Refresh)
+- Refresh from a metadata URL never seen before (EX-es5d5h76) — Given, When and Then read from the cited test or code.
+- Refresh token reuse (EX-bvcme1yj) — from “an already used refresh token is presented again” (openspec/specs/oauth-server/spec.md · Requirement: Refresh with rotation / Scenario: Refresh token reuse)
+- Regrade without a new comment (EX-yyckwz12) — Read from the test.
+- Reminder to students missing a submission (EX-nxw3s98y) — Given supplied from the scenario and the test setup.
+- Removed content is reported (EX-cv2f3jbz) — Given taken from the setup of content_test.php::test_removed_content_is_reported.
+- Removing a due date (EX-fex453gx) — The case is read from the test named in sources; no spec scenario states it.
+- Replies (EX-bbfnrn3a) — Given taken from the setup of list_forum_posts_test.php::test_announcements_with_replies.
+- Republish after editing the source (EX-afynnz6x) — Given taken from the setup of save_page_test.php::test_republish_updates_without_duplicate.
+- Responses within client time limits (EX-phc1smpa) — from “a client requests a discovery, registration or token endpoint” (openspec/specs/oauth-server/spec.md · Requirement: Discovery metadata / Scenario: Responses within client time limits)
+- Rewriting existing content (EX-nkd9rmpc) — Given taken from the setup of read_activity_test.php::test_page_content.
+- Sandbox notice (EX-9msat0s0) — Given: read from the Behat background.
+- Site with the root rewrite (EX-0jj8x464) — from “the site's web server maps the root well-known paths to the plugin” (openspec/specs/oauth-server/spec.md · Requirement: Discovery metadata / Scenario: Site with the root rewrite)
+- Site without rewrite (EX-4e6g5c3g) — Given: that nitro must be switched on for the check to run, read from setting_selfcheck.php.
+- Soft and hard deadline (EX-r9xy9vhs) — Given taken from the setup of save_assignment_test.php::test_soft_and_hard_deadline.
+- Statement is not the admin's to remove (EX-wdwmnqe1) — Given: read from the Behat scenario.
+- Student blocks messages (EX-wvecz15c) — Given supplied from the test setup.
+- Student of another group (EX-5yjttja7) — Read from the test, which exercises grading; messaging behaves the same in the code.
+- Student token (EX-q3yf1fj6) — Given: read from the submissions test.
+- Students do not overlap (EX-em976q93) — Given supplied from the test setup.
+- Students never see an empty quiz (EX-w06tvz69) — Given taken from the setup of quiz_tools_test.php::test_quiz_opens_only_once_it_has_questions.
+- Students who cannot be emailed (EX-082ksp0y) — Given supplied from the test setup (one student with nologin).
+- Students who never showed up (EX-tt8nsdrt) — Given taken from the setup of list_participants_test.php::test_never_accessed.
+- Submission content only when asked (EX-e1t16smd) — Given: read from the submissions test.
+- Submissions to work with (EX-kpr3pkta) — Given supplied from the provisioner, its test and the D9 notes.
+- Submitted repository links (EX-nk7d90ff) — Given taken from the setup of list_submissions_test.php::test_repository_links.
+- Successful call (EX-kzk28f7s) — from “a client calls an allowlisted tool with valid arguments” (openspec/specs/mcp-endpoint/spec.md · Requirement: Tool invocation / Scenario: Successful call)
+- Successful write (EX-5v6r7193) — Given: read from the save_page and dispatcher tests.
+- Suspended user (EX-1q2e7mxa) — from “a user with a valid access token is suspended in Moodle” (openspec/specs/oauth-server/spec.md · Requirement: Token secrecy and validity / Scenario: Suspended user)
+- Switched off (EX-dk4f44js) — Given supplied from the test setup.
+- Teacher connects a client (EX-6z1sg28y) — Given: read from the Behat scenario.
+- Teacher denies the request (EX-jp4fkd5k) — Given, When and Then read from the cited test or code.
+- Teacher disconnects Claude (EX-2s8d91xz) — from “a teacher revokes the Claude entry on their connections page” (openspec/specs/oauth-server/spec.md · Requirement: Users see and revoke their connections / Scenario: Teacher disconnects Claude)
+- Teacher looks for thought-through submissions (EX-ytya079z) — Read from the code; no test covers it.
+- Teacher loses AI access (EX-7wjzjfre) — Given, When and Then read from the cited test or code.
+- Teacher rewrites it (EX-0kf5tv29) — Given supplied from the test.
+- Teacher signs up (EX-h4w4c68e) — Given supplied from the sandbox deployment scripts and the provisioner test.
+- Teacher with several courses (EX-hsf3wymy) — Given taken from the setup of list_courses_test.php::test_teacher_courses_not_student_courses.
+- The mail server is not reachable (EX-cmmxt4d5) — Given taken from the setup of the PHPUnit test.
+- The teacher sees whose grade it is (EX-7w3yexht) — Given supplied from the test, which checks names in the preview.
+- Token of another user (EX-er57ayse) — from “a user presents a confirmation token issued to a different user” (openspec/specs/write-confirmation/spec.md · Requirement: Confirmation token properties / Scenario: Token of another user)
+- Token reuse (EX-3qrrarbw) — from “a confirmation token that has already been used is presented again” (openspec/specs/write-confirmation/spec.md · Requirement: Confirmation token properties / Scenario: Token reuse)
+- Too many redirect URIs (EX-pkshpjj3) — Given, When and Then read from the cited test or code.
+- Tool call makes no outbound request (EX-edf8sgs1) — from “any tool is called” (openspec/specs/access-control/spec.md · Requirement: No third-party data flow / Scenario: Tool call makes no outbound request)
+- Two attendees (EX-kkd4b8rj) — Given supplied from the test setup.
+- Unknown client (EX-59qw3gfm) — from “an authorization request names a client ID that is neither registered nor an allowed CIMD URL” (openspec/specs/oauth-server/spec.md · Requirement: Admin client registration / Scenario: Unknown client)
+- Unknown host (EX-g9cerqtf) — from “a client uses a redirect URI on a host not in the list” (openspec/specs/oauth-server/spec.md · Requirement: Redirect URI allowlist / Scenario: Unknown host)
+- Unknown protocol version in initialize (EX-5dewf9nb) — Given, When and Then read from the cited test or code.
+- Unknown tool (EX-erswmefh) — from “a client calls a tool name that is not on the allowlist” (openspec/specs/mcp-endpoint/spec.md · Requirement: Tool invocation / Scenario: Unknown tool)
+- Unsupported method (EX-qq17sejx) — from “the client calls a JSON-RPC method the server does not implement” (openspec/specs/mcp-endpoint/spec.md · Requirement: Streamable HTTP JSON-RPC endpoint / Scenario: Unsupported method)
+- Unsupported protocol version header (EX-g9f9fj8s) — Given, When and Then read from the cited test or code.
+- Update lists what changed (EX-r7x9s9sb) — The case is read from the test named in sources; no spec scenario states it.
+- User approves (EX-5x97yhke) — from “a logged-in user who holds `local/nitro:use` approves the consent screen” (openspec/specs/oauth-server/spec.md · Requirement: Authorization code flow with PKCE / Scenario: User approves)
+- User data deleted (EX-rte4gwzn) — Given: read from the privacy test.
+- User without the access capability (EX-86xg56ac) — from “a logged-in user who does not hold `local/nitro:use` in any context opens an authorization request” (openspec/specs/oauth-server/spec.md · Requirement: Authorization code flow with PKCE / Scenario: User without the access capability)
+- Valid exchange (EX-4g2zr0fq) — That an empty scope grants offline_access, read from authorization.php::scope.
+- Which Moodle this is (EX-p0eqmsjb) — Given taken from the setup of list_courses_test.php::test_teacher_courses_not_student_courses.
+- Write tool description (EX-4631fj09) — from “a client lists tools” (openspec/specs/mcp-endpoint/spec.md · Requirement: Guidance for the AI in the server / Scenario: Write tool description)
+- Wrong forum ID (EX-yppmszhg) — The case is read from the test named in sources; no spec scenario states it.
+- Wrong verifier (EX-6xgwgmtt) — from “the `code_verifier` does not match the code challenge” (openspec/specs/oauth-server/spec.md · Requirement: Token issuance / Scenario: Wrong verifier)
+- Purpose of access-control (G-1dkc0da5) — Context and baseline/target written from the archived nitro-demo design and proposal.
+- Purpose of audit-log (G-epbgv3wv) — Context and baseline/target written from the archived nitro-demo design and proposal.
+- Purpose of content-authoring (G-j44k40tx) — Context and baseline/target written from the archived nitro-demo design and proposal.
+- Purpose of course-read (G-dzt6pwqc) — Context and baseline/target written from the archived nitro-demo design and proposal.
+- Purpose of feedback (G-1nmcc10t) — Context and baseline/target written from the archived nitro-demo design and proposal.
+- Purpose of grading (G-2nngzv47) — Context and baseline/target written from the archived nitro-demo design and proposal.
+- Purpose of mcp-endpoint (G-31g4x4n1) — Context and baseline/target written from the archived nitro-demo design and proposal.
+- Purpose of messaging (G-pb0wkxwx) — Context and baseline/target written from the archived nitro-demo design and proposal.
+- Purpose of oauth-server (G-njg4hmw3) — Context and baseline/target written from the archived nitro-demo design and proposal.
+- Purpose of quiz-authoring (G-pm7jc53c) — Context and baseline/target written from the archived nitro-demo design and proposal.
+- Purpose of sandbox-onboarding (G-ebk4wy3q) — Context and baseline/target written from the archived nitro-demo design and proposal.
+- Purpose of write-confirmation (G-qh7yqv9f) — Context and baseline/target written from the archived nitro-demo design and proposal.
+- Authorization code lifecycle (SM-2cbadn4j) — from “Codes are deleted on redemption rather than flagged as used” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D3)
+- Confirmation lifecycle (SM-60dq46y6) — from “preview first, execute only with a confirmation token” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D5)
+- Demo course provisioning (SM-y1w54wy7) — from “observers on user_loggedin and user_created queue an ad hoc task for a confirmed user without a demo course yet” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D9)
+- Feedback delivery (SM-c35b2jxb) — States named from the admin guide and the feedback spec.
+- Self-registered client lifecycle (SM-tw1ejhz5) — from “a scheduled task deleting clients without a token after 7 days; and a cap on never-used clients” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D3)
+- Token lifecycle (SM-ptdrfj4f) — from “refresh tokens carry a familyid, and reuse of a rotated token revokes the whole family” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D3. OAuth 2.1 server)
+- Bring Nitro to an institution's Moodle (UC-9ez2hth6) — The journey order follows the admin installation guide.
+- Build a quiz (UC-xmqtfd5k) — from “For a quiz: import the questions first (import_questions creates the category), then create_quiz (hidden), then add_questions_to_quiz” (local/nitro/classes/mcp/server.php · instructions)
+- Call a Moodle tool (UC-ggfwqy05) — from “Each tool is a Moodle external function declared in db/services.php, starting with validate_context() and require_capability().” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D1. Architecture: Moodle is the MCP server)
+- Check where the course stands (UC-fkdsmx6a) — The step order as the server instructions tell the AI to work.
+- Connect an AI assistant to Moodle (UC-zkjbkcv9) — from “Success means a teacher connects by pasting one URL and signing in, sees what they are allowing, and can take it back at any time.” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D3a. What Claude actually does)
+- Decide who and what may use Nitro (UC-66c8mz69) — from “a site setting that allows or denies each tool one by one, so an admin can run a read-only site or keep grading out of the AI's reach” (local/nitro/README.md · 4. Settings)
+- Follow up with students who are behind (UC-k5n11dd7) — from “This mirrors the teacher's own hard rule ("show it first, send only after an explicit go"), which came from a message sent without approval.” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D5. Server-side confirmation tokens)
+- Get a trial course (UC-nqksd170) — from “signing up gives them a personal, realistic course with fictitious students, isolated from every other attendee” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D9. Sandbox onboarding as a separate plugin)
+- Grade submissions with feedback (UC-31a5ksp5) — from “grade_submission uses the assign API ... so marking workflow, notifications and the gradebook behave as in the web UI” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D11. Grades and announcements through Moodle's own APIs)
+- Install and switch on Nitro (UC-ba92b51n) — from “nitro is installed switched off. Nothing answers until you switch it on in section 4.” (local/nitro/README.md · 2–4)
+- Post an announcement (UC-2gwwwwq1) — from “post_announcement uses forum_get_course_forum($courseid, 'news') (which creates the announcements forum when missing)” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D11. Grades and announcements through Moodle's own APIs)
+- Publish pages and assignments (UC-1n3xk85j) — from “This makes republishing from the teacher's repository idempotent, like the Canvas scripts that matched pages by title, but with a key that survives renaming.” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D10. Stable keys for create-or-update)
+- Register an AI client by hand (UC-jh0e8rvq) — from “Register a client yourself here, as confidential (it gets a secret, shown once) or public, or delete one.” (local/nitro/README.md · 7. Administration)
+- Report a missing tool or a fault (UC-qvjk6t29) — from “a tool that mails feedback about nitro to the address the admin configured, after the teacher approved the text” (local/nitro/README.md · 4. Settings)
+- Review what the AI did (UC-3gkbmrr8) — from “every tool call is logged as the event AI tool called with user, course and tool, but without the content” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D8. Audit event)
+- Revoke a connection (UC-egw7rdx5) — from “The profile page /local/nitro/connections.php lists grants (user + client) and revokes them by deleting all their tokens.” (openspec/changes/archive/2026-09-22-nitro-demo/design.md · D3. OAuth 2.1 server)
+- Run a teaching week from the AI assistant (UC-czb36t32) — The order of the steps as one summary journey; the sources list the loop, not an order.
+- Try Nitro on the trial Moodle (UC-n056jh08) — The three steps as the landing page tells them (2026-10-13).
+
+Conversation: .kotta/changes/baseline/conversation.md, cited 4 times. Read it for the why before calling anything inferred.

@@ -1,0 +1,67 @@
+id: use-case
+version: 1
+directory: use-cases
+canonical_source: Jacobson
+description: A goal-directed interaction between an actor and the system, including alternatives.
+identity:
+  prefix: UC
+  format: "<prefix>-<26-character lowercase Crockford ULID>"
+  filename: "<slug>-<last 8 id characters>.md"
+required_fields:
+  frontmatter: [id, form, title]
+  body_headings: [Intent, Preconditions, Main success scenario, Alternatives]
+# Cockburn's goal level, when the use case states one.
+field_values:
+  level: [summary, user-goal, subfunction]
+required_edges:
+  - name: actor
+    direction: outgoing
+    fields: [actor]
+    source_forms: [use-case]
+    target_forms: [actor]
+    minimum: 1
+    question: Which actor owns this interaction?
+  - name: goal
+    direction: outgoing
+    fields: [goal]
+    source_forms: [use-case]
+    target_forms: [goal]
+    minimum: 1
+    question: Which goal does this use case serve?
+  - name: evidence
+    direction: incoming
+    fields: [subjects]
+    source_forms: [example]
+    target_forms: [use-case]
+    minimum: 1
+    question: What example proves this use case?
+  # Decomposition, as UML names it (BR-01m4ee22ypyq06n7vkk4ycnz9v): the use cases this one includes,
+  # and the use cases it extends. Optional; never a cycle.
+  - name: includes
+    direction: outgoing
+    fields: [includes]
+    source_forms: [use-case]
+    target_forms: [use-case]
+    minimum: 0
+    acyclic: true
+    question: Which use cases does this one include as part of its own behaviour?
+  - name: extends
+    direction: outgoing
+    fields: [extends]
+    source_forms: [use-case]
+    target_forms: [use-case]
+    minimum: 0
+    acyclic: true
+    question: Which use case does this one extend with optional behaviour?
+  # The requirements this use case relies on, after SysML «refine» (BR-01m4ee234nxva765r3jq5vmw01).
+  - name: refines
+    direction: outgoing
+    fields: [refines]
+    source_forms: [use-case]
+    target_forms: [business-rule, interface, quality-attribute]
+    minimum: 0
+    question: Which rules, interfaces and quality attributes does this use case rely on?
+recognition_signals:
+  - A multi-step interaction has a clear initiating actor and result.
+  - Preconditions, alternative paths, failures, or cancellation matter.
+  - Several stories describe one end-to-end user goal.

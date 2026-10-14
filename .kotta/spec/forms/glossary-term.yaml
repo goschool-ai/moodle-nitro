@@ -1,0 +1,17 @@
+id: glossary-term
+version: 1
+directory: glossary-terms
+canonical_source: DDD Ubiquitous Language
+description: One agreed domain term with a precise meaning and usage boundary.
+identity:
+  prefix: GT
+  format: "<prefix>-<26-character lowercase Crockford ULID>"
+  filename: "<slug>-<last 8 id characters>.md"
+required_fields:
+  frontmatter: [id, form, title]
+  body_headings: [Definition, Usage, Non-examples]
+required_edges: []
+recognition_signals:
+  - The same concept is called by several names.
+  - A domain word is overloaded or repeatedly clarified.
+  - A term's inclusion and exclusion boundary affects behavior.

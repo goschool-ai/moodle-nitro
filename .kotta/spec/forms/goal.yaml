@@ -1,0 +1,33 @@
+id: goal
+version: 1
+directory: goals
+canonical_source: Impact Mapping
+description: A measurable outcome the product or initiative is intended to create.
+identity:
+  prefix: G
+  format: "<prefix>-<26-character lowercase Crockford ULID>"
+  filename: "<slug>-<last 8 id characters>.md"
+required_fields:
+  frontmatter: [id, form, title]
+  body_headings: [Outcome, Context, Baseline and target]
+required_edges:
+  - name: measurement
+    direction: outgoing
+    fields: [measured_by]
+    source_forms: [goal]
+    target_forms: [example, quality-attribute]
+    minimum: 1
+    question: How will we know this goal was reached?
+  # Goal refinement (BR-01m4gg8vnq75d4rkw1e0x1b734): the wider goals this one serves. Optional; never a cycle.
+  - name: serves
+    direction: outgoing
+    fields: [serves]
+    source_forms: [goal]
+    target_forms: [goal]
+    minimum: 0
+    acyclic: true
+    question: Which wider goal does this goal serve?
+recognition_signals:
+  - A desired business or user outcome is named.
+  - Success, impact, a baseline, or a target is discussed.
+  - A proposed feature is justified by the change it should produce.

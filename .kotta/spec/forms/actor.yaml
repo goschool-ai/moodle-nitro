@@ -1,0 +1,24 @@
+id: actor
+version: 1
+directory: actors
+canonical_source: UML
+description: A role outside the modeled system that pursues a goal through it.
+identity:
+  prefix: A
+  format: "<prefix>-<26-character lowercase Crockford ULID>"
+  filename: "<slug>-<last 8 id characters>.md"
+required_fields:
+  frontmatter: [id, form, title]
+  body_headings: [Role, Goals, Responsibilities]
+required_edges:
+  - name: participation
+    direction: incoming
+    fields: [actor]
+    source_forms: [user-story, use-case]
+    target_forms: [actor]
+    minimum: 1
+    question: What does this actor actually do?
+recognition_signals:
+  - A user, role, external system, or stakeholder interacts with the system.
+  - Different responsibilities or permissions are being separated.
+  - The conversation says who initiates or benefits from behavior.

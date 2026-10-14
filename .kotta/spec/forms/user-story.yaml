@@ -1,0 +1,31 @@
+id: user-story
+version: 1
+directory: user-stories
+canonical_source: XP / Cohn
+description: A small capability expressed from an actor's point of view and proved by examples.
+identity:
+  prefix: US
+  format: "<prefix>-<26-character lowercase Crockford ULID>"
+  filename: "<slug>-<last 8 id characters>.md"
+required_fields:
+  frontmatter: [id, form, title]
+  body_headings: [Story, Value, Notes]
+required_edges:
+  - name: actor
+    direction: outgoing
+    fields: [actor]
+    source_forms: [user-story]
+    target_forms: [actor]
+    minimum: 1
+    question: Whose story is this?
+  - name: evidence
+    direction: incoming
+    fields: [subjects]
+    source_forms: [example]
+    target_forms: [user-story]
+    minimum: 1
+    question: What example proves this story?
+recognition_signals:
+  - A person wants a capability for a stated benefit.
+  - Work is being sliced into independently valuable behavior.
+  - Acceptance examples are being discussed around a small need.
